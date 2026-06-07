@@ -27,6 +27,14 @@ OS_DIR = BASE_DIR / "_ProjectOS"
 DATA_DIR = OS_DIR / "data"
 REGISTRY_FILE = DATA_DIR / "registry.json"
 
+# Direct-node bypass for lark-cli on Windows. The .cmd shim routes through
+# cmd.exe which mangles double-quotes inside large JSON payloads (interactive
+# cards). Calling node directly with shell=False sidesteps that entirely.
+LARK_CLI_NODE_SCRIPT = Path(
+    "C:/Users/maoxu/AppData/Roaming/npm/node_modules/@larksuite/cli/scripts/run.js"
+)
+NODE_EXE = Path("D:/nodejs/node.exe")
+
 # Feishu/Lark CLI wrapper
 class FeishuClient:
     """飞书CLI客户端封装"""
@@ -128,6 +136,45 @@ class FeishuClient:
         if as_bot:
             args.extend(["--as", "bot"])
         return self._run(args)
+
+    def send_interactive_card(self, target: str, card: Dict, target_type: str = "user_id", as_bot: bool = True) -> Dict:
+        """发送交互卡片（interactive 消息类型）
+
+        card: 由 feishu_cards.build_* 返回的 dict（不需提前 json.dumps）
+
+        实现细节：interactive card 的 content 是较大且含双引号/换行的 JSON 字符串。
+        Windows 上 lark-cli.cmd 走 cmd.exe 路由时会被吃掉引号（典型错误
+        "文件名、目录名或卷标语法不正确"）。直接调用 node + run.js 完全绕过 cmd。
+        """
+        flag = "--user-id" if target_type == "user_id" else "--chat-id"
+        content = json.dumps(card, ensure_ascii=False)
+        argv = [
+            str(NODE_EXE),
+            str(LARK_CLI_NODE_SCRIPT),
+            "im", "+messages-send",
+            flag, target,
+            "--msg-type", "interactive",
+            "--content", content,
+        ]
+        if as_bot:
+            argv.extend(["--as", "bot"])
+        try:
+            result = subprocess.run(
+                argv,
+                capture_output=True,
+                timeout=60,
+                shell=False,
+            )
+            stdout = result.stdout.decode("utf-8", errors="replace")
+            stderr = result.stderr.decode("utf-8", errors="replace")
+            if result.returncode != 0:
+                return {"ok": False, "error": stderr or f"exit {result.returncode}"}
+            try:
+                return json.loads(stdout)
+            except json.JSONDecodeError:
+                return {"ok": True, "raw": stdout}
+        except Exception as e:
+            return {"ok": False, "error": str(e)}
 
     # === Base / Multidimensional Table ===
     def create_base(self, name: str, folder_token: str = None) -> Dict:
