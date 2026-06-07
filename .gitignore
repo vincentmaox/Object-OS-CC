@@ -1,0 +1,51 @@
+# === Secrets / Credentials ===
+agent/*.env
+agent/cc_bot.env
+agent/project_os.env
+*.env.local
+feishu-auth-qr.png
+
+# === State / Runtime data ===
+data/*.json
+data/registry.json
+data/feishu-base-config.json
+agent/cc_bot_context.json
+agent/temp_import.md
+temp_import.md
+
+# === Logs ===
+agent/logs/
+agent/*.log
+agent/cc_bot.log
+logs/
+
+# === Archive & Inbox ===
+archive/
+_inbox/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# === Editor / OS ===
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === NSSM service install temp ===
+nssm.log
+
+# === Allow these specifically ===
+!data/.gitkeep
+!agent/cc_bot.env.example
+!agent/project_os.env.example
