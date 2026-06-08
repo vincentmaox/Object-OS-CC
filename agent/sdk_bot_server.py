@@ -35,6 +35,8 @@ import lark_oapi as lark
 from lark_oapi.api.im.v1 import (
     CreateMessageRequest,
     CreateMessageRequestBody,
+    PatchMessageRequest,
+    PatchMessageRequestBody,
 )
 from lark_oapi.event.dispatcher_handler import EventDispatcherHandlerBuilder
 
@@ -204,6 +206,26 @@ class FeishuSender:
             open_id, build_status_card(title, body, template=template)
         )
 
+    def patch_card(self, message_id: str, card: dict) -> bool:
+        """更新已发送的交互卡片内容（用于流式进度更新）。"""
+        content = json.dumps(card, ensure_ascii=False)
+        req = (
+            PatchMessageRequest.builder()
+            .message_id(message_id)
+            .request_body(
+                PatchMessageRequestBody.builder()
+                .content(content)
+                .build()
+            )
+            .build()
+        )
+        try:
+            resp = self._lark.im.v1.message.patch(req)
+            return resp.success()
+        except Exception as e:
+            log(f"[patch_card 异常] {e}")
+            return False
+
 
 # ─── SDK Permission Callback ─────────────────────────────────────────────────
 
@@ -267,6 +289,8 @@ def make_permission_callback(
 
 # ─── Message Handler ─────────────────────────────────────────────────────────
 
+STREAM_UPDATE_INTERVAL = 5  # 流式进度卡片更新间隔（秒）
+
 async def handle_message(
     sender: FeishuSender,
     open_id: str,
@@ -277,13 +301,14 @@ async def handle_message(
     """处理一条飞书消息：SDK session → 流式收集 → 回复。"""
     log(f"[SDK 启动] msg={msg_id} text={text[:80]}")
 
-    # 发送"处理中"状态
-    sender.send_status(
+    # 发送"处理中"状态卡片，保存 message_id 用于后续 patch
+    status_resp = sender.send_status(
         open_id,
         "🛠 处理中",
         f"**你：** {text[:200]}\n**状态：** 正在启动 SDK 会话…",
         "blue",
     )
+    status_msg_id = (status_resp.get("data") or {}).get("message_id")
 
     prompt = build_prompt(chat_id, text)
     options = ClaudeAgentOptions(
@@ -299,7 +324,9 @@ async def handle_message(
     )
 
     text_parts: list[str] = []
+    tool_count = 0
     t0 = time.time()
+    last_update = t0
 
     try:
         async with ClaudeSDKClient(options=options) as client:
@@ -310,7 +337,23 @@ async def handle_message(
                         if isinstance(block, TextBlock):
                             text_parts.append(block.text)
                         elif isinstance(block, ToolUseBlock):
+                            tool_count += 1
                             log(f"[SDK 工具] {block.name} input_keys={list(block.input.keys())}")
+
+                    # 流式进度：每 N 秒 patch 一次状态卡片
+                    now = time.time()
+                    if status_msg_id and (now - last_update) >= STREAM_UPDATE_INTERVAL:
+                        elapsed_s = now - t0
+                        partial = "".join(text_parts)
+                        preview = partial[-500:] if len(partial) > 500 else partial
+                        card = build_status_card(
+                            "🛠 生成中",
+                            f"**耗时：** {elapsed_s:.0f}s | **工具调用：** {tool_count} 次\n\n{preview}…",
+                            "turquoise",
+                        )
+                        sender.patch_card(status_msg_id, card)
+                        last_update = now
+
                 elif isinstance(message, ResultMessage):
                     cost_s = f"turns={message.num_turns} cost=${message.total_cost_usd or 0:.4f}"
                     elapsed = time.time() - t0
@@ -318,6 +361,11 @@ async def handle_message(
     except Exception as e:
         elapsed = time.time() - t0
         log(f"[SDK 异常] {e}")
+        # 更新状态卡片为失败
+        if status_msg_id:
+            sender.patch_card(status_msg_id, build_status_card(
+                "❌ 异常", f"SDK 异常（{elapsed:.0f}s）: {e}", "red",
+            ))
         reply = f"❌ SDK 异常（{elapsed:.0f}s）: {e}"
         sender.send_text(open_id, reply)
         add_context(chat_id, "assistant", reply)
@@ -325,6 +373,14 @@ async def handle_message(
 
     reply = "".join(text_parts).strip() or "(SDK 无文本返回)"
     elapsed = time.time() - t0
+
+    # 更新状态卡片为完成
+    if status_msg_id:
+        sender.patch_card(status_msg_id, build_status_card(
+            "✅ 完成",
+            f"**耗时：** {elapsed:.1f}s | **工具调用：** {tool_count} 次\n**回复长度：** {len(reply)} 字",
+            "green",
+        ))
 
     # 发送回复
     header = f"✅ 完成（{elapsed:.1f}s）\n\n" if elapsed < 300 else f"⚠️ 长耗时（{elapsed:.1f}s）\n\n"
