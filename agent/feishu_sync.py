@@ -647,6 +647,108 @@ class ProjectSyncEngine:
         content += "请选择：\n- All-in: 继续投入资源\n- Watch: 观察一周\n- Kill: 归档项目"
         return self.feishu.send_message(target, content, target_type)
 
+    def update_project_status(self, project_name: str, decision: str) -> Dict:
+        """根据 MVA 决策更新项目状态并回写 registry.json。
+
+        decision: 'all_in' | 'watch' | 'kill'
+        返回 {'ok': True, 'status': 新状态} 或 {'ok': False, 'error': ...}
+        """
+        from feishu_cards import build_morning_report_card
+
+        projects = self.registry.get("projects", {})
+        p = projects.get(project_name)
+        if p is None:
+            return {"ok": False, "error": f"项目 {project_name} 不在 registry 中"}
+
+        status_map = {
+            "all_in": ("All-in", "活跃"),
+            "watch": ("Watch", "观望"),
+            "kill": ("Kill", "已归档"),
+        }
+        entry = status_map.get(decision)
+        if not entry:
+            return {"ok": False, "error": f"未知决策: {decision}"}
+
+        mva_decision, new_status = entry
+        p["mva_decision"] = mva_decision
+        p["mva_date"] = datetime.now().isoformat()
+        p["status"] = new_status
+
+        if decision == "kill":
+            p["manual_status"] = "已归档"
+            p["archived_at"] = datetime.now().isoformat()
+
+        self.registry["last_update"] = datetime.now().isoformat()
+        with open(REGISTRY_FILE, "w", encoding="utf-8") as f:
+            json.dump(self.registry, f, ensure_ascii=False, indent=2)
+
+        return {"ok": True, "status": new_status, "mva_decision": mva_decision}
+
+    def send_daily_report_cards(self, target: str, target_type: str = "user_id") -> Dict:
+        """发送每日晨报交互卡片（每个活跃项目一张，附 All-in/Watch/Kill 按钮）。"""
+        from feishu_cards import build_morning_report_card
+
+        projects = self.registry.get("projects", {})
+        now = datetime.now()
+        sent, failed = 0, 0
+
+        for name, p in projects.items():
+            status = p.get("status", "")
+            if status in ("已归档", "已Kill", "killed"):
+                continue
+
+            # MVA day 计算
+            first_seen = p.get("first_seen")
+            mva_day = None
+            if first_seen:
+                try:
+                    mva_day = min((now - datetime.fromisoformat(first_seen)).days + 1, 3)
+                except (ValueError, TypeError):
+                    pass
+
+            last_active = ""
+            act = p.get("activity", {})
+            dse = act.get("days_since_edit")
+            if dse is not None:
+                last_active = f"{dse:.0f} 天前"
+            else:
+                last_active = "未知"
+
+            blockers = [b.get("message", "") for b in p.get("blockers", [])]
+
+            summary_parts = [f"状态: {status}"]
+            tech = p.get("tech", {})
+            if tech.get("stack"):
+                summary_parts.append(f"技术栈: {', '.join(tech['stack'][:3])}")
+            if not tech.get("deploy_ready"):
+                summary_parts.append("⚠ 部署未就绪")
+            summary = " | ".join(summary_parts)
+
+            # 卡片状态映射
+            card_status = "active"
+            if status == "卡点":
+                card_status = "kill_candidate"
+            elif status in ("观望", "待归档"):
+                card_status = "paused"
+
+            card = build_morning_report_card(
+                project_name=name,
+                status=card_status,
+                mva_day=mva_day,
+                last_active=last_active,
+                summary=summary,
+                blockers=blockers or None,
+            )
+
+            result = self.feishu.send_interactive_card(target, card, target_type)
+            if result.get("ok", False) or result.get("data"):
+                sent += 1
+            else:
+                failed += 1
+                print(f"[WARN] {name} 卡片发送失败: {result}")
+
+        return {"ok": True, "sent": sent, "failed": failed}
+
 
 def main():
     engine = ProjectSyncEngine()
@@ -689,13 +791,33 @@ def main():
             result = engine.send_blocker_alert(target, target_type)
             print(json.dumps(result, ensure_ascii=False, indent=2))
 
+        elif cmd == "send-cards":
+            if len(sys.argv) < 3:
+                print("Usage: python feishu_sync.py send-cards <ou_xxx_or_oc_xxx>")
+                sys.exit(1)
+            target = sys.argv[2]
+            target_type = "chat_id" if target.startswith("oc_") else "user_id"
+            result = engine.send_daily_report_cards(target, target_type)
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+
+        elif cmd == "update-status":
+            if len(sys.argv) < 4:
+                print("Usage: python feishu_sync.py update-status <project_name> <all_in|watch|kill>")
+                sys.exit(1)
+            project_name = sys.argv[2]
+            decision = sys.argv[3]
+            result = engine.update_project_status(project_name, decision)
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+
         else:
             print("Commands:")
             print("  auth                       - 检查认证状态")
-            print("  send-report <email>        - 发送项目晨报")
+            print("  send-report <ou_xxx>       - 发送项目晨报（富文本）")
+            print("  send-cards <ou_xxx>        - 发送项目晨报（交互卡片 + MVA 按钮）")
             print("  sync-base                  - 同步注册表到多维表格")
             print("  sync-docs                  - 同步看板文档到飞书")
-            print("  alert <email>              - 发送卡点紧急提醒")
+            print("  alert <ou_xxx>             - 发送卡点紧急提醒")
+            print("  update-status <项目名> <all_in|watch|kill> - 更新项目 MVA 决策")
     else:
         print("Feishu Sync Engine Ready")
         print("Use 'python feishu_sync.py <command>' to run")

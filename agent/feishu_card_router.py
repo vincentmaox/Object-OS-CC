@@ -230,17 +230,52 @@ class PermissionRouter:
         }
 
     def _handle_non_permission_action(self, action: str, value: dict, operator_open_id):
-        """晨报卡片上的 All-in/Watch/Kill 等非权限按钮。
+        """晨报卡片上的 All-in/Watch/Kill 按钮。
 
-        当前只回 toast；真正的状态变更由 Day4+ 接入 feishu_sync.update_project_status。
+        调用 feishu_sync.update_project_status 写回 registry.json，
+        然后返回 toast + 替换卡片显示决策结果。
         """
+        from feishu_cards import build_morning_report_card
+
         project = value.get("project", "?")
-        msg = {
-            "all_in": f"🚀 {project} → All-in（待接入状态写回）",
-            "watch": f"👀 {project} → Watch（待接入）",
-            "kill":  f"🪦 {project} → Kill（待接入）",
-        }.get(action, f"未实现的操作: {action}")
-        return {"toast": {"type": "info", "content": msg}}
+        if action not in ("all_in", "watch", "kill"):
+            return {"toast": {"type": "warning", "content": f"未知操作: {action}"}}
+
+        # 写回 registry
+        try:
+            import sys
+            from pathlib import Path
+            sys.path.insert(0, str(Path(__file__).parent))
+            from feishu_sync import ProjectSyncEngine
+            engine = ProjectSyncEngine()
+            result = engine.update_project_status(project, action)
+            if not result.get("ok"):
+                return {"toast": {"type": "error", "content": f"写回失败: {result.get('error', '?')}"}}
+            new_status = result.get("status", "?")
+        except Exception as e:
+            return {"toast": {"type": "error", "content": f"写回异常: {e}"}}
+
+        # 返回替换卡片
+        label = {"all_in": "🚀 All-in", "watch": "👀 Watch", "kill": "🪦 Kill"}[action]
+        template = {"all_in": "green", "watch": "yellow", "kill": "red"}[action]
+
+        resolved_card = {
+            "config": {"wide_screen_mode": True},
+            "header": {
+                "title": {"tag": "plain_text", "content": f"{label}: {project}"},
+                "template": template,
+            },
+            "elements": [
+                {
+                    "tag": "div",
+                    "text": {"tag": "lark_md", "content": f"状态已更新为 **{new_status}**"},
+                },
+            ],
+        }
+        return {
+            "toast": {"type": "success", "content": f"{label}: {project} → {new_status}"},
+            "card": {"type": "raw", "data": resolved_card},
+        }
 
 
 # 模块级单例（导入即用）

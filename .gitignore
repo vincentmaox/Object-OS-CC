@@ -23,6 +23,9 @@ logs/
 archive/
 _inbox/
 
+# === Conversation logs ===
+conversation_log/
+
 # === Python ===
 __pycache__/
 *.py[cod]

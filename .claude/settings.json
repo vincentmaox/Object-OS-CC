@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "command": "D:\\miniconda3\\python.exe D:\\ClaudeCodeProjects\\_ProjectOS\\agent\\save_conversation_turn.py"
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "command": "D:\\miniconda3\\python.exe D:\\ClaudeCodeProjects\\_ProjectOS\\agent\\save_conversation_turn.py"
+      }
+    ]
+  }
+}

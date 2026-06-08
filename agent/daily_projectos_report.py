@@ -29,7 +29,7 @@ def main() -> int:
     code = 0
     code |= run([PYTHON, str(AGENT / "project_agent.py")])
     code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "sync-base"])
-    code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "send-report", USER_OPEN_ID])
+    code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "send-cards", USER_OPEN_ID])
     code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "alert", USER_OPEN_ID])
     return code
 
