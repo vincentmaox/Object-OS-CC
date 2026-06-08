@@ -21,6 +21,13 @@
 - Day3: `agent/card_render_test.py` + `agent/test_card_router.py` — 真机渲染 + 路由单元测试
 - Day3: `agent/install_sdk_bot_service.bat` — NSSM 安装脚本（自动卸载旧 CCBotServer 避免 WS 冲突）
 - Day3: `docs/journal/2026-06-07-day3-sdk-bot-end-to-end.md` — Day3 完整记录
+- Day3 晚段: `thoughts/` 目录骨架（inbox/active/watching/killed.md）— 思考池数据层
+- Day3 晚段: `agent/thought_inspector.py` — 思考池巡检脚本（沉睡 14 天 / 反复 ≥3 / git 自然落地三档分析 + 飞书推送）
+- Day3 晚段: `agent/install_thought_inspector_schedule.bat` — schtasks 注册每周一 09:07 巡检
+- Day3 晚段: `permission_rules.py:allow_thoughts_write` 规则 — 思考池写入自动放行
+- Day3 晚段: `sdk_bot_server.py:build_prompt` 加思考池协议指令（识别"想法/思考"→ 反问 → 写 inbox）
+- Day3 晚段: TokenChrono 项目归档（README/CLAUDE.md + registry status="已归档"）
+- Day3 晚段: `docs/journal/2026-06-07-day3-evening-postmortem.md` — NSSM 服务化 + 密钥事故 + 思考池建成复盘
 
 ### Discovered (重要发现)
 - ❌ **Channel协议在第三方API代理后端不可用**：`--dangerously-load-development-channels` 被代理后端忽略，需Anthropic官方API的 `tengu_harbor_ledger` 服务端白名单

@@ -37,10 +37,20 @@ _ProjectOS/
 ├── agent/                  # 核心脚本
 │   ├── project_agent.py    # 项目扫描器 + 看板生成
 │   ├── feishu_sync.py      # 飞书同步引擎
-│   ├── cc_bot_server.py    # 飞书 Bot 服务（计划替换）
+│   ├── sdk_bot_server.py   # 飞书 Bot 主服务（claude-agent-sdk + 卡片权限中继）
+│   ├── feishu_cards.py     # 卡片模板
+│   ├── feishu_card_router.py  # 卡片回调路由
+│   ├── permission_rules.py # 工具权限白/黑名单引擎
+│   ├── thought_inspector.py   # 思考池周巡检（每周一 09:07）
+│   ├── cc_bot_server.py    # 旧版 Bot（保留作降级路径，不再开服务）
 │   └── daily_projectos_report.py  # 每日定时任务
 ├── data/                   # 数据真值（不入 git）
 │   └── registry.json
+├── thoughts/               # 思考池
+│   ├── inbox.md            # 接收原始思考（Bot 自动追加）
+│   ├── active.md           # 已决断 Go
+│   ├── watching.md         # 暂观望
+│   └── killed.md           # 已 Kill 留痕
 ├── templates/              # 项目笔记模板
 ├── docs/                   # 文档
 │   └── journal/            # 工作日志
@@ -84,6 +94,23 @@ agent/install_daily_report_task.bat
 agent/install_service.bat
 ```
 
+### NSSM 服务化新版 SDK Bot（推荐）
+
+```bash
+agent/install_sdk_bot_service.bat
+```
+
+服务名 `SDKBotServer`，跑当前 User 账户（继承 ~/.claude 配置）。
+管理命令：`net start/stop SDKBotServer`、`sc query SDKBotServer`。
+
+### 注册思考池每周巡检（每周一 09:07）
+
+```bash
+agent/install_thought_inspector_schedule.bat
+```
+
+不需要管理员。任务用 schtasks，跑当前 User 权限（Interactive only — 需登录 Windows 才触发）。
+
 ## 飞书 Bot 远程驱动（CC 小助手）
 
 私聊飞书 Bot 任何指令 → 本机 Claude Code 执行 → 结果推回。需要：
@@ -102,6 +129,16 @@ agent/install_service.bat
 - **认错套利**：错误 72h 内闭环为训练数据，不为面子持仓
 
 ProjectOS 把上述纪律物化为代码，让纪律不依赖意志力。
+
+## 思考池工作流（Day3 新增）
+
+把日常零散思考变成结构化决断流：
+
+1. **随手丢** — 飞书发"我有个想法，docreview 应该加 X" → Bot 反问确认项目 → 写入 `thoughts/inbox.md`
+2. **每周一 09:07** — `thought_inspector.py` 自动巡检，按"沉睡 14 天 / 反复出现 ≥3 / git 自然落地"三档分析，推飞书报告
+3. **你决断** — 回 Bot "1 Go, 2 Kill, 3 Watch" → 对应思考从 inbox 移到 active / killed / watching
+
+详见 `thoughts/inbox.md` 头部说明。
 
 ## License
 

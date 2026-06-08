@@ -8,9 +8,11 @@ set "SCRIPT=D:\ClaudeCodeProjects\_ProjectOS\agent\sdk_bot_server.py"
 set "WORKDIR=D:\ClaudeCodeProjects\_ProjectOS\agent"
 set "LOGDIR=D:\ClaudeCodeProjects\_ProjectOS\agent\logs"
 
+REM ===== Admin detection (no self-elevation to avoid UAC loop) =====
 echo === Check admin permission ===
-net session >nul 2>nul
+whoami /groups 2>nul | findstr /C:"S-1-16-12288" >nul
 if errorlevel 1 goto NEED_ADMIN
+echo OK: running as Administrator
 
 echo === Check files ===
 if not exist "%NSSM%" goto NO_NSSM
@@ -55,6 +57,35 @@ echo === Configure service ===
 "%NSSM%" set "%SVCNAME%" AppExit Default Restart
 "%NSSM%" set "%SVCNAME%" AppRestartDelay 3000
 
+echo === Set service to run as current User (inherit User env + ~/.claude config) ===
+echo Account: %USERDOMAIN%\%USERNAME%
+echo You will be prompted for your Windows login password (NSSM stores it encrypted in service config).
+set /p USERPWD=Password for %USERDOMAIN%\%USERNAME%:
+"%NSSM%" set "%SVCNAME%" ObjectName "%USERDOMAIN%\%USERNAME%" "%USERPWD%"
+if errorlevel 1 (
+    echo WARNING: Failed to set ObjectName. Service will run as LocalSystem and likely fail.
+    echo You can fix later: "%NSSM%" set %SVCNAME% ObjectName %USERDOMAIN%\%USERNAME% YourPassword
+)
+set "USERPWD="
+
+echo === Grant 'Log on as a service' right ===
+REM Without this right, the service will refuse to start with: "Logon failure"
+powershell -NoProfile -Command ^
+  "$tmp = [IO.Path]::GetTempFileName(); ^
+   secedit /export /cfg $tmp /quiet; ^
+   $cfg = Get-Content $tmp; ^
+   $line = $cfg | Where-Object { $_ -match '^SeServiceLogonRight' }; ^
+   if (-not $line) { $line = 'SeServiceLogonRight = ' }; ^
+   $sid = (New-Object System.Security.Principal.NTAccount('%USERDOMAIN%\%USERNAME%')).Translate([System.Security.Principal.SecurityIdentifier]).Value; ^
+   if ($line -notmatch [regex]::Escape($sid)) { ^
+     $newLine = $line.TrimEnd() + ',*' + $sid; ^
+     $cfg = $cfg -replace [regex]::Escape($line), $newLine; ^
+     $cfg | Set-Content $tmp; ^
+     secedit /configure /db secedit.sdb /cfg $tmp /quiet; ^
+     Write-Host 'Granted Log-on-as-service right.' ^
+   } else { Write-Host 'Log-on-as-service right already present.' }; ^
+   Remove-Item $tmp -Force"
+
 echo === Start service ===
 "%NSSM%" start "%SVCNAME%"
 if errorlevel 1 goto START_FAIL
@@ -79,7 +110,14 @@ pause
 exit /b 0
 
 :NEED_ADMIN
-echo ERROR: Please run this script as Administrator.
+echo.
+echo ERROR: This script needs Administrator privileges.
+echo.
+echo How to run as Admin:
+echo   1) File Explorer: right-click this .bat - "Run as Administrator"
+echo   2) Win+X - "Terminal (Admin)" - then run:
+echo      "%~f0"
+echo.
 pause
 exit /b 1
 

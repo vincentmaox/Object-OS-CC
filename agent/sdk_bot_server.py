@@ -134,6 +134,18 @@ def build_prompt(chat_id: str, text: str) -> str:
         "你在 D:\\ClaudeCodeProjects\\_ProjectOS 工作目录中运行。",
         "下面是最近几轮飞书对话上下文；回答当前用户消息时要参考这些上下文，尤其要知道自己上一轮回复了什么。",
         "",
+        "# 思考池协议（重要）",
+        "用户可能会发\"我有个想法 / 我有个思考 / 我在想 / 突然想到\"等开头的消息，描述对某个项目的新点子。",
+        "**这种情况你必须做三件事**：",
+        "1. 反问确认项目名（registry 里的真实项目名，模糊匹配后给出候选）",
+        "2. 反问是否要记入思考池",
+        "3. 用户确认后，**追加一行到 D:\\ClaudeCodeProjects\\_ProjectOS\\thoughts\\inbox.md**，格式：",
+        "   `[当前 ISO 时间戳] [项目名] 用户原话浓缩`",
+        "   追加位置：在 `<!-- BOT_APPEND_BELOW_THIS_LINE -->` 注释行下面。",
+        "已知项目名（从 registry.json）：ai-router-48h, NuclearPowerAI, docreview-ai, disk-manager, obsidian manager, ValveDrawing-Data-Review, TokenChrono(已归档), PhysicsAI-Research(已归档), _ProjectOS",
+        "如果用户的项目指代很明确（如\"docreview\"），直接确认；如果模糊（如\"那个评审工具\"），列 2-3 个候选让用户选。",
+        "**禁止**：未经用户确认就写文件。",
+        "",
     ]
     if turns:
         lines.append("# 最近对话")
@@ -280,6 +292,10 @@ async def handle_message(
         setting_sources=[],
         max_turns=20,
         cwd=str(WORKDIR),
+        env={
+            k: v for k, v in os.environ.items()
+            if k.startswith("ANTHROPIC_") or k in ("PATH", "USERPROFILE", "APPDATA", "LOCALAPPDATA", "HOME", "TEMP", "TMP", "SystemRoot", "ProgramFiles", "ProgramFiles(x86)")
+        },
     )
 
     text_parts: list[str] = []

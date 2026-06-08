@@ -118,6 +118,19 @@ RULES: list[Rule] = [
         _bash_matches(r"^python\s+[\"']?D:[\\/]ClaudeCodeProjects[\\/]_ProjectOS[\\/]agent[\\/]"),
         "ProjectOS agent 自家脚本",
     ),
+
+    # ─ 白名单：思考池 Edit/Write 自动放行 ─
+    Rule(
+        "allow_thoughts_write",
+        "allow",
+        lambda tool, inp: (
+            tool in ("Write", "Edit")
+            and isinstance(inp.get("file_path"), str)
+            and "_ProjectOS" in inp["file_path"]
+            and "thoughts" in inp["file_path"].replace("\\", "/").split("/")
+        ),
+        "思考池文件写入",
+    ),
 ]
 
 
@@ -155,6 +168,8 @@ if __name__ == "__main__":
         ("Bash", {"command": "npm install"}, "ask"),
         ("Write", {"file_path": "x.md", "content": "hi"}, "ask"),
         ("Edit", {"file_path": "x.md"}, "ask"),
+        ("Write", {"file_path": "D:/ClaudeCodeProjects/_ProjectOS/thoughts/inbox.md", "content": "x"}, "allow"),
+        ("Edit", {"file_path": "D:\\ClaudeCodeProjects\\_ProjectOS\\thoughts\\active.md"}, "allow"),
     ]
     for tool, inp, expected in cases:
         got, rule = evaluate(tool, inp)
