@@ -23,6 +23,7 @@
 from __future__ import annotations
 
 import asyncio
+import os
 import time
 from dataclasses import dataclass, field
 from typing import Optional
@@ -179,6 +180,10 @@ class PermissionRouter:
         if not req_id:
             return self._handle_non_permission_action(decision, value, operator_open_id)
 
+        # 安全校验：权限卡片也只允许白名单用户操作
+        if operator_open_id and operator_open_id not in self.ALLOWED_OPEN_IDS:
+            return {"toast": {"type": "error", "content": f"无权限操作（open_id: {operator_open_id[:8]}…）"}}
+
         p = self._pending.get(req_id)
         if p is None:
             return {
@@ -229,13 +234,21 @@ class PermissionRouter:
             },
         }
 
+    ALLOWED_OPEN_IDS = os.environ.get(
+        "FEISHU_ALLOWED_OPEN_IDS", "ou_59a5d4b0cc115a66295961a1aec66a9e"
+    ).split(",")
+
     def _handle_non_permission_action(self, action: str, value: dict, operator_open_id):
         """晨报卡片上的 All-in/Watch/Kill 按钮。
 
-        调用 feishu_sync.update_project_status 写回 registry.json，
-        然后返回 toast + 替换卡片显示决策结果。
+        校验操作者 open_id 白名单，调用 feishu_sync.update_project_status 写回
+        registry.json，然后返回 toast + 替换卡片显示决策结果。
         """
         from feishu_cards import build_morning_report_card
+
+        # 安全校验：只允许白名单用户操作
+        if operator_open_id and operator_open_id not in self.ALLOWED_OPEN_IDS:
+            return {"toast": {"type": "error", "content": f"无权限操作（open_id: {operator_open_id[:8]}…）"}}
 
         project = value.get("project", "?")
         if action not in ("all_in", "watch", "kill"):

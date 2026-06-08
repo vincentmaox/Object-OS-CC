@@ -240,8 +240,16 @@ def build_eval_prompt(project: str, activity: dict) -> str:
 def summarize_one(project: str, activity: dict) -> str:
     """调 claude-agent-sdk 总结一个项目（复用 sdk_bot_server 验证过的链路）。
 
-    失败回退原始数据 markdown。同步入口，内部跑 asyncio。
+    失败或超时回退原始数据 markdown。同步入口，内部跑 asyncio。
     """
+    return _call_llm(build_prompt_for(project, activity), project, activity, _fallback_render)
+
+
+LLM_TIMEOUT = 45  # 单项目 LLM 调用超时秒数
+
+
+def _call_llm(prompt: str, project: str, activity: dict, fallback_fn) -> str:
+    """通用 LLM 调用，带超时 + fallback。"""
     try:
         import asyncio
         from claude_agent_sdk import (
@@ -249,9 +257,7 @@ def summarize_one(project: str, activity: dict) -> str:
             AssistantMessage, TextBlock,
         )
     except ImportError:
-        return _fallback_render(project, activity)
-
-    prompt = build_prompt_for(project, activity)
+        return fallback_fn(project, activity)
 
     async def _run() -> str:
         options = ClaudeAgentOptions(
@@ -279,13 +285,16 @@ def summarize_one(project: str, activity: dict) -> str:
         return "".join(parts).strip()
 
     try:
-        text = asyncio.run(_run())
+        text = asyncio.run(asyncio.wait_for(_run(), timeout=LLM_TIMEOUT))
         if not text:
-            return _fallback_render(project, activity)
+            return fallback_fn(project, activity)
         return f"### {project}\n{text}\n"
+    except asyncio.TimeoutError:
+        print(f"[WARN] {project} LLM 超时 ({LLM_TIMEOUT}s)，用 fallback", file=sys.stderr)
+        return fallback_fn(project, activity)
     except Exception as e:
-        print(f"[WARN] {project} LLM 总结失败: {e}", file=sys.stderr)
-        return _fallback_render(project, activity)
+        print(f"[WARN] {project} LLM 失败: {e}", file=sys.stderr)
+        return fallback_fn(project, activity)
 
 
 def _fallback_render(project: str, activity: dict) -> str:
@@ -307,50 +316,7 @@ def _fallback_render(project: str, activity: dict) -> str:
 
 def eval_one(project: str, activity: dict) -> str:
     """调 LLM 做项目评估。失败回退纯模板。"""
-    try:
-        import asyncio
-        from claude_agent_sdk import (
-            ClaudeSDKClient, ClaudeAgentOptions,
-            AssistantMessage, TextBlock,
-        )
-    except ImportError:
-        return _fallback_eval(project, activity)
-
-    prompt = build_eval_prompt(project, activity)
-
-    async def _run() -> str:
-        options = ClaudeAgentOptions(
-            permission_mode="default",
-            setting_sources=[],
-            max_turns=1,
-            cwd=str(WORKDIR),
-            env={
-                k: v for k, v in os.environ.items()
-                if k.startswith("ANTHROPIC_") or k in (
-                    "PATH", "USERPROFILE", "APPDATA", "LOCALAPPDATA",
-                    "HOME", "TEMP", "TMP", "SystemRoot",
-                    "ProgramFiles", "ProgramFiles(x86)",
-                )
-            },
-        )
-        parts: list[str] = []
-        async with ClaudeSDKClient(options=options) as client:
-            await client.query(prompt)
-            async for msg in client.receive_response():
-                if isinstance(msg, AssistantMessage):
-                    for b in msg.content:
-                        if isinstance(b, TextBlock):
-                            parts.append(b.text)
-        return "".join(parts).strip()
-
-    try:
-        text = asyncio.run(_run())
-        if not text:
-            return _fallback_eval(project, activity)
-        return f"### {project}\n{text}\n"
-    except Exception as e:
-        print(f"[WARN] {project} 评估 LLM 失败: {e}", file=sys.stderr)
-        return _fallback_eval(project, activity)
+    return _call_llm(build_eval_prompt(project, activity), project, activity, _fallback_eval)
 
 
 def _fallback_eval(project: str, activity: dict) -> str:
