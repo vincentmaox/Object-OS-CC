@@ -2,6 +2,18 @@
 
 按倒序记录主要演进。完整决策细节在 `journal/` 下按日期归档。
 
+## [Unreleased] - 2026-06-08
+
+### Added
+- Day4: `feishu_sync.send_daily_report_cards()` — 晨报推交互卡片（每项目一张 + All-in/Watch/Kill 按钮）
+- Day4: `feishu_sync.update_project_status()` — MVA 决策写回 registry.json（all_in→活跃/watch→观望/kill→已归档）
+- Day4: `feishu_card_router._handle_non_permission_action` — 接通 MVA 按钮回调，点按钮即写回 + 替换卡片
+- Day4: `daily_recap.py` 项目评估三段式（诊断/建议/夸夸）— LLM 或 fallback 模板，所有活跃项目均评估
+- Day4: `daily_recap.py` 静默项目评估 — 今日无动静的项目也出评估
+- Day4: `agent/save_conversation_turn.py` — Claude Code Stop hook，自动保存对话轮次到 `conversation_log/`
+- Day4: `.claude/settings.json` — 注册 UserPromptSubmit + Stop hooks
+- Day4: `daily_projectos_report.py` 晨报改用 send-cards（交互卡片取代纯文本）
+
 ## [Unreleased] - 2026-06-07
 
 ### Added
