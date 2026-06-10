@@ -66,19 +66,9 @@ WORKDIR = Path(r"D:\ClaudeCodeProjects\_ProjectOS")
 ENV_FILE = WORKDIR / "agent" / "cc_bot.env"
 
 
-def load_env_file(path: Path) -> None:
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        if value.strip():
-            os.environ.setdefault(key.strip(), value.strip())
+from env_loader import load_all
 
-
-load_env_file(ENV_FILE)
+load_all(ENV_FILE)
 
 APP_ID = os.environ.get("FEISHU_APP_ID", "")
 APP_SECRET = os.environ.get("FEISHU_APP_SECRET", "")

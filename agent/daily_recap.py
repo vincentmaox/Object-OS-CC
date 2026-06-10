@@ -37,17 +37,10 @@ THOUGHT_RE = re.compile(
 )
 
 # 让模块导入时把 cc_bot.env 灌进环境（NSSM/schtasks 跑时未必继承 User env）
-def load_env_file(path: Path) -> None:
-    if not path.exists():
-        return
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        k, v = line.split("=", 1)
-        os.environ.setdefault(k.strip(), v.strip())
+# 然后用 CC Switch (settings.json) 的最新值覆盖 ANTHROPIC_* 变量
+from env_loader import load_all
 
-load_env_file(WORKDIR / "agent" / "cc_bot.env")
+load_all(WORKDIR / "agent" / "cc_bot.env")
 
 
 def today_str() -> str:
