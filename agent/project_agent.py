@@ -168,6 +168,8 @@ class ProjectScanner:
                 ["git", "-C", str(path), "branch", "--show-current"],
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=5,
             )
             if branch.returncode == 0:
@@ -177,6 +179,8 @@ class ProjectScanner:
                 ["git", "-C", str(path), "status", "--short"],
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=5,
             )
             lines = [l for l in status.stdout.strip().split("\n") if l.strip()]
@@ -187,6 +191,8 @@ class ProjectScanner:
                 ["git", "-C", str(path), "log", "-1", "--format=%H|%ci|%s"],
                 capture_output=True,
                 text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=5,
             )
             if log.returncode == 0 and log.stdout.strip():
@@ -209,6 +215,8 @@ class ProjectScanner:
                     ],
                     capture_output=True,
                     text=True,
+                    encoding="utf-8",
+                    errors="replace",
                     timeout=5,
                 )
                 if ahead.returncode == 0:
@@ -229,6 +237,8 @@ class ProjectScanner:
                     ],
                     capture_output=True,
                     text=True,
+                    encoding="utf-8",
+                    errors="replace",
                     timeout=5,
                 )
                 if behind.returncode == 0:

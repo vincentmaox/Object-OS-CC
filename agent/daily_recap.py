@@ -245,11 +245,23 @@ def summarize_one(project: str, activity: dict) -> str:
     return _call_llm(build_prompt_for(project, activity), project, activity, _fallback_render)
 
 
-LLM_TIMEOUT = 45  # 单项目 LLM 调用超时秒数
+LLM_TIMEOUT = 90  # 单项目 LLM 调用超时秒数
+LLM_RETRIES = 2   # 超时重试次数
+RECAP_LOG = WORKDIR / "agent" / "daily_recap.log"
+
+
+def _recap_log(msg: str) -> None:
+    line = f"[{datetime.now().isoformat(timespec='seconds')}] {msg}"
+    print(line, file=sys.stderr)
+    try:
+        with open(RECAP_LOG, "a", encoding="utf-8") as f:
+            f.write(line + "\n")
+    except Exception:
+        pass
 
 
 def _call_llm(prompt: str, project: str, activity: dict, fallback_fn) -> str:
-    """通用 LLM 调用，带超时 + fallback。"""
+    """通用 LLM 调用，带超时 + 重试 + fallback + 文件日志。"""
     try:
         import asyncio
         from claude_agent_sdk import (
@@ -257,6 +269,7 @@ def _call_llm(prompt: str, project: str, activity: dict, fallback_fn) -> str:
             AssistantMessage, TextBlock,
         )
     except ImportError:
+        _recap_log(f"[{project}] SDK 不可导入，用 fallback")
         return fallback_fn(project, activity)
 
     async def _run() -> str:
@@ -284,17 +297,21 @@ def _call_llm(prompt: str, project: str, activity: dict, fallback_fn) -> str:
                             parts.append(b.text)
         return "".join(parts).strip()
 
-    try:
-        text = asyncio.run(asyncio.wait_for(_run(), timeout=LLM_TIMEOUT))
-        if not text:
-            return fallback_fn(project, activity)
-        return f"### {project}\n{text}\n"
-    except asyncio.TimeoutError:
-        print(f"[WARN] {project} LLM 超时 ({LLM_TIMEOUT}s)，用 fallback", file=sys.stderr)
-        return fallback_fn(project, activity)
-    except Exception as e:
-        print(f"[WARN] {project} LLM 失败: {e}", file=sys.stderr)
-        return fallback_fn(project, activity)
+    for attempt in range(1, LLM_RETRIES + 1):
+        try:
+            text = asyncio.run(asyncio.wait_for(_run(), timeout=LLM_TIMEOUT))
+            if not text:
+                _recap_log(f"[{project}] LLM 返回空，用 fallback")
+                return fallback_fn(project, activity)
+            _recap_log(f"[{project}] LLM 成功 ({len(text)} chars)")
+            return f"### {project}\n{text}\n"
+        except asyncio.TimeoutError:
+            _recap_log(f"[{project}] LLM 超时 attempt={attempt}/{LLM_RETRIES} ({LLM_TIMEOUT}s)")
+        except Exception as e:
+            _recap_log(f"[{project}] LLM 异常 attempt={attempt}/{LLM_RETRIES}: {e}")
+
+    _recap_log(f"[{project}] 全部重试用尽，用 fallback")
+    return fallback_fn(project, activity)
 
 
 def _fallback_render(project: str, activity: dict) -> str:
@@ -434,15 +451,18 @@ def push_to_feishu(title: str, content: str) -> bool:
             content=content,
             target_type="user_id",
         )
-        return bool(result.get("data"))
+        ok = bool(result.get("data"))
+        _recap_log(f"[推送] {'成功' if ok else '失败'} title={title}")
+        return ok
     except Exception as e:
-        print(f"[ERROR] 推飞书失败: {e}", file=sys.stderr)
+        _recap_log(f"[ERROR] 推飞书失败: {e}")
         return False
 
 
 def main():
+    _recap_log(f"=== 启动 daily_recap args={sys.argv[1:]} ===")
     if not REGISTRY.exists():
-        print(f"[ERROR] registry 不存在: {REGISTRY}", file=sys.stderr)
+        _recap_log(f"[ERROR] registry 不存在: {REGISTRY}")
         sys.exit(1)
 
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
@@ -454,11 +474,11 @@ def main():
     print()
 
     if "--dry-run" in sys.argv:
-        print("[DRY-RUN] 跳过推送")
+        _recap_log("[DRY-RUN] 跳过推送")
         return
 
     ok = push_to_feishu(title, content)
-    print(f"[推送] {'成功' if ok else '失败'}")
+    _recap_log(f"=== 完成 push_ok={ok} ===")
 
 
 if __name__ == "__main__":
