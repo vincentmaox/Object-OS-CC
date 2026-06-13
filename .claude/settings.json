@@ -1,5 +1,16 @@
 {
   "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "D:\\miniconda3\\python.exe C:\\Users\\maoxu\\.claude\\scripts\\save_conversation_turn.py"
+          }
+        ]
+      }
+    ],
     "UserPromptSubmit": [
       {
         "matcher": "",
@@ -12,6 +23,17 @@
       }
     ],
     "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "D:\\miniconda3\\python.exe C:\\Users\\maoxu\\.claude\\scripts\\save_conversation_turn.py"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
       {
         "matcher": "",
         "hooks": [
