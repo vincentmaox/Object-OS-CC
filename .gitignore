@@ -51,6 +51,9 @@ desktop.ini
 # === NSSM service install temp ===
 nssm.log
 
+# === Playwright MCP debug snapshots ===
+.playwright-mcp/
+
 # === Allow these specifically ===
 !data/.gitkeep
 !agent/cc_bot.env.example
