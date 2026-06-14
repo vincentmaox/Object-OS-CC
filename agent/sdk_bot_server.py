@@ -37,6 +37,7 @@ from lark_oapi.api.im.v1 import (
     CreateMessageRequestBody,
     PatchMessageRequest,
     PatchMessageRequestBody,
+    GetMessageResourceRequest,
 )
 from lark_oapi.event.dispatcher_handler import EventDispatcherHandlerBuilder
 
@@ -79,6 +80,14 @@ LOG_FILE = WORKDIR / "agent" / "cc_bot.log"
 CONTEXT_FILE = WORKDIR / "agent" / "cc_bot_context.json"
 PROCESSED_IDS: set[str] = set()
 CHAT_CONTEXTS: dict[str, deque[dict[str, str]]] = defaultdict(lambda: deque(maxlen=16))
+
+# Inbox 目录（飞书图片/文件/富文本落盘）
+INBOX_ROOT = WORKDIR / "agent" / "inbox"
+INBOX_IMAGES = INBOX_ROOT / "images"
+INBOX_FILES = INBOX_ROOT / "files"
+INBOX_TEXTS = INBOX_ROOT / "texts"
+for _d in (INBOX_IMAGES, INBOX_FILES, INBOX_TEXTS):
+    _d.mkdir(parents=True, exist_ok=True)
 
 # ─── Logging ─────────────────────────────────────────────────────────────────
 
@@ -215,6 +224,64 @@ class FeishuSender:
         except Exception as e:
             log(f"[patch_card 异常] {e}")
             return False
+
+    def download_resource(
+        self, message_id: str, file_key: str, resource_type: str = "file"
+    ) -> Optional[tuple[bytes, str]]:
+        """下载飞书消息中的图片/文件资源。
+
+        resource_type: "image" 或 "file"
+        返回 (bytes, file_name) 或 None（失败）。
+        """
+        req = (
+            GetMessageResourceRequest.builder()
+            .message_id(message_id)
+            .file_key(file_key)
+            .type(resource_type)
+            .build()
+        )
+        try:
+            resp = self._lark.im.v1.message_resource.get(req)
+            if not resp.success():
+                log(f"[下载失败] code={resp.code} msg={resp.msg} key={file_key}")
+                return None
+            # resp.file 是 IO[bytes]，resp.file_name 是文件名
+            data = resp.file.read() if resp.file else b""
+            name = resp.file_name or file_key
+            return (data, name)
+        except Exception as e:
+            log(f"[下载异常] {e} key={file_key}")
+            return None
+
+
+def save_to_inbox(
+    folder: Path, open_id: str, filename: str, data: bytes
+) -> Path:
+    """落盘到 inbox。文件名加时间戳 + open_id 短哈希前缀避免冲突。"""
+    ts = datetime.now().strftime("%Y%m%d-%H%M%S")
+    short_id = (open_id or "anon")[-8:]
+    safe_name = "".join(c if c.isalnum() or c in "._-" else "_" for c in filename)
+    out_path = folder / f"{ts}_{short_id}_{safe_name}"
+    out_path.write_bytes(data)
+    return out_path
+
+
+def list_inbox(limit: int = 20) -> str:
+    """列出 inbox 最近 N 条。"""
+    items: list[tuple[float, Path, str]] = []
+    for cat, folder in [("img", INBOX_IMAGES), ("file", INBOX_FILES), ("text", INBOX_TEXTS)]:
+        for p in folder.iterdir():
+            if p.is_file():
+                items.append((p.stat().st_mtime, p, cat))
+    items.sort(key=lambda x: -x[0])
+    if not items:
+        return "📭 Inbox 为空"
+    lines = [f"📬 Inbox 最近 {min(limit, len(items))} 条："]
+    for mt, p, cat in items[:limit]:
+        ts = datetime.fromtimestamp(mt).strftime("%m-%d %H:%M")
+        size_kb = p.stat().st_size / 1024
+        lines.append(f"  [{cat}] {ts} {p.name} ({size_kb:.1f}KB)")
+    return "\n".join(lines)
 
 
 # ─── SDK Permission Callback ─────────────────────────────────────────────────
@@ -416,7 +483,96 @@ def on_message(data, sender: FeishuSender, loop: asyncio.AbstractEventLoop) -> N
         return
 
     if msg_type != "text":
-        sender.send_text(open_id, f"暂只支持文本消息（你发的是 {msg_type}）")
+        # 非文本消息：尝试落盘到 inbox（图片/文件/富文本/post）
+        try:
+            content_obj = json.loads(content_raw or "{}")
+        except Exception:
+            content_obj = {}
+        saved_paths: list[Path] = []
+
+        try:
+            if msg_type == "image":
+                image_key = content_obj.get("image_key")
+                if image_key:
+                    res = sender.download_resource(msg_id, image_key, "image")
+                    if res:
+                        data, name = res
+                        # 飞书图片名常为空，自动补 .png
+                        if not name or "." not in name:
+                            name = f"{image_key}.png"
+                        p = save_to_inbox(INBOX_IMAGES, open_id, name, data)
+                        saved_paths.append(p)
+
+            elif msg_type == "file":
+                file_key = content_obj.get("file_key")
+                file_name = content_obj.get("file_name") or (file_key or "unknown")
+                if file_key:
+                    res = sender.download_resource(msg_id, file_key, "file")
+                    if res:
+                        data, name = res
+                        # 优先用 content 里的 file_name
+                        p = save_to_inbox(INBOX_FILES, open_id, file_name or name, data)
+                        saved_paths.append(p)
+
+            elif msg_type == "post":
+                # 富文本：先把 JSON 落盘，再扫描内嵌的 image_key/file_key
+                ts = datetime.now().strftime("%Y%m%d-%H%M%S")
+                short_id = (open_id or "anon")[-8:]
+                post_path = INBOX_TEXTS / f"{ts}_{short_id}_{msg_id}.json"
+                post_path.write_text(
+                    json.dumps(content_obj, ensure_ascii=False, indent=2),
+                    encoding="utf-8",
+                )
+                saved_paths.append(post_path)
+                # 富文本中可能嵌的 img/file 元素
+                def _walk(node):
+                    if isinstance(node, dict):
+                        tag = node.get("tag")
+                        if tag == "img" and node.get("image_key"):
+                            res = sender.download_resource(msg_id, node["image_key"], "image")
+                            if res:
+                                data, name = res
+                                if not name or "." not in name:
+                                    name = f"{node['image_key']}.png"
+                                saved_paths.append(save_to_inbox(INBOX_IMAGES, open_id, name, data))
+                        elif tag in ("file", "media") and node.get("file_key"):
+                            rtype = "file" if tag == "file" else "file"
+                            res = sender.download_resource(msg_id, node["file_key"], rtype)
+                            if res:
+                                data, name = res
+                                saved_paths.append(save_to_inbox(INBOX_FILES, open_id, name, data))
+                        for v in node.values():
+                            _walk(v)
+                    elif isinstance(node, list):
+                        for v in node:
+                            _walk(v)
+                _walk(content_obj)
+
+            elif msg_type in ("audio", "media", "sticker"):
+                # 这几类暂统一当 file 试一下
+                key = content_obj.get("file_key") or content_obj.get("image_key")
+                if key:
+                    res = sender.download_resource(msg_id, key, "file")
+                    if res:
+                        data, name = res
+                        if not name or "." not in name:
+                            ext = {"audio": ".opus", "media": ".mp4", "sticker": ".png"}.get(msg_type, "")
+                            name = f"{key}{ext}"
+                        p = save_to_inbox(INBOX_FILES, open_id, name, data)
+                        saved_paths.append(p)
+        except Exception as e:
+            log(f"[资源处理异常] msg_type={msg_type} err={e}")
+
+        if saved_paths:
+            lines = [f"📥 已收到 {msg_type}，落盘 {len(saved_paths)} 个文件："]
+            for p in saved_paths:
+                rel = p.relative_to(WORKDIR)
+                lines.append(f"  • {rel}")
+            sender.send_text(open_id, "\n".join(lines))
+            log(f"[资源落盘] msg={msg_id} type={msg_type} count={len(saved_paths)}")
+        else:
+            sender.send_text(open_id, f"⚠️ 收到 {msg_type} 但未提取到资源（content={truncate_preview(content_raw or '', 200)}）")
+            log(f"[资源落盘失败] msg={msg_id} type={msg_type} content={content_raw[:200] if content_raw else ''}")
         return
 
     try:
@@ -425,6 +581,30 @@ def on_message(data, sender: FeishuSender, loop: asyncio.AbstractEventLoop) -> N
         text = ""
     if not text:
         sender.send_text(open_id, "消息为空，请发文本指令")
+        return
+
+    # ─── 内置指令 ────────────────────────────────────────────────
+    cmd = text.strip()
+    if cmd in ("/reload", "/重载"):
+        try:
+            from env_loader import load_all
+            load_all(ENV_FILE)
+            token_present = bool(os.environ.get("ANTHROPIC_AUTH_TOKEN") or os.environ.get("ANTHROPIC_API_KEY"))
+            base_url = os.environ.get("ANTHROPIC_BASE_URL", "(未设)")
+            sender.send_text(
+                open_id,
+                f"🔄 已重载环境变量\n"
+                f"  ANTHROPIC token: {'✅ 已加载' if token_present else '❌ 缺失'}\n"
+                f"  ANTHROPIC_BASE_URL: {base_url}\n"
+                f"  注意：当前进行中的 SDK session 不受影响，下一条消息生效",
+            )
+            log(f"[/reload] {open_id} token_present={token_present}")
+        except Exception as e:
+            sender.send_text(open_id, f"❌ /reload 失败: {e}")
+        return
+
+    if cmd in ("/list-inbox", "/inbox", "/收件箱"):
+        sender.send_text(open_id, list_inbox(limit=20))
         return
 
     # 命令通道：y/n 解 pending（卡片之外的双通道）

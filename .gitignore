@@ -22,6 +22,7 @@ logs/
 # === Archive & Inbox ===
 archive/
 _inbox/
+agent/inbox/
 
 # === Conversation logs ===
 conversation_log/
