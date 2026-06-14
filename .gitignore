@@ -9,6 +9,8 @@ feishu-auth-qr.png
 data/*.json
 data/registry.json
 data/feishu-base-config.json
+!data/public-registry.json
+!data/public-bios.json
 agent/cc_bot_context.json
 agent/temp_import.md
 temp_import.md

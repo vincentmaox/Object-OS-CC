@@ -1,0 +1,204 @@
+{
+  "generated_at": "2026-06-14T21:25:06",
+  "count": 14,
+  "projects": [
+    {
+      "name": "voidarchitect-site",
+      "description": "工作室主页本身（Astro 5 + R3F WebGL 流体）。这个站点的进展在它自己上面实时更新。",
+      "stage": "All-in",
+      "freq_total": 13,
+      "freq_suggestion": "All-in",
+      "last_action": null,
+      "github_url": null,
+      "tech_stack": []
+    },
+    {
+      "name": "AI-NoteBook",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "Phase 2 fix: cascade 剥离为独立命令 + Windows CRLF frontmatter 修复",
+        "date": "2026-06-10"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-NoteBook",
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "Tailwind"
+      ]
+    },
+    {
+      "name": "AI-Patent",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: 冷启动恢复 4 层冗余 (CLAUDE.md + CHANGELOG + 项目日志 + 开发手册)",
+        "date": "2026-06-13"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-Patent",
+      "tech_stack": []
+    },
+    {
+      "name": "AI-Screen-Record",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "fix: show recording state immediately on start",
+        "date": "2026-06-12"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-Screen-Record",
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "Tailwind"
+      ]
+    },
+    {
+      "name": "NuclearPowerAI",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs(v0.9): V5 使用说明 + 协同开发手册 v0.9 + 06-13 日志",
+        "date": "2026-06-13"
+      },
+      "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
+      "tech_stack": [
+        "Node.js",
+        "React"
+      ]
+    },
+    {
+      "name": "PhysicsAI-Research",
+      "description": "",
+      "stage": "已归档",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "tech_stack": []
+    },
+    {
+      "name": "Screen-Record",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "release(v0.3.0): single-window rewrite + ddagrab + recording pill",
+        "date": "2026-06-13"
+      },
+      "github_url": "https://github.com/vincentmaox/Screen-Record",
+      "tech_stack": [
+        "Node.js",
+        "React"
+      ]
+    },
+    {
+      "name": "TokenChrono",
+      "description": "",
+      "stage": "已归档",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "tech_stack": []
+    },
+    {
+      "name": "ValveDrawing-Data-Review",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "tech_stack": []
+    },
+    {
+      "name": "ai-router-48h",
+      "description": "48 小时跨模型路由 SaaS — 编程 GLM / 视觉 Kimi / 写作 DeepSeek。",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "chore: clean build warnings",
+        "date": "2026-06-01"
+      },
+      "github_url": "https://github.com/vincentmaox/MailForge-AI",
+      "tech_stack": [
+        "Node.js",
+        "Next.js",
+        "React",
+        "Prisma",
+        "Tailwind",
+        "Clerk"
+      ]
+    },
+    {
+      "name": "claude-channel-feishu",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "chore: 内部调查日志与 memory 移出仓库",
+        "date": "2026-05-20"
+      },
+      "github_url": "https://github.com/Ceeon/claude-channel-feishu",
+      "tech_stack": [
+        "Node.js"
+      ]
+    },
+    {
+      "name": "disk-manager",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "docreview-ai",
+      "description": "AI 文档审查智能体。三频共振 14/15 已落地，方案 1。",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "fix(deps+timeout): add jszip for DOCX + bump chat timeout to 5min",
+        "date": "2026-06-07"
+      },
+      "github_url": "https://github.com/vincentmaox/NP-DocReview-AI",
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "Tailwind"
+      ]
+    },
+    {
+      "name": "product-idea-agent",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "Initial MVP: Upwork x GitHub Trending matcher",
+        "date": "2026-06-08"
+      },
+      "github_url": "https://github.com/vincentmaox/product-idea-agent",
+      "tech_stack": [
+        "Python"
+      ]
+    }
+  ]
+}

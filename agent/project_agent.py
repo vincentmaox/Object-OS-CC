@@ -488,6 +488,12 @@ class RegistryManager:
             "resources_needed",
             "mva_decision",
             "mva_date",
+            "freq_theory",
+            "freq_market",
+            "freq_org",
+            "freq_total",
+            "freq_suggestion",
+            "freq_scored_at",
         ]:
             if key in old:
                 project[key] = old[key]
@@ -1071,6 +1077,19 @@ class ProjectAgent:
         self.registry.set_manual_field(project_name, "mva_date", datetime.now().isoformat())
         print(f"记录 {project_name} MVA决策: {decision}")
 
+    def set_freq(self, project_name: str, theory: int, market: int, org: int):
+        """记录三频共振评分（理论/市场/组织 各 0-5），自动算出总分 + 规则建议。"""
+        sys.path.insert(0, str(self.os_dir / "agent"))
+        from freq_resonance import build_freq_payload
+
+        payload = build_freq_payload(theory, market, org)
+        for k, v in payload.items():
+            self.registry.set_manual_field(project_name, k, v)
+        print(
+            f"{project_name} 三频共振: 理论{theory} 市场{market} 组织{org} "
+            f"= {payload['freq_total']}/15 → 建议: {payload['freq_suggestion']}"
+        )
+
 
 def main():
     agent = ProjectAgent()
@@ -1083,12 +1102,15 @@ def main():
             agent.set_priority(sys.argv[2], sys.argv[3])
         elif cmd == "mva" and len(sys.argv) > 3:
             agent.set_mva(sys.argv[2], sys.argv[3])
+        elif cmd == "freq" and len(sys.argv) > 5:
+            agent.set_freq(sys.argv[2], int(sys.argv[3]), int(sys.argv[4]), int(sys.argv[5]))
         else:
             print("用法:")
             print("  python project_agent.py           # 执行完整扫描")
             print("  python project_agent.py archive <项目名>  # 归档项目")
             print("  python project_agent.py priority <项目名> P0/P1/P2/P3")
             print("  python project_agent.py mva <项目名> All-in/Watch/Kill")
+            print("  python project_agent.py freq <项目名> <理论0-5> <市场0-5> <组织0-5>")
     else:
         agent.run()
 

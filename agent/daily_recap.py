@@ -39,6 +39,7 @@ THOUGHT_RE = re.compile(
 # 让模块导入时把 cc_bot.env 灌进环境（NSSM/schtasks 跑时未必继承 User env）
 # 然后用 CC Switch (settings.json) 的最新值覆盖 ANTHROPIC_* 变量
 from env_loader import load_all
+from freq_resonance import compute_suggestion, render_freq_line
 
 load_all(WORKDIR / "agent" / "cc_bot.env")
 
@@ -162,6 +163,13 @@ def collect_today_activity(registry: dict) -> dict[str, dict]:
             "tech_stack": info.get("tech", {}).get("stack", []),
             "deploy_ready": info.get("tech", {}).get("deploy_ready", False),
             "file_count": info.get("activity", {}).get("file_count", 0),
+            # 三频共振（可能为 None — 老茅还没评分）
+            "freq_theory": info.get("freq_theory"),
+            "freq_market": info.get("freq_market"),
+            "freq_org": info.get("freq_org"),
+            "freq_total": info.get("freq_total"),
+            "freq_suggestion": info.get("freq_suggestion"),
+            "mva_decision": info.get("mva_decision"),
         }
         if any([activity["commits"], activity["changelog"],
                 activity["journal"], activity["thoughts"]]):
@@ -216,6 +224,16 @@ def build_eval_prompt(project: str, activity: dict) -> str:
         meta.append(f"技术栈: {', '.join(activity['tech_stack'])}")
     if not activity["deploy_ready"]:
         meta.append("部署未就绪")
+
+    # 三频锚点：评过分就报告规则建议，没评分则提示需要打分
+    freq_line = render_freq_line(activity)
+    if freq_line:
+        meta.append(freq_line)
+        if activity.get("mva_decision"):
+            meta.append(f"老茅历史 MVA 决断: {activity['mva_decision']}")
+    else:
+        meta.append("⚠️ 三频共振未打分（理论/市场/组织 1-5 分），LLM 建议仅供参考")
+
     meta_str = "\n".join(f"- {m}" for m in meta) if meta else "- 无异常指标"
 
     return (
@@ -224,7 +242,7 @@ def build_eval_prompt(project: str, activity: dict) -> str:
         f"{meta_str}\n\n"
         "请输出**项目评估三段式**（每段不超过 60 字）：\n"
         "1. **诊断**：最该优先解决的一个问题（具体、可执行）\n"
-        "2. **建议**：一个具体的改善动作（不是「应该做好」而是「做 X」）\n"
+        "2. **建议**：一个具体的改善动作（不是「应该做好」而是「做 X」）；如果三频规则给出 All-in/Watch/Kill 建议，请优先采纳，不要绕过它另起炉灶\n"
         "3. **夸夸**：这个项目（或开发它的 AI + 人类）今天做得好的地方——哪怕只是「还在坚持」也算，真诚不敷衍\n\n"
         "禁止笼统、禁止套话、禁止「继续加油」。夸夸段必须有具体事实支撑。\n"
     )
@@ -339,8 +357,11 @@ def _fallback_eval(project: str, activity: dict) -> str:
         lines.append(f"1. **诊断**：已 {activity['days_since_edit']:.0f} 天无更新，可能需要激活或归档")
     else:
         lines.append("1. **诊断**：暂无明显问题")
-    # 建议
-    if activity["missing_docs"]:
+    # 建议：优先用三频规则
+    freq_line = render_freq_line(activity)
+    if freq_line:
+        lines.append(f"2. **建议**：依规则建议 → {activity['freq_suggestion']}（{freq_line}）")
+    elif activity["missing_docs"]:
         lines.append(f"2. **建议**：补 {activity['missing_docs'][0]}")
     elif not activity["deploy_ready"]:
         lines.append("2. **建议**：补部署配置")
@@ -354,6 +375,136 @@ def _fallback_eval(project: str, activity: dict) -> str:
     else:
         lines.append("3. **夸夸**：项目仍在，不言放弃 💪")
     return "\n".join(lines) + "\n"
+
+
+# === 第六段：心力净值 ===
+# 思想底座来自《虚空建筑师野化宣言》——「圈养 vs 野生」时段比例 + 「高/中/低能量密度」任务占比。
+# 数据源：今日对话存档 + 各项目 commits/journal/thoughts。是粗略统计，给 LLM 当锚点。
+
+CONVERSATION_LOG = WORKDIR / "conversation_log"
+
+# 关键词桶：粗启发式，不求精确
+WILD_KEYWORDS = (
+    "想法", "思考", "野化", "MVA", "频域", "三频", "All-in", "Watch", "Kill",
+    "心力", "圈养", "野生", "建筑师", "探路", "突袭", "实验",
+    "在场", "线下", "暗面", "破壁", "五金店", "华强北", "保安", "档口", "摆摊", "实地",
+)
+CAGE_KEYWORDS = (
+    "会议", "汇报", "填表", "整理", "格式", "翻译会议",
+)
+HIGH_DENSITY_KEYWORDS = (
+    "重构", "新功能", "野化", "复盘", "MVA", "突袭", "决断", "方案",
+    "Day", "首发", "上线", "All-in",
+)
+LOW_DENSITY_KEYWORDS = (
+    "fix typo", "rename", "format", "lint", "整理", "归档", "命名",
+)
+
+
+def _read_conversation_today() -> str:
+    """读今日对话存档（如果有）。"""
+    f = CONVERSATION_LOG / f"{today_str()}.md"
+    if not f.exists():
+        return ""
+    try:
+        return f.read_text(encoding="utf-8", errors="replace")
+    except Exception:
+        return ""
+
+
+def collect_heart_signals(activities: dict[str, dict]) -> dict:
+    """收集心力净值原始信号。"""
+    convo = _read_conversation_today()
+    convo_lines = [l for l in convo.splitlines() if l.strip()]
+    convo_chars = len(convo)
+
+    # 把对话拆段，按主体标签数 turns
+    turns_user = sum(1 for l in convo_lines if l.startswith("**老茅:**"))
+    turns_assistant = sum(1 for l in convo_lines if l.startswith("**老赫:**"))
+
+    # 关键词命中
+    text_blob = convo
+    wild_hits = sum(text_blob.count(k) for k in WILD_KEYWORDS)
+    cage_hits = sum(text_blob.count(k) for k in CAGE_KEYWORDS)
+
+    # 各项目今日 commits 抽出 subject 集合
+    commit_subjects: list[str] = []
+    for name, a in activities.items():
+        for c in a.get("commits", []):
+            # "<sha> <subject>"
+            commit_subjects.append(c.split(" ", 1)[1] if " " in c else c)
+
+    high_density = sum(1 for s in commit_subjects if any(k.lower() in s.lower() for k in HIGH_DENSITY_KEYWORDS))
+    low_density = sum(1 for s in commit_subjects if any(k.lower() in s.lower() for k in LOW_DENSITY_KEYWORDS))
+    mid_density = max(0, len(commit_subjects) - high_density - low_density)
+
+    # 今日新思考数（高密度信号 — 思考 = 野生时段）
+    thoughts_count = sum(len(a.get("thoughts", [])) for a in activities.values())
+
+    return {
+        "convo_chars": convo_chars,
+        "turns_user": turns_user,
+        "turns_assistant": turns_assistant,
+        "wild_hits": wild_hits,
+        "cage_hits": cage_hits,
+        "commit_count": len(commit_subjects),
+        "high_density": high_density,
+        "mid_density": mid_density,
+        "low_density": low_density,
+        "thoughts_count": thoughts_count,
+        "active_projects": len(activities),
+    }
+
+
+def build_heart_section(activities: dict[str, dict], use_llm: bool = True) -> str:
+    """生成「心力净值」第六段。"""
+    sig = collect_heart_signals(activities)
+
+    # 圈养 vs 野生：基于关键词命中比例（粗略），无信号时给提示
+    total_kw = sig["wild_hits"] + sig["cage_hits"]
+    if total_kw == 0:
+        wild_ratio_str = "数据不足（对话无足够关键词信号）"
+    else:
+        wild_pct = round(100 * sig["wild_hits"] / total_kw)
+        wild_ratio_str = f"野生 {wild_pct}% / 圈养 {100 - wild_pct}%（基于对话关键词，野生 {sig['wild_hits']} 次 vs 圈养 {sig['cage_hits']} 次）"
+
+    if sig["commit_count"] == 0:
+        density_str = "今日无 commit（密度数据缺失）"
+    else:
+        density_str = (
+            f"高 {sig['high_density']} / 中 {sig['mid_density']} / 低 {sig['low_density']}"
+            f"（共 {sig['commit_count']} commits）"
+        )
+
+    raw = (
+        "## ❤️ 心力净值\n\n"
+        f"- **圈养 vs 野生**：{wild_ratio_str}\n"
+        f"- **任务能量密度**：{density_str}\n"
+        f"- **对话规模**：老茅 {sig['turns_user']} 轮 / 老赫 {sig['turns_assistant']} 轮，"
+        f"对话存档 {sig['convo_chars']} 字符\n"
+        f"- **新思考**：{sig['thoughts_count']} 条入思考池\n"
+        f"- **活跃项目**：{sig['active_projects']} 个有今日动静\n"
+    )
+
+    if not use_llm or sig["commit_count"] + sig["thoughts_count"] == 0:
+        return raw
+
+    prompt = (
+        "下面是老茅今日「心力净值」原始信号（圈养=主业/常规/填表，野生=创造/突袭/野化）。\n"
+        "请基于数据输出**心力净值评估**，3 条以内（每条不超过 50 字）：\n"
+        "1. 今日心力是「正净值」还是「负净值」？理由（具体引用一两个数据点）\n"
+        "2. 哪个比例最值得明天调整？给出具体动作，不是「保持平衡」\n"
+        "3. 一句话提醒（不准说「加油」「继续」）\n\n"
+        "禁止套话，禁止重复原始数字。\n\n"
+        f"---\n{raw}"
+    )
+    # 借用 _call_llm，不需要 activity 字典
+    out = _call_llm(prompt, "_heart", {}, lambda p, a: raw)
+    # _call_llm 会包 "### _heart\n..."，我们去掉头
+    if out.startswith("### _heart"):
+        body = out.split("\n", 1)[1] if "\n" in out else ""
+        return raw + "\n**LLM 评估**：\n" + body
+    return raw + "\n**LLM 评估**：\n" + out
 
 
 def collect_all_active(registry: dict) -> dict[str, dict]:
@@ -379,6 +530,12 @@ def collect_all_active(registry: dict) -> dict[str, dict]:
             "tech_stack": info.get("tech", {}).get("stack", []),
             "deploy_ready": info.get("tech", {}).get("deploy_ready", False),
             "file_count": info.get("activity", {}).get("file_count", 0),
+            "freq_theory": info.get("freq_theory"),
+            "freq_market": info.get("freq_market"),
+            "freq_org": info.get("freq_org"),
+            "freq_total": info.get("freq_total"),
+            "freq_suggestion": info.get("freq_suggestion"),
+            "mva_decision": info.get("mva_decision"),
         }
     return result
 
@@ -392,6 +549,7 @@ def build_report(registry: dict, use_llm: bool = True) -> tuple[str, str]:
     if not activities:
         # 仍然跑评估，哪怕没有今日动静
         all_active = collect_all_active(registry)
+        heart = build_heart_section({}, use_llm=use_llm)
         if all_active:
             eval_sections = []
             for name in sorted(all_active.keys()):
@@ -399,8 +557,8 @@ def build_report(registry: dict, use_llm: bool = True) -> tuple[str, str]:
                     eval_sections.append(eval_one(name, all_active[name]))
                 else:
                     eval_sections.append(_fallback_eval(name, all_active[name]))
-            return title, "今日无项目有动静，但评估不能停：\n\n" + "\n".join(eval_sections)
-        return title, "今日所有活跃项目无动静。建议看看是否需要重排优先级。"
+            return title, "今日无项目有动静，但评估不能停：\n\n" + "\n".join(eval_sections) + "\n---\n" + heart
+        return title, "今日所有活跃项目无动静。建议看看是否需要重排优先级。\n\n---\n" + heart
 
     # --- 日报部分 ---
     sections = []
@@ -430,7 +588,8 @@ def build_report(registry: dict, use_llm: bool = True) -> tuple[str, str]:
             sections.append(_fallback_eval(name, activities[name]))
 
     footer = f"\n---\n共 {len(activities)} 个项目今日有动静，{len(all_active)} 个活跃项目已评估。"
-    return title, "\n".join(sections) + footer
+    heart = build_heart_section(activities, use_llm=use_llm)
+    return title, "\n".join(sections) + footer + "\n\n---\n" + heart
 
 
 def push_to_feishu(title: str, content: str) -> bool:
