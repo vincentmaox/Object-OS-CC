@@ -1,16 +1,23 @@
 {
-  "generated_at": "2026-06-14T21:25:06",
+  "generated_at": "2026-06-15T12:26:42",
   "count": 14,
   "projects": [
     {
       "name": "voidarchitect-site",
-      "description": "工作室主页本身（Astro 5 + R3F WebGL 流体）。这个站点的进展在它自己上面实时更新。",
+      "description": "虚空建筑师工作室主页（Astro 6 + R3F WebGL 流体）。实时展示在建工程矩阵。",
       "stage": "All-in",
       "freq_total": 13,
       "freq_suggestion": "All-in",
-      "last_action": null,
-      "github_url": null,
-      "tech_stack": []
+      "last_action": {
+        "message": "docs: 加 CLAUDE.md 冷启动入口 + developer-guide 完整开发手册",
+        "date": "2026-06-14"
+      },
+      "github_url": "https://github.com/vincentmaox/voidarchitect-site",
+      "tech_stack": [
+        "Node.js",
+        "React",
+        "Tailwind"
+      ]
     },
     {
       "name": "AI-NoteBook",
@@ -88,7 +95,7 @@
     {
       "name": "Screen-Record",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -114,7 +121,7 @@
     {
       "name": "ValveDrawing-Data-Review",
       "description": "",
-      "stage": "活跃",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -159,11 +166,14 @@
     {
       "name": "disk-manager",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "R1D1: ingest layer — SQLite data lake + ProjectOS bridge + project sizes + Feishu sender",
+        "date": "2026-06-15"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "tech_stack": [
         "Python"
       ]
