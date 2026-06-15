@@ -38,11 +38,37 @@ def run(args: list[str]) -> int:
     return proc.returncode
 
 
+def git_push_public_data() -> int:
+    """Auto-commit + push if public data files changed (triggers site rebuild via webhook)."""
+    changed = subprocess.run(
+        ["git", "diff", "--name-only", "HEAD"],
+        cwd=str(ROOT), capture_output=True, text=True,
+    ).stdout.strip()
+    public_files = [f for f in changed.splitlines()
+                    if f.startswith("data/public-")]
+    if not public_files:
+        _log("git: no public data changes, skip push")
+        return 0
+    _log(f"git: public data changed: {public_files}")
+    for f in public_files:
+        subprocess.run(["git", "add", f], cwd=str(ROOT))
+    date_tag = datetime.now().strftime("%Y-%m-%d")
+    subprocess.run(
+        ["git", "commit", "-m",
+         f"auto: daily public-registry update {date_tag}"],
+        cwd=str(ROOT),
+    )
+    rc = subprocess.run(["git", "push"], cwd=str(ROOT)).returncode
+    _log(f"git: push rc={rc}")
+    return rc
+
+
 def main() -> int:
     _log("=== 启动 daily_projectos_report ===")
     code = 0
     code |= run([PYTHON, str(AGENT / "project_agent.py")])
     code |= run([PYTHON, str(AGENT / "export_public_registry.py")])
+    code |= git_push_public_data()
     code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "sync-base"])
     code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "send-cards", USER_OPEN_ID])
     code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "alert", USER_OPEN_ID])
