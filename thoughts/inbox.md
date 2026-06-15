@@ -51,6 +51,13 @@
 ## 清单（按时间倒序）
 
 <!-- BOT_APPEND_BELOW_THIS_LINE -->
+[2026-06-15T22:54:37] [_ProjectOS] 任何项目都需要使用 Stripe/PayPal 的"到账通知"作为强正反馈信号，作为项目从产品到销售的关键环节，放到 ProjectOS 项目管控进度追踪里作为一个里程碑节点考虑
+[2026-06-15T22:54:38] [voidarchitect-site] 用 X（Twitter）记录每天项目开发情况，build-in-public 吸引客户（AI 转述）
+[2026-06-15T22:54:39] [hermes-desktop] 桌面形象助手：摄像头 + 麦克风 + 语音启动项目（新开项目）（AI 转述）
+[2026-06-15T22:54:40] [ai-pet-pokemon] AI 宠物，宝可梦形象（新开项目）（AI 转述）
+[2026-06-15T22:54:41] [voidarchitect-academy-kb] 把 NPAR 多数据源知识库改造成"虚空建筑师学院私人版"，专门服务于个人，做成开源 GitHub 仓库（框架开源 + 个人 vault 私有），并暴露 AI API 端口（合并昨天那条"NPAR 个人版 + AI API 端口"想法）（新开项目）
+[2026-06-15T22:54:42] [Private-Wealth-AI-Steward] 给已有项目加新功能：钱迹 API 接入调研。已查：钱迹无官方开放 API，可行路径——(a) Tasker/无障碍服务自动记账抓取 (b) CSV/Excel 导出定期 dump (c) 逆向 SQLite（脆弱）(d) 换底座到 Beancount/Firefly III/Actual Budget
+[2026-06-15T22:54:43] [voidarchitect-gateway] 模型聚合网关 + 订阅制收费中台：用户买月卡 → voidarchitect.studio 发绑定链接（封装 Embedding/Rerank/Chat/VLM/LLM 多模型 API key 与配置）→ 产品（NPAR 学院版 KB / Private-Wealth-AI-Steward / 未来 docreview-ai 等）通过该固定链接调用，用户零配置；产品下载免费，月卡续费驱动使用。类比 OpenRouter/Helicone/Portkey + Poe，差异化：一产品一固定入口 + 个人 IP 渠道转化。归属：新开独立中台项目（与 voidarchitect-site 解耦：site 是门面，gateway 是计费/路由）。备注：还没太想清楚
 [2026-06-14T21:00:00] [voidarchitect-site] 工作室主页 v2 启动：Astro 5 + R3F WebGL 流体 Hero + Tailwind + Framer Motion。沿用旧 Vercel 项目（disconnect voidcompass → connect 新仓），DNS/Cloudflare 不动。三频 4/4/5=13/15 All-in。72h MVA 起始 2026-06-15：D1 静态架构+数据管道 D2 第一版上线给3个朋友看 D3 跨仓 webhook+自动部署。数据源：ProjectOS 加 export_public_registry.py 只导出公开字段（name/stage/freq_total/freq_suggestion/last_action摘要/github链接）→ data/public-registry.json 入 git → 构建期 fetch。
 [2026-06-14T20:30:00] [void-charter-bos-v1] 老赫读完《茧房破壁操作系统 v1.0》：BOS = ProjectOS 的线下采样插件而非新系统。第11.2章三频共振检查 ≈ 已落的 freq_resonance；第26.2章探路先遣队训练数据 = 认错套利结构化模板。决议：30天内不为BOS落码（registry/breaching_log/killed.md都不动），等老茅真去华强北/五金店蹲过一次再说。详 memory/bos-charter-v1-read.md
 [2026-06-14T20:00:00] [void-charter-12-blueprints] 来自《虚空建筑师野化宣言 v1.0》第八部分 12 方案：以下 11 条种子入池（方案 1=docreview-ai 已落地不重复），三频分由原文给定，MVA 起始日按分数高低错峰排进周一思考池巡检；MVA 起始日 ≤ 今日的，会被 thought_inspector 标记为「待决断」推卡片

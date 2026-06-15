@@ -54,6 +54,10 @@ nssm.log
 # === Playwright MCP debug snapshots ===
 .playwright-mcp/
 
+# === Research screenshots (Playwright) ===
+*.png
+!public/**/*.png
+
 # === Allow these specifically ===
 !data/.gitkeep
 !agent/cc_bot.env.example
