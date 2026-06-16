@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-15T12:26:42",
-  "count": 14,
+  "generated_at": "2026-06-16T09:07:53",
+  "count": 15,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -9,8 +9,8 @@
       "freq_total": 13,
       "freq_suggestion": "All-in",
       "last_action": {
-        "message": "docs: 加 CLAUDE.md 冷启动入口 + developer-guide 完整开发手册",
-        "date": "2026-06-14"
+        "message": "docs: 归档 2026-06-15 大片感改版 + 更新 CLAUDE.md + developer-guide",
+        "date": "2026-06-15"
       },
       "github_url": "https://github.com/vincentmaox/voidarchitect-site",
       "tech_stack": [
@@ -73,8 +73,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs(v0.9): V5 使用说明 + 协同开发手册 v0.9 + 06-13 日志",
-        "date": "2026-06-13"
+        "message": "docs: 项目日志 06-16 — VL FIX/YOLO 调研结论 + void-brain fork",
+        "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "tech_stack": [
@@ -99,8 +99,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "release(v0.3.0): single-window rewrite + ddagrab + recording pill",
-        "date": "2026-06-13"
+        "message": "docs: update DEVELOPMENT.md for v0.4.0 architecture",
+        "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/Screen-Record",
       "tech_stack": [
@@ -166,12 +166,12 @@
     {
       "name": "disk-manager",
       "description": "",
-      "stage": "活跃",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "R1D1: ingest layer — SQLite data lake + ProjectOS bridge + project sizes + Feishu sender",
-        "date": "2026-06-15"
+        "message": "fix: artifact classifier catches nested dirs (e.g. src-tauri/target)",
+        "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "tech_stack": [
@@ -208,6 +208,22 @@
       "github_url": "https://github.com/vincentmaox/product-idea-agent",
       "tech_stack": [
         "Python"
+      ]
+    },
+    {
+      "name": "void-brain",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: 补充 CHANGELOG + 更新版本号 v0.1.0 + 对话日志归档",
+        "date": "2026-06-16"
+      },
+      "github_url": "https://github.com/vincentmaox/void-brain",
+      "tech_stack": [
+        "Node.js",
+        "React"
       ]
     }
   ]
