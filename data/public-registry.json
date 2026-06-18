@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T09:08:01",
+  "generated_at": "2026-06-18T09:18:30",
   "count": 16,
   "projects": [
     {
@@ -22,7 +22,7 @@
     {
       "name": "AI-NoteBook",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -198,11 +198,14 @@
     {
       "name": "hermes-desktop",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "feat: 将 F8 改为开关收音",
+        "date": "2026-06-17"
+      },
+      "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "tech_stack": [
         "Node.js",
         "React",
