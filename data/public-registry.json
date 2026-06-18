@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-18T12:01:30",
-  "count": 16,
+  "generated_at": "2026-06-18T12:56:16",
+  "count": 17,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -14,6 +14,7 @@
       },
       "github_url": "https://github.com/vincentmaox/voidarchitect-site",
       "cover_image": "/images/projects/voidarchitect-site/cover.svg",
+      "product_label": "Studio OS",
       "featured": true,
       "showcase_rank": 10,
       "tech_stack": [
@@ -34,6 +35,7 @@
       },
       "github_url": "https://github.com/vincentmaox/AI-NoteBook",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": [
@@ -54,6 +56,7 @@
       },
       "github_url": "https://github.com/vincentmaox/AI-Patent",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": []
@@ -70,6 +73,7 @@
       },
       "github_url": "https://github.com/vincentmaox/AI-Screen-Record",
       "cover_image": "/images/projects/ai-screen-record/cover.svg",
+      "product_label": "Memory Recorder",
       "featured": true,
       "showcase_rank": 40,
       "tech_stack": [
@@ -90,6 +94,7 @@
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": [
@@ -106,6 +111,7 @@
       "last_action": null,
       "github_url": null,
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": []
@@ -122,12 +128,30 @@
       },
       "github_url": "https://github.com/vincentmaox/Screen-Record",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React"
       ]
+    },
+    {
+      "name": "TexasPhilosopher",
+      "description": "德州扑克哲学训练模拟器。把策略、性格 AI、Roguelike 成长与高粘性训练反馈合成一款可玩的思维产品。",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: 项目日志 + 用户手册 + 开发手册全面更新",
+        "date": "2026-06-09"
+      },
+      "github_url": "https://github.com/vincentmaox/Texas-Philosopher",
+      "cover_image": "/images/projects/texas-philosopher/cover.svg",
+      "product_label": "Training Game",
+      "featured": true,
+      "showcase_rank": 50,
+      "tech_stack": []
     },
     {
       "name": "TokenChrono",
@@ -138,6 +162,7 @@
       "last_action": null,
       "github_url": null,
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": []
@@ -151,13 +176,14 @@
       "last_action": null,
       "github_url": null,
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": []
     },
     {
       "name": "ai-router-48h",
-      "description": "48 小时跨模型路由 SaaS。面向编程、视觉、写作等任务自动选择合适模型。",
+      "description": "",
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
@@ -167,8 +193,9 @@
       },
       "github_url": "https://github.com/vincentmaox/MailForge-AI",
       "cover_image": null,
-      "featured": true,
-      "showcase_rank": 50,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "Next.js",
@@ -190,6 +217,7 @@
       },
       "github_url": "https://github.com/Ceeon/claude-channel-feishu",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": [
@@ -208,6 +236,7 @@
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": [
@@ -226,6 +255,7 @@
       },
       "github_url": "https://github.com/vincentmaox/NP-DocReview-AI",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": [
@@ -246,6 +276,7 @@
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": "/images/projects/hermes-desktop/cover.svg",
+      "product_label": "Agent Cockpit",
       "featured": true,
       "showcase_rank": 30,
       "tech_stack": [
@@ -266,6 +297,7 @@
       },
       "github_url": "https://github.com/vincentmaox/product-idea-agent",
       "cover_image": null,
+      "product_label": null,
       "featured": false,
       "showcase_rank": null,
       "tech_stack": [
@@ -284,6 +316,7 @@
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": "/images/projects/void-brain/cover.svg",
+      "product_label": "Knowledge OS",
       "featured": true,
       "showcase_rank": 20,
       "tech_stack": [

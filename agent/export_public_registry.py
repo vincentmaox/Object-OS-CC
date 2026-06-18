@@ -9,6 +9,7 @@
   - last_action    最近一次 commit message + 日期
   - github_url     GitHub 仓库链接（如开源）
   - cover_image    公开产品图 URL / 站点内绝对路径（可选，手动维护）
+  - product_label  产品定位短标签（可选，手动维护）
   - featured       是否进入主页精选橱窗（可选，手动维护）
   - showcase_rank  主页精选排序（可选，手动维护）
   - tech_stack     技术栈标签
@@ -38,7 +39,6 @@ HIDDEN = {
     "_ProjectOS",
     "ProjectOS-Projects",
     "Private-Wealth-AI-Steward",
-    "TexasPhilosopher",
     "obsidian manager",
 }
 
@@ -105,6 +105,7 @@ def export() -> dict:
             "last_action": last_action,
             "github_url": get_github_url(info.get("path", "")),
             "cover_image": bio.get("cover_image"),
+            "product_label": bio.get("product_label"),
             "featured": bool(bio.get("featured")),
             "showcase_rank": bio.get("showcase_rank"),
             "tech_stack": (info.get("tech") or {}).get("stack", [])[:6],

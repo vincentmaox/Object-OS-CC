@@ -1,30 +1,36 @@
 {
   "voidarchitect-site": {
     "description": "虚空建筑师工作室主页。以高级空间界面展示在建 AI 产品与频域决策工作流。",
+    "product_label": "Studio OS",
     "cover_image": "/images/projects/voidarchitect-site/cover.svg",
     "featured": true,
     "showcase_rank": 10
   },
   "void-brain": {
     "description": "个人 AI 知识库桌面助手。支持本地知识库、RAG 问答、可追溯引用、多轮对话与报告导出。",
+    "product_label": "Knowledge OS",
     "cover_image": "/images/projects/void-brain/cover.svg",
     "featured": true,
     "showcase_rank": 20
   },
   "hermes-desktop": {
     "description": "桌面端 AI 伙伴控制台。把语音、任务、运行态与多模型协作整合成一个可操作界面。",
+    "product_label": "Agent Cockpit",
     "cover_image": "/images/projects/hermes-desktop/cover.svg",
     "featured": true,
     "showcase_rank": 30
   },
   "AI-Screen-Record": {
     "description": "AI 屏幕记录与复盘工具。捕捉操作过程，把屏幕行动转化为可检索、可总结的工作记忆。",
+    "product_label": "Memory Recorder",
     "cover_image": "/images/projects/ai-screen-record/cover.svg",
     "featured": true,
     "showcase_rank": 40
   },
-  "ai-router-48h": {
-    "description": "48 小时跨模型路由 SaaS。面向编程、视觉、写作等任务自动选择合适模型。",
+  "TexasPhilosopher": {
+    "description": "德州扑克哲学训练模拟器。把策略、性格 AI、Roguelike 成长与高粘性训练反馈合成一款可玩的思维产品。",
+    "product_label": "Training Game",
+    "cover_image": "/images/projects/texas-philosopher/cover.svg",
     "featured": true,
     "showcase_rank": 50
   },
