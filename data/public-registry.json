@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-18T11:53:28",
+  "generated_at": "2026-06-18T12:01:30",
   "count": 16,
   "projects": [
     {
       "name": "voidarchitect-site",
-      "description": "虚空建筑师工作室主页（Astro 6 + R3F WebGL 流体）。实时展示在建工程矩阵。",
+      "description": "虚空建筑师工作室主页。以高级空间界面展示在建 AI 产品与频域决策工作流。",
       "stage": "All-in",
       "freq_total": 13,
       "freq_suggestion": "All-in",
@@ -14,6 +14,8 @@
       },
       "github_url": "https://github.com/vincentmaox/voidarchitect-site",
       "cover_image": "/images/projects/voidarchitect-site/cover.svg",
+      "featured": true,
+      "showcase_rank": 10,
       "tech_stack": [
         "Node.js",
         "React",
@@ -32,6 +34,8 @@
       },
       "github_url": "https://github.com/vincentmaox/AI-NoteBook",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -50,11 +54,13 @@
       },
       "github_url": "https://github.com/vincentmaox/AI-Patent",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": []
     },
     {
       "name": "AI-Screen-Record",
-      "description": "",
+      "description": "AI 屏幕记录与复盘工具。捕捉操作过程，把屏幕行动转化为可检索、可总结的工作记忆。",
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
@@ -63,7 +69,9 @@
         "date": "2026-06-12"
       },
       "github_url": "https://github.com/vincentmaox/AI-Screen-Record",
-      "cover_image": null,
+      "cover_image": "/images/projects/ai-screen-record/cover.svg",
+      "featured": true,
+      "showcase_rank": 40,
       "tech_stack": [
         "Node.js",
         "React",
@@ -82,6 +90,8 @@
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React"
@@ -96,6 +106,8 @@
       "last_action": null,
       "github_url": null,
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": []
     },
     {
@@ -110,6 +122,8 @@
       },
       "github_url": "https://github.com/vincentmaox/Screen-Record",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React"
@@ -124,6 +138,8 @@
       "last_action": null,
       "github_url": null,
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": []
     },
     {
@@ -135,11 +151,13 @@
       "last_action": null,
       "github_url": null,
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": []
     },
     {
       "name": "ai-router-48h",
-      "description": "48 小时跨模型路由 SaaS — 编程 GLM / 视觉 Kimi / 写作 DeepSeek。",
+      "description": "48 小时跨模型路由 SaaS。面向编程、视觉、写作等任务自动选择合适模型。",
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
@@ -149,6 +167,8 @@
       },
       "github_url": "https://github.com/vincentmaox/MailForge-AI",
       "cover_image": null,
+      "featured": true,
+      "showcase_rank": 50,
       "tech_stack": [
         "Node.js",
         "Next.js",
@@ -170,6 +190,8 @@
       },
       "github_url": "https://github.com/Ceeon/claude-channel-feishu",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js"
       ]
@@ -186,13 +208,15 @@
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Python"
       ]
     },
     {
       "name": "docreview-ai",
-      "description": "AI 文档审查智能体。三频共振 14/15 已落地，方案 1。",
+      "description": "AI 文档审查智能体。把高强度文档校核流程封装成可复用的审查工作流。",
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
@@ -202,6 +226,8 @@
       },
       "github_url": "https://github.com/vincentmaox/NP-DocReview-AI",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -210,7 +236,7 @@
     },
     {
       "name": "hermes-desktop",
-      "description": "",
+      "description": "桌面端 AI 伙伴控制台。把语音、任务、运行态与多模型协作整合成一个可操作界面。",
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
@@ -219,7 +245,9 @@
         "date": "2026-06-18"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
-      "cover_image": null,
+      "cover_image": "/images/projects/hermes-desktop/cover.svg",
+      "featured": true,
+      "showcase_rank": 30,
       "tech_stack": [
         "Node.js",
         "React",
@@ -238,6 +266,8 @@
       },
       "github_url": "https://github.com/vincentmaox/product-idea-agent",
       "cover_image": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Python"
       ]
@@ -254,6 +284,8 @@
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": "/images/projects/void-brain/cover.svg",
+      "featured": true,
+      "showcase_rank": 20,
       "tech_stack": [
         "Node.js",
         "React"

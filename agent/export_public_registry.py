@@ -9,6 +9,8 @@
   - last_action    最近一次 commit message + 日期
   - github_url     GitHub 仓库链接（如开源）
   - cover_image    公开产品图 URL / 站点内绝对路径（可选，手动维护）
+  - featured       是否进入主页精选橱窗（可选，手动维护）
+  - showcase_rank  主页精选排序（可选，手动维护）
   - tech_stack     技术栈标签
 
 写入 data/public-registry.json（入 git 公开），voidarchitect-site 构建期 fetch 此文件。
@@ -93,15 +95,18 @@ def export() -> dict:
                 "date": commit.get("date", "")[:10],
             }
 
+        bio = bios.get(name, {})
         item = {
             "name": name,
-            "description": bios.get(name, {}).get("description", ""),
+            "description": bio.get("description", ""),
             "stage": derive_stage(info),
             "freq_total": info.get("freq_total"),
             "freq_suggestion": info.get("freq_suggestion"),
             "last_action": last_action,
             "github_url": get_github_url(info.get("path", "")),
-            "cover_image": bios.get(name, {}).get("cover_image"),
+            "cover_image": bio.get("cover_image"),
+            "featured": bool(bio.get("featured")),
+            "showcase_rank": bio.get("showcase_rank"),
             "tech_stack": (info.get("tech") or {}).get("stack", [])[:6],
         }
         projects.append(item)
