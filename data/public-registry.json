@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T09:18:30",
+  "generated_at": "2026-06-18T11:44:53",
   "count": 16,
   "projects": [
     {
@@ -13,6 +13,7 @@
         "date": "2026-06-15"
       },
       "github_url": "https://github.com/vincentmaox/voidarchitect-site",
+      "cover_image": "/images/projects/voidarchitect-site/cover.svg",
       "tech_stack": [
         "Node.js",
         "React",
@@ -30,6 +31,7 @@
         "date": "2026-06-10"
       },
       "github_url": "https://github.com/vincentmaox/AI-NoteBook",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -47,6 +49,7 @@
         "date": "2026-06-13"
       },
       "github_url": "https://github.com/vincentmaox/AI-Patent",
+      "cover_image": null,
       "tech_stack": []
     },
     {
@@ -60,6 +63,7 @@
         "date": "2026-06-12"
       },
       "github_url": "https://github.com/vincentmaox/AI-Screen-Record",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -77,6 +81,7 @@
         "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "React"
@@ -90,6 +95,7 @@
       "freq_suggestion": null,
       "last_action": null,
       "github_url": null,
+      "cover_image": null,
       "tech_stack": []
     },
     {
@@ -103,6 +109,7 @@
         "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/Screen-Record",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "React"
@@ -116,6 +123,7 @@
       "freq_suggestion": null,
       "last_action": null,
       "github_url": null,
+      "cover_image": null,
       "tech_stack": []
     },
     {
@@ -126,6 +134,7 @@
       "freq_suggestion": null,
       "last_action": null,
       "github_url": null,
+      "cover_image": null,
       "tech_stack": []
     },
     {
@@ -139,6 +148,7 @@
         "date": "2026-06-01"
       },
       "github_url": "https://github.com/vincentmaox/MailForge-AI",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "Next.js",
@@ -159,6 +169,7 @@
         "date": "2026-05-20"
       },
       "github_url": "https://github.com/Ceeon/claude-channel-feishu",
+      "cover_image": null,
       "tech_stack": [
         "Node.js"
       ]
@@ -174,6 +185,7 @@
         "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
+      "cover_image": null,
       "tech_stack": [
         "Python"
       ]
@@ -189,6 +201,7 @@
         "date": "2026-06-07"
       },
       "github_url": "https://github.com/vincentmaox/NP-DocReview-AI",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -198,14 +211,15 @@
     {
       "name": "hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: 将 F8 改为开关收音",
-        "date": "2026-06-17"
+        "message": "feat: 增加语音链路运行态面板",
+        "date": "2026-06-18"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -223,6 +237,7 @@
         "date": "2026-06-08"
       },
       "github_url": "https://github.com/vincentmaox/product-idea-agent",
+      "cover_image": null,
       "tech_stack": [
         "Python"
       ]
@@ -238,6 +253,7 @@
         "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
+      "cover_image": null,
       "tech_stack": [
         "Node.js",
         "React"

@@ -8,6 +8,7 @@
   - freq_suggestion All-in / Watch / Kill
   - last_action    最近一次 commit message + 日期
   - github_url     GitHub 仓库链接（如开源）
+  - cover_image    公开产品图 URL / 站点内绝对路径（可选，手动维护）
   - tech_stack     技术栈标签
 
 写入 data/public-registry.json（入 git 公开），voidarchitect-site 构建期 fetch 此文件。
@@ -100,6 +101,7 @@ def export() -> dict:
             "freq_suggestion": info.get("freq_suggestion"),
             "last_action": last_action,
             "github_url": get_github_url(info.get("path", "")),
+            "cover_image": bios.get(name, {}).get("cover_image"),
             "tech_stack": (info.get("tech") or {}).get("stack", [])[:6],
         }
         projects.append(item)

@@ -1,6 +1,7 @@
 {
   "voidarchitect-site": {
-    "description": "虚空建筑师工作室主页（Astro 6 + R3F WebGL 流体）。实时展示在建工程矩阵。"
+    "description": "虚空建筑师工作室主页（Astro 6 + R3F WebGL 流体）。实时展示在建工程矩阵。",
+    "cover_image": "/images/projects/voidarchitect-site/cover.svg"
   },
   "docreview-ai": {
     "description": "AI 文档审查智能体。三频共振 14/15 已落地，方案 1。"
