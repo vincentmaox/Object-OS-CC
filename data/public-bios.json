@@ -8,5 +8,9 @@
   },
   "ai-router-48h": {
     "description": "48 小时跨模型路由 SaaS — 编程 GLM / 视觉 Kimi / 写作 DeepSeek。"
+  },
+  "void-brain": {
+    "description": "个人 AI 知识库桌面助手。支持本地知识库、RAG 问答、可追溯引用、多轮对话与报告导出。",
+    "cover_image": "/images/projects/void-brain/cover.svg"
   }
 }

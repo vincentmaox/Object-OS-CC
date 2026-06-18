@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T11:44:53",
+  "generated_at": "2026-06-18T11:53:28",
   "count": 16,
   "projects": [
     {
@@ -244,7 +244,7 @@
     },
     {
       "name": "void-brain",
-      "description": "",
+      "description": "个人 AI 知识库桌面助手。支持本地知识库、RAG 问答、可追溯引用、多轮对话与报告导出。",
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
@@ -253,7 +253,7 @@
         "date": "2026-06-16"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
-      "cover_image": null,
+      "cover_image": "/images/projects/void-brain/cover.svg",
       "tech_stack": [
         "Node.js",
         "React"
