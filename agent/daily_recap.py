@@ -256,8 +256,8 @@ def summarize_one(project: str, activity: dict) -> str:
     return _call_llm(build_prompt_for(project, activity), project, activity, _fallback_render)
 
 
-LLM_TIMEOUT = 90  # 单项目 LLM 调用超时秒数
-LLM_RETRIES = 2   # 超时重试次数
+LLM_TIMEOUT = 45  # 单项目 LLM 调用超时秒数
+LLM_RETRIES = 1   # 超时重试次数
 RECAP_LOG = WORKDIR / "agent" / "daily_recap.log"
 
 
@@ -574,10 +574,7 @@ def build_report(registry: dict, use_llm: bool = True) -> tuple[str, str]:
     if eval_names:
         sections.append("---\n## 🔍 静默项目评估\n")
         for name in eval_names:
-            if use_llm:
-                sections.append(eval_one(name, all_active[name]))
-            else:
-                sections.append(_fallback_eval(name, all_active[name]))
+            sections.append(_fallback_eval(name, all_active[name]))
 
     # --- 今日有动静的项目也跑评估 ---
     sections.append("---\n## 📊 项目评估\n")
@@ -604,7 +601,10 @@ def push_to_feishu(title: str, content: str) -> bool:
             target_type="user_id",
         )
         ok = bool(result.get("data"))
-        _recap_log(f"[推送] {'成功' if ok else '失败'} title={title}")
+        if ok:
+            _recap_log(f"[推送] 成功 title={title}")
+        else:
+            _recap_log(f"[推送] 失败 title={title} result={json.dumps(result, ensure_ascii=False)[:1000]}")
         return ok
     except Exception as e:
         _recap_log(f"[ERROR] 推飞书失败: {e}")

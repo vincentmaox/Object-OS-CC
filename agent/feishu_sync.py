@@ -115,11 +115,41 @@ class FeishuClient:
                 ]
             }
         }
+        content_json = json.dumps(post_content, ensure_ascii=False)
+        if os.name == "nt" and NODE_EXE.exists() and LARK_CLI_NODE_SCRIPT.exists():
+            argv = [
+                str(NODE_EXE),
+                str(LARK_CLI_NODE_SCRIPT),
+                "im", "+messages-send",
+                flag, target,
+                "--msg-type", "post",
+                "--content", content_json,
+            ]
+            if as_bot:
+                argv.extend(["--as", "bot"])
+            try:
+                result = subprocess.run(
+                    argv,
+                    capture_output=True,
+                    timeout=60,
+                    shell=False,
+                )
+                stdout = result.stdout.decode("utf-8", errors="replace")
+                stderr = result.stderr.decode("utf-8", errors="replace")
+                if result.returncode != 0:
+                    return {"ok": False, "error": stderr or f"exit {result.returncode}"}
+                try:
+                    return json.loads(stdout)
+                except json.JSONDecodeError:
+                    return {"ok": True, "raw": stdout}
+            except Exception as e:
+                return {"ok": False, "error": str(e)}
+
         args = [
             "im", "+messages-send",
             flag, target,
             "--msg-type", "post",
-            "--content", json.dumps(post_content, ensure_ascii=False)
+            "--content", content_json
         ]
         if as_bot:
             args.extend(["--as", "bot"])
