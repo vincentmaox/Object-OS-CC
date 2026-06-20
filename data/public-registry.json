@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T16:44:13",
+  "generated_at": "2026-06-20T10:48:32",
   "count": 17,
   "projects": [
     {
@@ -8,8 +8,11 @@
       "stage": "All-in",
       "freq_total": 13,
       "freq_suggestion": "All-in",
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "docs: 同步 D3.2-D3.19 进展到 CLAUDE.md 和开发手册",
+        "date": "2026-06-20"
+      },
+      "github_url": "https://github.com/vincentmaox/voidarchitect-site",
       "cover_image": "/images/projects/voidarchitect-site/cover.svg",
       "product_label": "Studio OS",
       "featured": true,
@@ -26,8 +29,11 @@
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "Phase 2 fix: cascade 剥离为独立命令 + Windows CRLF frontmatter 修复",
+        "date": "2026-06-10"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-NoteBook",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -44,8 +50,11 @@
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "docs: 冷启动恢复 4 层冗余 (CLAUDE.md + CHANGELOG + 项目日志 + 开发手册)",
+        "date": "2026-06-13"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-Patent",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -55,11 +64,14 @@
     {
       "name": "AI-Screen-Record",
       "description": "AI 屏幕记录与复盘工具。捕捉操作过程，把屏幕行动转化为可检索、可总结的工作记忆。",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "fix: show recording state immediately on start",
+        "date": "2026-06-12"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-Screen-Record",
       "cover_image": "/images/projects/ai-screen-record/cover.svg",
       "product_label": "Memory Recorder",
       "featured": true,
@@ -76,8 +88,11 @@
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "docs: 项目日志 06-16 — VL FIX/YOLO 调研结论 + void-brain fork",
+        "date": "2026-06-16"
+      },
+      "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -104,11 +119,14 @@
     {
       "name": "Screen-Record",
       "description": "",
-      "stage": "活跃",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "docs: update DEVELOPMENT.md for v0.4.0 architecture",
+        "date": "2026-06-16"
+      },
+      "github_url": "https://github.com/vincentmaox/Screen-Record",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -121,11 +139,14 @@
     {
       "name": "TexasPhilosopher",
       "description": "德州扑克哲学训练模拟器。把策略、性格 AI、Roguelike 成长与高粘性训练反馈合成一款可玩的思维产品。",
-      "stage": "停滞",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "docs: 项目日志 + 用户手册 + 开发手册全面更新",
+        "date": "2026-06-09"
+      },
+      "github_url": "https://github.com/vincentmaox/Texas-Philosopher",
       "cover_image": "/images/projects/texas-philosopher/cover.svg",
       "product_label": "Training Game",
       "featured": true,
@@ -166,8 +187,11 @@
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "chore: clean build warnings",
+        "date": "2026-06-01"
+      },
+      "github_url": "https://github.com/vincentmaox/MailForge-AI",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -187,8 +211,11 @@
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "chore: 内部调查日志与 memory 移出仓库",
+        "date": "2026-05-20"
+      },
+      "github_url": "https://github.com/Ceeon/claude-channel-feishu",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -203,8 +230,11 @@
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "fix: artifact classifier catches nested dirs (e.g. src-tauri/target)",
+        "date": "2026-06-16"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -219,8 +249,11 @@
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "fix(deps+timeout): add jszip for DOCX + bump chat timeout to 5min",
+        "date": "2026-06-07"
+      },
+      "github_url": "https://github.com/vincentmaox/NP-DocReview-AI",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -237,8 +270,11 @@
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "docs: 沉淀 Phase 4 手册与冷启动交接",
+        "date": "2026-06-20"
+      },
+      "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": "/images/projects/hermes-desktop/cover.svg",
       "product_label": "Agent Cockpit",
       "featured": true,
@@ -255,8 +291,11 @@
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "Initial MVP: Upwork x GitHub Trending matcher",
+        "date": "2026-06-08"
+      },
+      "github_url": "https://github.com/vincentmaox/product-idea-agent",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -271,8 +310,11 @@
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "docs: 补充 CHANGELOG + 更新版本号 v0.1.0 + 对话日志归档",
+        "date": "2026-06-16"
+      },
+      "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": "/images/projects/void-brain/cover.svg",
       "product_label": "Knowledge OS",
       "featured": true,
