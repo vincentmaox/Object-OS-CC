@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-20T10:48:32",
-  "count": 17,
+  "generated_at": "2026-06-21T09:08:01",
+  "count": 19,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -47,7 +47,7 @@
     {
       "name": "AI-Patent",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -206,6 +206,28 @@
       ]
     },
     {
+      "name": "bucket-list-ai",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: 加 conversation_log 占位 + Day 1-14 摘要",
+        "date": "2026-06-21"
+      },
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Node.js",
+        "Next.js",
+        "React",
+        "Tailwind"
+      ]
+    },
+    {
       "name": "claude-channel-feishu",
       "description": "",
       "stage": "停滞",
@@ -265,14 +287,28 @@
       ]
     },
     {
+      "name": "hermes-agent",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "hermes-desktop",
       "description": "桌面端 AI 伙伴控制台。把语音、任务、运行态与多模型协作整合成一个可操作界面。",
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 沉淀 Phase 4 手册与冷启动交接",
-        "date": "2026-06-20"
+        "message": "docs: 沉淀 MidJourney 真图提示词库到手册 14.8",
+        "date": "2026-06-21"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": "/images/projects/hermes-desktop/cover.svg",
