@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-21T09:08:01",
+  "generated_at": "2026-06-22T09:08:02",
   "count": 19,
   "projects": [
     {
@@ -212,10 +212,10 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 加 conversation_log 占位 + Day 1-14 摘要",
+        "message": "fix(ai): DeepSeek 真实联调通 — generateText 替代 generateObject",
         "date": "2026-06-21"
       },
-      "github_url": null,
+      "github_url": "https://github.com/vincentmaox/bucket-list-ai",
       "cover_image": null,
       "product_label": null,
       "featured": false,
