@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-22T09:08:02",
+  "generated_at": "2026-06-23T09:08:07",
   "count": 19,
   "projects": [
     {
@@ -85,7 +85,7 @@
     {
       "name": "NuclearPowerAI",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -343,7 +343,7 @@
     {
       "name": "void-brain",
       "description": "个人 AI 知识库桌面助手。支持本地知识库、RAG 问答、可追溯引用、多轮对话与报告导出。",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
