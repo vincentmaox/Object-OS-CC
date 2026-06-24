@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-23T09:08:07",
+  "generated_at": "2026-06-24T09:08:05",
   "count": 19,
   "projects": [
     {
@@ -303,7 +303,7 @@
     {
       "name": "hermes-desktop",
       "description": "桌面端 AI 伙伴控制台。把语音、任务、运行态与多模型协作整合成一个可操作界面。",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
