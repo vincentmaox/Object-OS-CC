@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T09:28:08",
+  "generated_at": "2026-06-26T11:40:29",
   "count": 19,
   "projects": [
     {
@@ -85,7 +85,7 @@
     {
       "name": "NuclearPowerAI",
       "description": "",
-      "stage": "停滞",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -212,8 +212,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "chore(hooks): 注册 save_conversation_turn 4 事件 + 同步手册状态",
-        "date": "2026-06-24"
+        "message": "feat(tauri): 桌面安装包首发 — Static export + 客户端直调方案 A",
+        "date": "2026-06-25"
       },
       "github_url": "https://github.com/vincentmaox/bucket-list-ai",
       "cover_image": null,
@@ -253,8 +253,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "chore: gitignore conversation_log (personal paths, not for remote)",
-        "date": "2026-06-24"
+        "message": "R6-1: multi-root scan + hard-delete for MAX_PATH + IDE config protection",
+        "date": "2026-06-25"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
@@ -303,12 +303,12 @@
     {
       "name": "hermes-desktop",
       "description": "桌面端 AI 伙伴控制台。把语音、任务、运行态与多模型协作整合成一个可操作界面。",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: 视觉调优 + sidecar 架构隐患沉淀",
-        "date": "2026-06-24"
+        "message": "feat: sidecar 自动跟随 CC Switch 配置切换",
+        "date": "2026-06-25"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": "/images/projects/hermes-desktop/cover.svg",
@@ -343,7 +343,7 @@
     {
       "name": "void-brain",
       "description": "个人 AI 知识库桌面助手。支持本地知识库、RAG 问答、可追溯引用、多轮对话与报告导出。",
-      "stage": "停滞",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
