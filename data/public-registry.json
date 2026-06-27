@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T11:40:29",
+  "generated_at": "2026-06-27T09:08:06",
   "count": 19,
   "projects": [
     {
@@ -212,8 +212,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(tauri): 桌面安装包首发 — Static export + 客户端直调方案 A",
-        "date": "2026-06-25"
+        "message": "feat(settings): 设置页 + AI 服务商手动切换 + 三层配置兜底",
+        "date": "2026-06-26"
       },
       "github_url": "https://github.com/vincentmaox/bucket-list-ai",
       "cover_image": null,
@@ -289,11 +289,14 @@
     {
       "name": "hermes-agent",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "Initial archive: 方舟第30期 Hermes Agent 众测项目存档",
+        "date": "2026-06-26"
+      },
+      "github_url": "https://github.com/vincentmaox/hermes-agent",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -303,7 +306,7 @@
     {
       "name": "hermes-desktop",
       "description": "桌面端 AI 伙伴控制台。把语音、任务、运行态与多模型协作整合成一个可操作界面。",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
