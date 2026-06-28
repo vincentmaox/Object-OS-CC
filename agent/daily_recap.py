@@ -28,6 +28,9 @@ sys.stderr.reconfigure(encoding="utf-8")
 WORKDIR = Path(r"D:\ClaudeCodeProjects\_ProjectOS")
 REGISTRY = WORKDIR / "data" / "registry.json"
 INBOX = WORKDIR / "thoughts" / "inbox.md"
+FREQ_OS_DIR = WORKDIR / "frequency_os"
+FREQ_DAILY_LOG = FREQ_OS_DIR / "daily_log.md"
+FREQ_ANTI_SWING = FREQ_OS_DIR / "anti_swing_inbox.md"
 BASE_DIR = Path(r"D:\ClaudeCodeProjects")
 OPEN_ID = "ou_59a5d4b0cc115a66295961a1aec66a9e"
 
@@ -507,6 +510,91 @@ def build_heart_section(activities: dict[str, dict], use_llm: bool = True) -> st
     return raw + "\n**LLM 评估**：\n" + out
 
 
+# === 第七段：FrequencyOS 当日采样 ===
+# 思想底座来自《频域组织度重建手册》+《信息传递与控制》+《全胜手册》三份文档合流。
+# 数据源：frequency_os/daily_log.md + anti_swing_inbox.md。是手动采样，给 LLM 当锚点。
+
+def collect_frequency_os_signals() -> dict:
+    """读 frequency_os 当日采样 + 本周摇摆事件。"""
+    if not FREQ_DAILY_LOG.exists():
+        return {"available": False, "reason": "daily_log.md 不存在"}
+
+    text = FREQ_DAILY_LOG.read_text(encoding="utf-8", errors="replace")
+    today = today_str()
+    m = re.search(rf"## {re.escape(today)}.*?(?=\n## |\Z)", text, re.S)
+    if not m:
+        return {"available": False, "reason": "今日无采样条目"}
+    block = m.group(0)
+
+    def grep(p: str) -> str:
+        mm = re.search(p, block)
+        return mm.group(1).strip() if mm else ""
+
+    sig = {
+        "available": True,
+        "main_freq": grep(r"今日唯一主频：[ \t]*([^\n]+)"),
+        "main_hours": grep(r"主频投入时间：[ \t]*([0-9.]+)"),
+        "noise_hours": grep(r"高频噪音时间：[ \t]*([0-9.]+)"),
+        "morning_mood": grep(r"晨间情绪评分：[ \t]*(\d+)"),
+        "evening_mood": grep(r"晚间情绪评分：[ \t]*(\d+)"),
+        "energy": grep(r"身体能量评分：[ \t]*(\d+)"),
+        "swing_today": grep(r"目标摇摆事件：[ \t]*([^\n]+)"),
+        "recap": grep(r"一句话复盘[^\n]*\n+([^\n#][^\n]*)"),
+        "tomorrow": grep(r"明日主频咒语[^\n]*\n+([^\n#-][^\n]*)"),
+    }
+
+    if FREQ_ANTI_SWING.exists():
+        aswing = FREQ_ANTI_SWING.read_text(encoding="utf-8", errors="replace")
+        today_date = datetime.strptime(today, "%Y-%m-%d").date()
+        week_start = today_date - timedelta(days=today_date.weekday())
+        week_dates = {(week_start + timedelta(days=i)).strftime("%Y-%m-%d") for i in range(7)}
+        week_swings = re.findall(r"### \[(\d{4}-\d{2}-\d{2})", aswing)
+        sig["swing_week_count"] = sum(1 for d in week_swings if d in week_dates)
+    else:
+        sig["swing_week_count"] = 0
+
+    return sig
+
+
+def build_frequency_os_section(use_llm: bool = True) -> str:
+    """生成「FrequencyOS 当日采样」第七段。"""
+    sig = collect_frequency_os_signals()
+    if not sig.get("available"):
+        return (
+            "## 📊 FrequencyOS 当日采样\n\n"
+            f"- 状态：未填写（{sig.get('reason', '未知')}）\n"
+            "- 提示：copy `frequency_os/templates/daily_sample.md` 到 `daily_log.md` 顶部\n"
+        )
+
+    raw = (
+        "## 📊 FrequencyOS 当日采样\n\n"
+        f"- **主频**：{sig['main_freq'] or '—'}\n"
+        f"- **主频投入**：{sig['main_hours'] or '—'} h\n"
+        f"- **高频噪音**：{sig['noise_hours'] or '—'} h\n"
+        f"- **情绪（晨/晚）**：{sig['morning_mood'] or '—'} / {sig['evening_mood'] or '—'}\n"
+        f"- **身体能量**：{sig['energy'] or '—'}\n"
+        f"- **摇摆事件**：{sig['swing_today'] or '—'}（本周累计 {sig['swing_week_count']}）\n"
+        f"- **明日咒语**：{sig['tomorrow'] or '—'}\n"
+    )
+
+    if not use_llm or not sig["main_hours"]:
+        return raw
+
+    prompt = (
+        "下面是老茅今日 FrequencyOS（个人频域组织度系统）采样数据。请输出**频域一致性评估**，3 条以内（每条不超过 50 字）：\n"
+        "1. 今日行为是否服从主频目标？给出判断（是/否/部分）+ 一个证据\n"
+        "2. 最值得明天调整的一项（具体动作，不是「保持」）\n"
+        "3. 一句话明日咒语建议\n\n"
+        "禁止套话，禁止重复原始数字。\n\n"
+        f"---\n{raw}"
+    )
+    out = _call_llm(prompt, "_frequency", {}, lambda p, a: raw)
+    if out.startswith("### _frequency"):
+        body = out.split("\n", 1)[1] if "\n" in out else ""
+        return raw + "\n**LLM 评估**：\n" + body
+    return raw + "\n**LLM 评估**：\n" + out
+
+
 def collect_all_active(registry: dict) -> dict[str, dict]:
     """遍历所有活跃项目（不限于今日有动静），用于评估。"""
     result = {}
@@ -620,6 +708,10 @@ def main():
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     use_llm = "--no-llm" not in sys.argv
     title, content = build_report(registry, use_llm=use_llm)
+
+    # 追加 FrequencyOS 当日采样段（V0.2 集成）
+    freq_section = build_frequency_os_section(use_llm=use_llm)
+    content = content + "\n\n---\n" + freq_section
 
     print(f"=== {title} ===")
     print(content)

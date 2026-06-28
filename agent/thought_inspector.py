@@ -33,6 +33,8 @@ WORKDIR = Path(r"D:\ClaudeCodeProjects\_ProjectOS")
 THOUGHTS_DIR = WORKDIR / "thoughts"
 INBOX = THOUGHTS_DIR / "inbox.md"
 REGISTRY = WORKDIR / "data" / "registry.json"
+FREQ_OS_DIR = WORKDIR / "frequency_os"
+FREQ_ANTI_SWING = FREQ_OS_DIR / "anti_swing_inbox.md"
 BASE_DIR = Path(r"D:\ClaudeCodeProjects")
 
 THOUGHT_RE = re.compile(
@@ -147,17 +149,58 @@ def find_stale(thoughts: list[dict]) -> list[dict]:
     return [t for t in thoughts if t["ts"] < cutoff]
 
 
+SWING_HEADER_RE = re.compile(r"### \[(?P<ts>\d{4}-\d{2}-\d{2})\s+(?P<hm>\d{2}:\d{2})\]")
+SWING_TYPE_RE = re.compile(r"冲动类型：([^\n]*?)(?:战略机会|高频噪音|情绪逃避|新鲜感渴求|身份焦虑)([^\n]*)")
+SWING_CONTENT_RE = re.compile(r"冲动内容：\s*([^\n]+)")
+
+
+def collect_swing_events() -> list[dict]:
+    """扫 frequency_os/anti_swing_inbox.md，返回本周新增的摇摆冲动。
+
+    只取最近 7 天的登记。每条返回 {date, time, content, type}。
+    """
+    if not FREQ_ANTI_SWING.exists():
+        return []
+    text = FREQ_ANTI_SWING.read_text(encoding="utf-8")
+    cutoff = datetime.now() - timedelta(days=7)
+
+    blocks = re.split(r"(?=^### \[\d{4}-\d{2}-\d{2})", text, flags=re.M)
+    events: list[dict] = []
+    for blk in blocks:
+        m = SWING_HEADER_RE.search(blk)
+        if not m:
+            continue
+        try:
+            ts = datetime.strptime(f"{m.group('ts')} {m.group('hm')}", "%Y-%m-%d %H:%M")
+        except ValueError:
+            continue
+        if ts < cutoff:
+            continue
+        cm = SWING_CONTENT_RE.search(blk)
+        tm = SWING_TYPE_RE.search(blk)
+        types = re.findall(r"(战略机会|高频噪音|情绪逃避|新鲜感渴求|身份焦虑)", blk)
+        events.append({
+            "ts": ts,
+            "content": cm.group(1).strip() if cm else "（未填冲动内容）",
+            "type": types[0] if types else "未分类",
+        })
+    events.sort(key=lambda e: e["ts"], reverse=True)
+    return events
+
+
 def build_report(thoughts: list[dict], registry: dict) -> dict:
     """生成巡检报告 dict（给卡片用）。"""
     stale = find_stale(thoughts)
     recurrence = find_recurrence(thoughts)
     landed = find_landed(thoughts, registry)
+    swings = collect_swing_events()
 
     return {
         "total": len(thoughts),
         "stale": stale,
         "recurrence": recurrence,
         "landed": landed,
+        "swings": swings,
         "scan_time": datetime.now().isoformat(timespec="seconds"),
     }
 
@@ -190,7 +233,14 @@ def render_text_report(report: dict) -> str:
             lines.append(f"    → commit: {commit[:60]}")
         lines.append("")
 
-    if not (report["stale"] or report["recurrence"] or report["landed"]):
+    if report.get("swings"):
+        lines.append(f"🌊 FrequencyOS 本周摇摆冲动（{len(report['swings'])} 条，默认 24h 冷却中）：")
+        for s in report["swings"][:10]:
+            ts_str = s["ts"].strftime("%m-%d %H:%M")
+            lines.append(f"  • [{ts_str}] ({s['type']}) {s['content']}")
+        lines.append("")
+
+    if not (report["stale"] or report["recurrence"] or report["landed"] or report.get("swings")):
         lines.append("✨ 所有思考都在新鲜期，无需决断。")
 
     lines.append("")
