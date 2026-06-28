@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T09:08:06",
+  "generated_at": "2026-06-28T09:08:11",
   "count": 19,
   "projects": [
     {
@@ -212,8 +212,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(settings): 设置页 + AI 服务商手动切换 + 三层配置兜底",
-        "date": "2026-06-26"
+        "message": "docs: 四件套收尾 — Day 20/21 日志 + 手册更新 + 对话归档",
+        "date": "2026-06-27"
       },
       "github_url": "https://github.com/vincentmaox/bucket-list-ai",
       "cover_image": null,
@@ -289,7 +289,7 @@
     {
       "name": "hermes-agent",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
