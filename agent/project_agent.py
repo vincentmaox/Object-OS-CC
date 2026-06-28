@@ -59,6 +59,7 @@ class ObsidianClient:
     def __init__(self, api_key: str, port: int = 27123):
         self.api_key = api_key
         self.base_url = f"http://127.0.0.1:{port}"
+        self._conn_warned = False  # 拒连只 WARN 一次，后续静默直到恢复
 
     def request(self, method: str, path: str, data: bytes = None, headers: dict = None):
         url = f"{self.base_url}{path}"
@@ -69,12 +70,18 @@ class ObsidianClient:
                 req.add_header(k, v)
         try:
             with urllib.request.urlopen(req, timeout=5) as resp:
+                if self._conn_warned:
+                    self._conn_warned = False
                 return resp.read().decode("utf-8")
         except urllib.error.HTTPError as e:
-            print(f"  [WARN] Obsidian API {e.code} {e.reason} on {path}")
+            if not self._conn_warned:
+                print(f"  [WARN] Obsidian API {e.code} {e.reason} on {path}（后续静默直到恢复）")
+                self._conn_warned = True
             return None
         except Exception as e:
-            print(f"  [WARN] Obsidian connection failed: {e}")
+            if not self._conn_warned:
+                print(f"  [WARN] Obsidian connection failed: {e}（后续静默直到恢复）")
+                self._conn_warned = True
             return None
 
     def write_file(self, path: str, content: str):
