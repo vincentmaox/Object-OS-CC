@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-28T10:22:30",
-  "count": 19,
+  "generated_at": "2026-06-29T09:08:15",
+  "count": 20,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -81,6 +81,20 @@
         "React",
         "Tailwind"
       ]
+    },
+    {
+      "name": "Hackathon-AI-Game",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
     },
     {
       "name": "NuclearPowerAI",
