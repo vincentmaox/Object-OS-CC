@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-30T19:57:08",
+  "generated_at": "2026-07-01T15:38:55",
   "count": 20,
   "projects": [
     {
@@ -303,7 +303,7 @@
     {
       "name": "hermes-agent",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
