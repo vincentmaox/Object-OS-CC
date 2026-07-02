@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-01T15:38:55",
-  "count": 20,
+  "generated_at": "2026-07-02T09:08:26",
+  "count": 21,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -240,6 +240,23 @@
         "React",
         "Tailwind"
       ]
+    },
+    {
+      "name": "bytedance-test",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: piston task order C->A->B (区分度点), bypass permission options",
+        "date": "2026-07-01"
+      },
+      "github_url": "https://github.com/vincentmaox/bytedance-crowdsourcing-31",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
     },
     {
       "name": "claude-channel-feishu",
