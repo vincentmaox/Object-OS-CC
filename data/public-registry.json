@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T09:08:26",
+  "generated_at": "2026-07-03T09:08:06",
   "count": 21,
   "projects": [
     {
@@ -244,12 +244,12 @@
     {
       "name": "bytedance-test",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: piston task order C->A->B (区分度点), bypass permission options",
-        "date": "2026-07-01"
+        "message": "docs: task D hybrid prompt + onyx/nebula scoring + cold-start handoff",
+        "date": "2026-07-02"
       },
       "github_url": "https://github.com/vincentmaox/bytedance-crowdsourcing-31",
       "cover_image": null,
