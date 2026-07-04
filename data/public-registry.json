@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-03T09:08:06",
-  "count": 21,
+  "generated_at": "2026-07-04T09:08:11",
+  "count": 23,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -220,6 +220,25 @@
       ]
     },
     {
+      "name": "ai-skin-system",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: 项目对话日志纳入 git 管理",
+        "date": "2026-07-03"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-skin-system",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
       "name": "bucket-list-ai",
       "description": "",
       "stage": "卡点",
@@ -373,6 +392,20 @@
       "tech_stack": [
         "Python"
       ]
+    },
+    {
+      "name": "trae-race",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
     },
     {
       "name": "void-brain",
