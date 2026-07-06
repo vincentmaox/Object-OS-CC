@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-05T09:08:19",
+  "generated_at": "2026-07-06T09:08:07",
   "count": 23,
   "projects": [
     {
@@ -85,7 +85,7 @@
     {
       "name": "Hackathon-AI-Game",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
