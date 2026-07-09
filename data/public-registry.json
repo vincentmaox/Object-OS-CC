@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T11:34:52",
-  "count": 23,
+  "generated_at": "2026-07-09T18:18:09",
+  "count": 25,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -271,6 +271,34 @@
         "date": "2026-07-02"
       },
       "github_url": "https://github.com/vincentmaox/bytedance-crowdsourcing-31",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "bytedance-test-33-coding-test-yonder",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "bytedance-test-33-coding-vesper",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
       "cover_image": null,
       "product_label": null,
       "featured": false,
