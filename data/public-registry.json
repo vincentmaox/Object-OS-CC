@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-09T18:18:09",
-  "count": 25,
+  "generated_at": "2026-07-10T09:08:17",
+  "count": 26,
   "projects": [
     {
       "name": "voidarchitect-site",
@@ -263,7 +263,7 @@
     {
       "name": "bytedance-test",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -323,6 +323,20 @@
       "tech_stack": [
         "Node.js"
       ]
+    },
+    {
+      "name": "company-ppt",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
     },
     {
       "name": "disk-manager",
