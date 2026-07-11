@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T09:08:17",
+  "generated_at": "2026-07-11T09:08:24",
   "count": 26,
   "projects": [
     {
@@ -438,7 +438,7 @@
     {
       "name": "trae-race",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
