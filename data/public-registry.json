@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-15T09:08:23",
+  "generated_at": "2026-07-16T16:40:18",
   "count": 26,
   "projects": [
     {
@@ -280,7 +280,7 @@
     {
       "name": "bytedance-test-33-coding-test-yonder",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -294,7 +294,7 @@
     {
       "name": "bytedance-test-33-coding-vesper",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
