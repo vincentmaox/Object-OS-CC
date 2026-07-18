@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T09:08:16",
+  "generated_at": "2026-07-18T09:08:15",
   "count": 26,
   "projects": [
     {
@@ -263,7 +263,7 @@
     {
       "name": "bytedance-test",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
