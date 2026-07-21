@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-20T11:36:33",
-  "count": 26,
+  "generated_at": "2026-07-21T10:31:06",
+  "count": 96,
   "projects": [
     {
-      "name": "voidarchitect-site",
-      "description": "虚空建筑师工作室主页。以高级空间界面展示在建 AI 产品与频域决策工作流。",
+      "name": "ClaudeCodeProjects__voidarchitect-site",
+      "description": "",
       "stage": "All-in",
       "freq_total": 13,
       "freq_suggestion": "All-in",
@@ -13,10 +13,10 @@
         "date": "2026-06-20"
       },
       "github_url": "https://github.com/vincentmaox/voidarchitect-site",
-      "cover_image": "/images/projects/voidarchitect-site/cover.svg",
-      "product_label": "Studio OS",
-      "featured": true,
-      "showcase_rank": 10,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -24,7 +24,1021 @@
       ]
     },
     {
-      "name": "AI-NoteBook",
+      "name": "01_Project__001_AI_XIFENG",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__002_AI_Story",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__003_AI子女",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20250105_NIM_AI_Platform",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20250107_NIM_AI_Platform",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260106_NIM_AI_Platform - 副本",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260107_NIM_WorkPlatform",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260107_ObsidianTake",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260110_MXD_WorkPlatform",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260111_AIStory_TXY",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260117_人工智能课程",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260118_Wechat_MCP",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__20260118_人工智能课程2",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260124_人工智能课程3",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260124_文生语音",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__20260124_解析文字",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__20260125_人工智能课程4",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260127_Codebuddy",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260128_核岛所数字化PPT",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260129_AI子女",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260130_AI子女",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260131_人工智能课程5",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__20260201_KIMI视频读取能力",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260201_Qoder",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260201_人工智能课程6",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260201_飞书",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260202_ClaudeBlog",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260202_MIT_AICoding",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260203_AIIdol",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__20260204_工作流讲解",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260207_AIObsidian",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260207_AI专利",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260207_RUNNINGHUB",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260207_人工智能课程7",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260208_KIMICode",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260215_BUP_Pager",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__20260215_RAG",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260217_MBTIMentor",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260219_SKILLS_BEST",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260304_RCCM规范规则化",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260305_虚空建筑师学院",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260310_二次分包ASG方法使用",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260312_Dify工作流和n8n工作流智能体",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260405_AI会议论文",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260405_XIFENG_Knowledge",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260409_AI Agent审计合规网关",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260409_高维捡钱使魔系统",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python",
+        "Docker"
+      ]
+    },
+    {
+      "name": "01_Project__20260410_AI面相肤质分析系统",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "Merge remote-tracking branch 'origin/main'",
+        "date": "2026-07-01"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-skin-system",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260410_AI面相肤质分析系统-mirage",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "Merge remote-tracking branch 'origin/main'",
+        "date": "2026-07-01"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-skin-system",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260410_AI面相肤质分析系统-nebula",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "Merge remote-tracking branch 'origin/main'",
+        "date": "2026-07-01"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-skin-system",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260410_AI面相肤质分析系统-onyx",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "Merge remote-tracking branch 'origin/main'",
+        "date": "2026-07-01"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-skin-system",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260410_AI面相肤质分析系统-piston",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "Merge remote-tracking branch 'origin/main'",
+        "date": "2026-07-01"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-skin-system",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "01_Project__20260410_专利标准规则化工具",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260411_AI产品合规律师",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260413_PDF文档转换成MD文档",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260413_情绪频域套利产品",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260414_RAGFLOW",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260415_情感导师",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "feat(v1.2.0): billing system - daily limits, premium plan, pricing page",
+        "date": "2026-05-13"
+      },
+      "github_url": "https://github.com/vincentmaox/LoveMentor",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260513_德扑思维训练导师",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260515_AI路由",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260517_ClaudeCode安装",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260531_GLM抢套餐",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__20260628-GuangMingGame",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "fix: 添加开始/继续游戏选择界面+修复存档加载导致景点无法进入的bug+修复mp字段缺失",
+        "date": "2026-07-07"
+      },
+      "github_url": "https://github.com/vincentmaox/donut-odyssey",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__CGN-company-ppt",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__ai-disk-clear",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__bucket-list-ai",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Node.js",
+        "Next.js",
+        "React",
+        "Tailwind"
+      ]
+    },
+    {
+      "name": "01_Project__my-bucket-list",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "init: 提示词工程 + 配套材料 + 记忆固化四件套",
+        "date": "2026-07-04"
+      },
+      "github_url": "https://github.com/vincentmaox/my-bucket-list",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__备份",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__多端同步体系",
+      "description": "",
+      "stage": "停滞",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "ClaudeCodeProjects__AI-NoteBook",
       "description": "",
       "stage": "停滞",
       "freq_total": null,
@@ -45,7 +1059,7 @@
       ]
     },
     {
-      "name": "AI-Patent",
+      "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
       "stage": "停滞",
       "freq_total": null,
@@ -62,8 +1076,8 @@
       "tech_stack": []
     },
     {
-      "name": "AI-Screen-Record",
-      "description": "AI 屏幕记录与复盘工具。捕捉操作过程，把屏幕行动转化为可检索、可总结的工作记忆。",
+      "name": "ClaudeCodeProjects__AI-Screen-Record",
+      "description": "",
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
@@ -72,10 +1086,10 @@
         "date": "2026-06-12"
       },
       "github_url": "https://github.com/vincentmaox/AI-Screen-Record",
-      "cover_image": "/images/projects/ai-screen-record/cover.svg",
-      "product_label": "Memory Recorder",
-      "featured": true,
-      "showcase_rank": 40,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -83,9 +1097,9 @@
       ]
     },
     {
-      "name": "Hackathon-AI-Game",
+      "name": "ClaudeCodeProjects__Hackathon-AI-Game",
       "description": "",
-      "stage": "停滞",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -97,14 +1111,14 @@
       "tech_stack": []
     },
     {
-      "name": "NuclearPowerAI",
+      "name": "ClaudeCodeProjects__NuclearPowerAI",
       "description": "",
-      "stage": "卡点",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 项目日志 06-16 — VL FIX/YOLO 调研结论 + void-brain fork",
-        "date": "2026-06-16"
+        "message": "chore: clean build/icon artifacts, gitignore build/",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -117,7 +1131,7 @@
       ]
     },
     {
-      "name": "PhysicsAI-Research",
+      "name": "ClaudeCodeProjects__PhysicsAI-Research",
       "description": "",
       "stage": "已归档",
       "freq_total": null,
@@ -131,14 +1145,33 @@
       "tech_stack": []
     },
     {
-      "name": "Screen-Record",
+      "name": "ClaudeCodeProjects__Private-Wealth-AI-Steward",
       "description": "",
-      "stage": "卡点",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: update DEVELOPMENT.md for v0.4.0 architecture",
-        "date": "2026-06-16"
+        "message": "chore: gitignore .playwright-mcp cache dir",
+        "date": "2026-07-20"
+      },
+      "github_url": "https://github.com/vincentmaox/Private-Wealth-AI-Steward",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
+    },
+    {
+      "name": "ClaudeCodeProjects__Screen-Record",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "chore: gitignore mobile dir (728MB, contains node_modules)",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/Screen-Record",
       "cover_image": null,
@@ -151,24 +1184,24 @@
       ]
     },
     {
-      "name": "TexasPhilosopher",
-      "description": "德州扑克哲学训练模拟器。把策略、性格 AI、Roguelike 成长与高粘性训练反馈合成一款可玩的思维产品。",
-      "stage": "卡点",
+      "name": "ClaudeCodeProjects__TexasPhilosopher",
+      "description": "",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 项目日志 + 用户手册 + 开发手册全面更新",
-        "date": "2026-06-09"
+        "message": "chore: add v2-current-state screenshot",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/Texas-Philosopher",
-      "cover_image": "/images/projects/texas-philosopher/cover.svg",
-      "product_label": "Training Game",
-      "featured": true,
-      "showcase_rank": 50,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": []
     },
     {
-      "name": "TokenChrono",
+      "name": "ClaudeCodeProjects__TokenChrono",
       "description": "",
       "stage": "已归档",
       "freq_total": null,
@@ -182,7 +1215,7 @@
       "tech_stack": []
     },
     {
-      "name": "ValveDrawing-Data-Review",
+      "name": "ClaudeCodeProjects__ValveDrawing-Data-Review",
       "description": "",
       "stage": "已归档",
       "freq_total": null,
@@ -196,7 +1229,7 @@
       "tech_stack": []
     },
     {
-      "name": "ai-router-48h",
+      "name": "ClaudeCodeProjects__ai-router-48h",
       "description": "",
       "stage": "停滞",
       "freq_total": null,
@@ -220,7 +1253,7 @@
       ]
     },
     {
-      "name": "ai-skin-system",
+      "name": "ClaudeCodeProjects__ai-skin-system",
       "description": "",
       "stage": "卡点",
       "freq_total": null,
@@ -239,14 +1272,14 @@
       ]
     },
     {
-      "name": "bucket-list-ai",
+      "name": "ClaudeCodeProjects__bucket-list-ai",
       "description": "",
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 四件套收尾 — Day 20/21 日志 + 手册更新 + 对话归档",
-        "date": "2026-06-27"
+        "message": "docs: update TRAE_WORK_PROMPT + Day28 log + trae drafts",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/bucket-list-ai",
       "cover_image": null,
@@ -261,14 +1294,14 @@
       ]
     },
     {
-      "name": "bytedance-test",
+      "name": "ClaudeCodeProjects__bytedance-test",
       "description": "",
-      "stage": "卡点",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: task D hybrid prompt + onyx/nebula scoring + cold-start handoff",
-        "date": "2026-07-02"
+        "message": "chore: commit 31st logs/prompts + small placeholders, gitignore 32/33/34 large dirs + .claude",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/bytedance-crowdsourcing-31",
       "cover_image": null,
@@ -278,9 +1311,9 @@
       "tech_stack": []
     },
     {
-      "name": "bytedance-test-33-coding-test-yonder",
+      "name": "ClaudeCodeProjects__bytedance-test-33-coding-test-yonder",
       "description": "",
-      "stage": "停滞",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -292,9 +1325,9 @@
       "tech_stack": []
     },
     {
-      "name": "bytedance-test-33-coding-vesper",
+      "name": "ClaudeCodeProjects__bytedance-test-33-coding-vesper",
       "description": "",
-      "stage": "停滞",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -306,7 +1339,7 @@
       "tech_stack": []
     },
     {
-      "name": "claude-channel-feishu",
+      "name": "ClaudeCodeProjects__claude-channel-feishu",
       "description": "",
       "stage": "停滞",
       "freq_total": null,
@@ -325,28 +1358,14 @@
       ]
     },
     {
-      "name": "company-ppt",
-      "description": "",
-      "stage": "活跃",
-      "freq_total": null,
-      "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
-      "cover_image": null,
-      "product_label": null,
-      "featured": false,
-      "showcase_rank": null,
-      "tech_stack": []
-    },
-    {
-      "name": "disk-manager",
+      "name": "ClaudeCodeProjects__disk-manager",
       "description": "",
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "R6-1: multi-root scan + hard-delete for MAX_PATH + IDE config protection",
-        "date": "2026-06-25"
+        "message": "docs: sync CLAUDE.md + dev-journal to R6 completion state",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
@@ -358,14 +1377,14 @@
       ]
     },
     {
-      "name": "docreview-ai",
-      "description": "AI 文档审查智能体。把高强度文档校核流程封装成可复用的审查工作流。",
+      "name": "ClaudeCodeProjects__docreview-ai",
+      "description": "",
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(deps+timeout): add jszip for DOCX + bump chat timeout to 5min",
-        "date": "2026-06-07"
+        "message": "feat: update model clients + add RCC-M test docs",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/NP-DocReview-AI",
       "cover_image": null,
@@ -379,16 +1398,16 @@
       ]
     },
     {
-      "name": "hermes-agent",
+      "name": "ClaudeCodeProjects__hermes-agent",
       "description": "",
-      "stage": "卡点",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
         "message": "Initial archive: 方舟第30期 Hermes Agent 众测项目存档",
         "date": "2026-06-26"
       },
-      "github_url": "https://github.com/vincentmaox/hermes-agent",
+      "github_url": null,
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -396,20 +1415,20 @@
       "tech_stack": []
     },
     {
-      "name": "hermes-desktop",
-      "description": "桌面端 AI 伙伴控制台。把语音、任务、运行态与多模型协作整合成一个可操作界面。",
-      "stage": "卡点",
+      "name": "ClaudeCodeProjects__hermes-desktop",
+      "description": "",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: sidecar 自动跟随 CC Switch 配置切换",
-        "date": "2026-06-25"
+        "message": "docs+test: v0.4.7 交接 + TTS 升级测试脚本 (v0.4.7 收尾)",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
-      "cover_image": "/images/projects/hermes-desktop/cover.svg",
-      "product_label": "Agent Cockpit",
-      "featured": true,
-      "showcase_rank": 30,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React",
@@ -417,7 +1436,21 @@
       ]
     },
     {
-      "name": "product-idea-agent",
+      "name": "ClaudeCodeProjects__obsidian manager",
+      "description": "",
+      "stage": "待归档",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "ClaudeCodeProjects__product-idea-agent",
       "description": "",
       "stage": "卡点",
       "freq_total": null,
@@ -436,9 +1469,9 @@
       ]
     },
     {
-      "name": "trae-race",
+      "name": "ClaudeCodeProjects__trae-race",
       "description": "",
-      "stage": "停滞",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -450,20 +1483,20 @@
       "tech_stack": []
     },
     {
-      "name": "void-brain",
-      "description": "个人 AI 知识库桌面助手。支持本地知识库、RAG 问答、可追溯引用、多轮对话与报告导出。",
-      "stage": "卡点",
+      "name": "ClaudeCodeProjects__void-brain",
+      "description": "",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 补充 CHANGELOG + 更新版本号 v0.1.0 + 对话日志归档",
-        "date": "2026-06-16"
+        "message": "chore: clean build/icon artifacts, gitignore build/",
+        "date": "2026-07-20"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
-      "cover_image": "/images/projects/void-brain/cover.svg",
-      "product_label": "Knowledge OS",
-      "featured": true,
-      "showcase_rank": 20,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
       "tech_stack": [
         "Node.js",
         "React"
