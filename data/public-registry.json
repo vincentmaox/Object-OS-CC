@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T10:31:06",
+  "generated_at": "2026-07-22T09:10:01",
   "count": 96,
   "projects": [
     {
@@ -962,7 +962,7 @@
     {
       "name": "01_Project__ai-disk-clear",
       "description": "",
-      "stage": "活跃",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1113,7 +1113,7 @@
     {
       "name": "ClaudeCodeProjects__NuclearPowerAI",
       "description": "",
-      "stage": "活跃",
+      "stage": "All-in",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1364,8 +1364,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: sync CLAUDE.md + dev-journal to R6 completion state",
-        "date": "2026-07-20"
+        "message": "docs: sync CLAUDE.md + dev-journal to R7/R8 completion",
+        "date": "2026-07-21"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
@@ -1417,12 +1417,12 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs+test: v0.4.7 交接 + TTS 升级测试脚本 (v0.4.7 收尾)",
-        "date": "2026-07-20"
+        "message": "feat: P0.1 filler 占位 + 项目聊天记录查看器 (v0.5.2)",
+        "date": "2026-07-22"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
