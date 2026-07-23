@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T09:10:01",
+  "generated_at": "2026-07-23T09:09:14",
   "count": 96,
   "projects": [
     {
@@ -9,8 +9,8 @@
       "freq_total": 13,
       "freq_suggestion": "All-in",
       "last_action": {
-        "message": "docs: 同步 D3.2-D3.19 进展到 CLAUDE.md 和开发手册",
-        "date": "2026-06-20"
+        "message": "docs: 迁移对话日志到单文件 conversation_log.md",
+        "date": "2026-07-22"
       },
       "github_url": "https://github.com/vincentmaox/voidarchitect-site",
       "cover_image": null,
@@ -995,7 +995,7 @@
     {
       "name": "01_Project__my-bucket-list",
       "description": "",
-      "stage": "停滞",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1186,7 +1186,7 @@
     {
       "name": "ClaudeCodeProjects__TexasPhilosopher",
       "description": "",
-      "stage": "停滞",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1296,7 +1296,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-test",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1421,7 +1421,7 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: P0.1 filler 占位 + 项目聊天记录查看器 (v0.5.2)",
+        "message": "feat: 单文件格式 + 全局索引 + 乱码修复 (v0.5.3)",
         "date": "2026-07-22"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
@@ -1485,7 +1485,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
