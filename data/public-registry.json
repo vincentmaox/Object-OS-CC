@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-23T09:09:14",
+  "generated_at": "2026-07-24T12:15:11",
   "count": 96,
   "projects": [
     {
@@ -948,7 +948,7 @@
     {
       "name": "01_Project__CGN-company-ppt",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -995,7 +995,7 @@
     {
       "name": "01_Project__my-bucket-list",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1186,7 +1186,7 @@
     {
       "name": "ClaudeCodeProjects__TexasPhilosopher",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1296,7 +1296,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-test",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1364,8 +1364,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: sync CLAUDE.md + dev-journal to R7/R8 completion",
-        "date": "2026-07-21"
+        "message": "R9 Phase 3: 21 tests for risk_explainer evidence chain",
+        "date": "2026-07-23"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
@@ -1485,12 +1485,12 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "进行中",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "chore: clean build/icon artifacts, gitignore build/",
-        "date": "2026-07-20"
+        "message": "docs: PROJECT_LOG 追加 7-23 监听文件夹开发记录",
+        "date": "2026-07-23"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
