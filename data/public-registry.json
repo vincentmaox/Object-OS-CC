@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T09:09:14",
+  "generated_at": "2026-07-26T09:09:31",
   "count": 98,
   "projects": [
     {
@@ -1258,8 +1258,11 @@
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "init: 虚空藏经阁 P1 MVP - scanner/extractor/injector 三件套跑通 + 12 条经验入库",
+        "date": "2026-07-25"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-self-evolution",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -1397,7 +1400,7 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "R12: 5 new deep clean ops + 1.4GB real reclaim (C drive emergency)",
+        "message": "R13: 8 new deep clean ops + user data migration + software uninstall suggest",
         "date": "2026-07-25"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
@@ -1450,12 +1453,12 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: 单文件格式 + 全局索引 + 乱码修复 (v0.5.3)",
-        "date": "2026-07-22"
+        "message": "docs: CLAUDE.md TODO 标记 v0.5.4 完成 (最近活动徽章+新建项目+立即扫描)",
+        "date": "2026-07-25"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
