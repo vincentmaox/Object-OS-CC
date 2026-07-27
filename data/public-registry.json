@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T09:09:31",
+  "generated_at": "2026-07-27T09:09:26",
   "count": 98,
   "projects": [
     {
@@ -1453,7 +1453,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
