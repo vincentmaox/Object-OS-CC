@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T11:11:05",
+  "generated_at": "2026-07-31T09:35:53",
   "count": 98,
   "projects": [
     {
@@ -1117,8 +1117,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "chore: clean build/icon artifacts, gitignore build/",
-        "date": "2026-07-20"
+        "message": "chore(v0.10): bump version to 0.10.0",
+        "date": "2026-07-30"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1453,7 +1453,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1521,7 +1521,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
