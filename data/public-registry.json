@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T09:35:53",
+  "generated_at": "2026-08-01T09:09:21",
   "count": 98,
   "projects": [
     {
@@ -1400,8 +1400,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "R13: 8 new deep clean ops + user data migration + software uninstall suggest",
-        "date": "2026-07-25"
+        "message": "docs: R19 manual test plan + acceptance criteria",
+        "date": "2026-08-01"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
@@ -1453,7 +1453,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
