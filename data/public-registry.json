@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T09:09:21",
+  "generated_at": "2026-08-02T09:09:18",
   "count": 98,
   "projects": [
     {
@@ -1400,7 +1400,7 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: R19 manual test plan + acceptance criteria",
+        "message": "i18n: 中文 UI + 完整使用手册",
         "date": "2026-08-01"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
