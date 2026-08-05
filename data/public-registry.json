@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-04T11:17:26",
-  "count": 98,
+  "generated_at": "2026-08-05T13:47:40",
+  "count": 99,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1221,6 +1221,23 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "ClaudeCodeProjects__ai-love-mentor",
+      "description": "",
+      "stage": "进行中",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "init",
+        "date": "2026-08-04"
+      },
       "github_url": null,
       "cover_image": null,
       "product_label": null,
