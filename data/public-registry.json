@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T13:47:40",
+  "generated_at": "2026-08-06T11:41:18",
   "count": 99,
   "projects": [
     {
@@ -1417,8 +1417,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "i18n: 中文 UI + 完整使用手册",
-        "date": "2026-08-01"
+        "message": "R23+ UX fixes: UAC relaunch + smart-select + startup polish + search fallback",
+        "date": "2026-08-05"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
