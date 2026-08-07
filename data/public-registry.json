@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-06T11:41:18",
-  "count": 99,
+  "generated_at": "2026-08-07T09:36:10",
+  "count": 100,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1231,7 +1231,7 @@
     {
       "name": "ClaudeCodeProjects__ai-love-mentor",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1285,6 +1285,25 @@
       "featured": false,
       "showcase_rank": null,
       "tech_stack": []
+    },
+    {
+      "name": "ClaudeCodeProjects__ai-skill-mentor",
+      "description": "",
+      "stage": "卡点",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "init",
+        "date": "2026-08-06"
+      },
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Python"
+      ]
     },
     {
       "name": "ClaudeCodeProjects__ai-skin-system",
@@ -1417,8 +1436,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "R23+ UX fixes: UAC relaunch + smart-select + startup polish + search fallback",
-        "date": "2026-08-05"
+        "message": "P0-3: 检索三套合一（unified search）",
+        "date": "2026-08-06"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
