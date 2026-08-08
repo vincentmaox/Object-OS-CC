@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T09:36:10",
+  "generated_at": "2026-08-08T09:09:21",
   "count": 100,
   "projects": [
     {
@@ -1289,14 +1289,14 @@
     {
       "name": "ClaudeCodeProjects__ai-skill-mentor",
       "description": "",
-      "stage": "卡点",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "init",
-        "date": "2026-08-06"
+        "message": "feat(M7/M2/M1): 第一期正题 —— 学习追踪 + 沙箱持久化 + PDF 解析",
+        "date": "2026-08-07"
       },
-      "github_url": null,
+      "github_url": "https://github.com/vincentmaox/ai-skill-mentor",
       "cover_image": null,
       "product_label": null,
       "featured": false,
