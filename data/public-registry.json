@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-08T09:09:21",
-  "count": 100,
+  "generated_at": "2026-08-09T09:09:21",
+  "count": 101,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -939,6 +939,20 @@
         "date": "2026-07-07"
       },
       "github_url": "https://github.com/vincentmaox/donut-odyssey",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "01_Project__AI-旅游",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
       "cover_image": null,
       "product_label": null,
       "featured": false,
