@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T10:23:08",
+  "generated_at": "2026-08-13T22:10:02",
   "count": 101,
   "projects": [
     {
@@ -1075,7 +1075,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
