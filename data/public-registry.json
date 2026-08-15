@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T12:06:55",
+  "generated_at": "2026-08-15T14:51:53",
   "count": 101,
   "projects": [
     {
@@ -8,7 +8,10 @@
       "stage": "All-in",
       "freq_total": 13,
       "freq_suggestion": "All-in",
-      "last_action": null,
+      "last_action": {
+        "message": "docs: 迁移对话日志到单文件 conversation_log.md",
+        "date": "2026-07-22"
+      },
       "github_url": "https://github.com/vincentmaox/voidarchitect-site",
       "cover_image": null,
       "product_label": null,
@@ -1054,7 +1057,10 @@
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
+      "last_action": {
+        "message": "Phase 2 fix: cascade 剥离为独立命令 + Windows CRLF frontmatter 修复",
+        "date": "2026-06-10"
+      },
       "github_url": "https://github.com/vincentmaox/AI-NoteBook",
       "cover_image": null,
       "product_label": null,
@@ -1069,7 +1075,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1194,10 +1200,13 @@
     {
       "name": "ClaudeCodeProjects__TexasPhilosopher",
       "description": "",
-      "stage": "停滞",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
+      "last_action": {
+        "message": "chore: add v2-current-state screenshot",
+        "date": "2026-07-20"
+      },
       "github_url": "https://github.com/vincentmaox/Texas-Philosopher",
       "cover_image": null,
       "product_label": null,
@@ -1459,7 +1468,10 @@
       "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
+      "last_action": {
+        "message": "feat: update model clients + add RCC-M test docs",
+        "date": "2026-07-20"
+      },
       "github_url": "https://github.com/vincentmaox/NP-DocReview-AI",
       "cover_image": null,
       "product_label": null,
@@ -1562,7 +1574,10 @@
       "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
+      "last_action": {
+        "message": "docs: PROJECT_LOG 追加 7-23 监听文件夹开发记录",
+        "date": "2026-07-23"
+      },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
       "product_label": null,
