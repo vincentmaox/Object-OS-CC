@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T09:09:19",
+  "generated_at": "2026-08-17T09:11:39",
   "count": 101,
   "projects": [
     {
@@ -642,7 +642,7 @@
     {
       "name": "01_Project__20260405_AI会议论文",
       "description": "",
-      "stage": "停滞",
+      "stage": "已归档",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -656,7 +656,7 @@
     {
       "name": "01_Project__20260405_XIFENG_Knowledge",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1503,7 +1503,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1571,7 +1571,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "停滞",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
