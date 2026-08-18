@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T09:11:39",
+  "generated_at": "2026-08-18T09:15:31",
   "count": 101,
   "projects": [
     {
@@ -659,7 +659,10 @@
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
+      "last_action": {
+        "message": "初始提交：西风知识库全量5613篇+清洗管线+项目文档",
+        "date": "2026-08-17"
+      },
       "github_url": null,
       "cover_image": null,
       "product_label": null,
@@ -1503,7 +1506,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1575,8 +1578,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: PROJECT_LOG 追加 7-23 监听文件夹开发记录",
-        "date": "2026-07-23"
+        "message": "docs: PROJECT_LOG 追加 v0.3.0 发布记录 + 15 篇实测结论 + 下一步工作计划",
+        "date": "2026-08-17"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
