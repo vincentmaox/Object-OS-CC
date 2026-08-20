@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T09:15:49",
+  "generated_at": "2026-08-20T09:39:02",
   "count": 101,
   "projects": [
     {
@@ -1578,8 +1578,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: v0.4.4 长文流水线网络瞬断重试 + 降级提示友好化",
-        "date": "2026-08-18"
+        "message": "docs: CLAUDE.md 补 v0.4.5 主进程长生成请求必须流式约束（undici headersTimeout 坑）",
+        "date": "2026-08-19"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
