@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21T09:28:32",
+  "generated_at": "2026-08-22T09:51:08",
   "count": 101,
   "projects": [
     {
@@ -656,7 +656,7 @@
     {
       "name": "01_Project__20260405_XIFENG_Knowledge",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1574,12 +1574,12 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "进行中",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: CLAUDE.md 补 v0.4.5 主进程长生成请求必须流式约束（undici headersTimeout 坑）",
-        "date": "2026-08-19"
+        "message": "docs: v0.4.6 重导监控记录 + v0.4.7 待修清单入库",
+        "date": "2026-08-21"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
