@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-23T09:09:19",
-  "count": 101,
+  "generated_at": "2026-08-24T09:09:35",
+  "count": 103,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1246,6 +1246,20 @@
       "tech_stack": []
     },
     {
+      "name": "ClaudeCodeProjects__ai-invest",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "ClaudeCodeProjects__ai-love-mentor",
       "description": "",
       "stage": "卡点",
@@ -1383,9 +1397,23 @@
       ]
     },
     {
+      "name": "ClaudeCodeProjects__bytedance-agent-test",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "ClaudeCodeProjects__bytedance-test",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1506,7 +1534,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
