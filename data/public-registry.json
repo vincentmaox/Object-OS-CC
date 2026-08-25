@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-24T09:09:35",
+  "generated_at": "2026-08-25T09:09:28",
   "count": 103,
   "projects": [
     {
@@ -1413,7 +1413,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-test",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1534,7 +1534,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
