@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T09:09:28",
+  "generated_at": "2026-08-26T09:12:54",
   "count": 103,
   "projects": [
     {
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "chore(v0.10): bump version to 0.10.0",
-        "date": "2026-07-30"
+        "message": "docs: 技术方案与开发历程交流文档（v0.1-v0.11 完整演进 + 核心方案 + 踩坑清单）",
+        "date": "2026-08-25"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1534,7 +1534,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1606,8 +1606,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: v0.4.6 重导监控记录 + v0.4.7 待修清单入库",
-        "date": "2026-08-21"
+        "message": "perf: v0.4.8 综述聚类内核提速 - 预归一化点积 + Float32Array + 增量质心",
+        "date": "2026-08-25"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
