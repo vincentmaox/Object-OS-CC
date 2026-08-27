@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T09:12:54",
+  "generated_at": "2026-08-27T09:09:33",
   "count": 103,
   "projects": [
     {
@@ -656,7 +656,7 @@
     {
       "name": "01_Project__20260405_XIFENG_Knowledge",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1481,8 +1481,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "P0-3: 检索三套合一（unified search）",
-        "date": "2026-08-06"
+        "message": "C 盘清理工具：admin_clean_t1（管理员 T1 批清理）+ c_drive_survey（空间分布调研）",
+        "date": "2026-08-26"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
@@ -1606,8 +1606,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "perf: v0.4.8 综述聚类内核提速 - 预归一化点积 + Float32Array + 增量质心",
-        "date": "2026-08-25"
+        "message": "fix: portable.nsi GetFileTime 宏不存在改 GetTime（NSIS 3.0.4.1 FileFunc 实测无此宏，首轮打包即失败）",
+        "date": "2026-08-26"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
