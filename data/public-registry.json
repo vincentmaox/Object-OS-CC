@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T09:09:33",
+  "generated_at": "2026-08-28T09:09:34",
   "count": 103,
   "projects": [
     {
@@ -656,7 +656,7 @@
     {
       "name": "01_Project__20260405_XIFENG_Knowledge",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1534,7 +1534,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1606,8 +1606,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: portable.nsi GetFileTime 宏不存在改 GetTime（NSIS 3.0.4.1 FileFunc 实测无此宏，首轮打包即失败）",
-        "date": "2026-08-26"
+        "message": "fix: 测试 import 补 .js 扩展名适配 NodeNext 解析",
+        "date": "2026-08-27"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
