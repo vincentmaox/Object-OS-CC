@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T09:57:38",
+  "generated_at": "2026-09-04T09:09:29",
   "count": 103,
   "projects": [
     {
@@ -1248,7 +1248,7 @@
     {
       "name": "ClaudeCodeProjects__ai-invest",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1361,7 +1361,10 @@
       "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
+      "last_action": {
+        "message": "init: 项目骨架 + 50+ 模型价目表 + SQLite 记账本",
+        "date": "2026-07-24"
+      },
       "github_url": "https://github.com/vincentmaox/at-token-cost",
       "cover_image": null,
       "product_label": null,
