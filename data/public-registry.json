@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T09:09:39",
+  "generated_at": "2026-09-07T09:28:46",
   "count": 103,
   "projects": [
     {
@@ -1248,7 +1248,7 @@
     {
       "name": "ClaudeCodeProjects__ai-invest",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1602,7 +1602,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
