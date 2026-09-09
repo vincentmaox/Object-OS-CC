@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-08T09:45:59",
-  "count": 103,
+  "generated_at": "2026-09-09T09:10:33",
+  "count": 104,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1260,6 +1260,23 @@
       "tech_stack": []
     },
     {
+      "name": "ClaudeCodeProjects__ai-life-secretary",
+      "description": "",
+      "stage": "进行中",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "feat: 语音交互 + 飞书推送（v0.7）",
+        "date": "2026-09-08"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-life-secretary",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "ClaudeCodeProjects__ai-love-mentor",
       "description": "",
       "stage": "卡点",
@@ -1534,7 +1551,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
