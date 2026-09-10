@@ -9,10 +9,22 @@ AGENT = ROOT / "agent"
 PYTHON = sys.executable
 REPORT_LOG = AGENT / "daily_report.log"
 
+LOG_MAX_BYTES = 2 * 1024 * 1024  # 日志超 2MB 截断，保留尾部 512KB（防无限增长）
+
+
+def _rotate_log_if_big(path: Path) -> None:
+    try:
+        if path.exists() and path.stat().st_size > LOG_MAX_BYTES:
+            keep = path.read_bytes()[-512 * 1024:]
+            path.write_bytes(keep)
+    except Exception:
+        pass
+
 
 def _log(msg: str) -> None:
     line = f"[{datetime.now().isoformat(timespec='seconds')}] {msg}"
     print(line, flush=True)
+    _rotate_log_if_big(REPORT_LOG)
     try:
         with open(REPORT_LOG, "a", encoding="utf-8") as f:
             f.write(line + "\n")

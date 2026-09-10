@@ -40,6 +40,17 @@ load_all(WORKDIR / "agent" / "cc_bot.env")
 
 LLM_TIMEOUT = 180  # 单次 digest LLM 调用超时（一次生成整份内容，比旧版 96 次调用省时省 token）
 
+LOG_MAX_BYTES = 2 * 1024 * 1024  # 日志超 2MB 截断，保留尾部 512KB（防无限增长）
+
+
+def _rotate_log_if_big(path: Path) -> None:
+    try:
+        if path.exists() and path.stat().st_size > LOG_MAX_BYTES:
+            keep = path.read_bytes()[-512 * 1024:]
+            path.write_bytes(keep)
+    except Exception:
+        pass
+
 
 def today_str() -> str:
     return date.today().strftime("%Y-%m-%d")
@@ -48,6 +59,7 @@ def today_str() -> str:
 def _log(msg: str) -> None:
     line = f"[{datetime.now().isoformat(timespec='seconds')}] {msg}"
     print(line, file=sys.stderr, flush=True)
+    _rotate_log_if_big(DIGEST_LOG)
     try:
         with open(DIGEST_LOG, "a", encoding="utf-8") as f:
             f.write(line + "\n")
