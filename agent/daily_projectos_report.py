@@ -1,6 +1,7 @@
 import os
 import subprocess
 import sys
+import zipfile
 from datetime import datetime
 from pathlib import Path
 
@@ -97,6 +98,32 @@ def git_push_public_data() -> int:
     return rc
 
 
+def backup_conversation_logs() -> int:
+    """每日 zip 快照两个仓库的 conversation_log.md 到 archive/（本地备份，不入 git；保留最近 30 份）。"""
+    targets = [
+        ROOT / "conversation_log.md",
+        Path(r"D:\ClaudeCodeProjects\hermes-desktop") / "conversation_log.md",
+    ]
+    exist = [t for t in targets if t.exists()]
+    if not exist:
+        _log("backup: no conversation_log.md found, skip")
+        return 0
+    backup_dir = ROOT / "archive" / "conversation_log_backups"
+    backup_dir.mkdir(parents=True, exist_ok=True)
+    out = backup_dir / f"{datetime.now().strftime('%Y-%m-%d')}.zip"
+    try:
+        with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as zf:
+            for t in exist:
+                zf.write(t, arcname=f"{t.parent.name}/conversation_log.md")
+        for old in sorted(backup_dir.glob("*.zip"))[:-30]:
+            old.unlink(missing_ok=True)
+        _log(f"backup: {out.name} ok ({out.stat().st_size} bytes, {len(exist)} logs)")
+        return 0
+    except Exception as e:
+        _log(f"backup: error: {e}")
+        return 1
+
+
 def main() -> int:
     _log("=== 启动 daily_projectos_report ===")
     code = 0
@@ -107,6 +134,8 @@ def main() -> int:
     # v0.7.0 信息减负（2026-09-10）：send-cards 90+ 张卡片 / alert / 独立主频推送下线，
     # 合并为一条群早报（含主频咒语 + 今日三启动），发「AI项目」群
     code |= run([PYTHON, str(AGENT / "daily_digest.py"), "--morning"], timeout=300)
+    # 日志备份：对话存档每日快照（对话记录不入 git，走本地滚动备份）
+    code |= backup_conversation_logs()
     _log(f"=== 完成 exit_code={code} ===")
     return code
 
