@@ -70,3 +70,4 @@ data/registry.json.bak*
 # === Hermes conversation dump (同 conversation_log 策略, 不入库) ===
 thoughts/hermes-conversation.jsonl
 conversation_log.md
+agent/usage_snapshot.json

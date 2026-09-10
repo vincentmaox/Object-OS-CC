@@ -39,6 +39,8 @@ STATE_FILE = WORKDIR / "agent" / "usage_monitor_state.json"
 LOG_FILE = WORKDIR / "agent" / "usage_monitor.log"
 
 USER_OPEN_ID = "ou_59a5d4b0cc115a66295961a1aec66a9e"
+# v0.7.1 快照落盘：hermes-desktop 驾驶舱额度条读取（Rust 侧 read_usage_snapshot）
+SNAPSHOT_FILE = WORKDIR / "agent" / "usage_snapshot.json"
 
 ALERT_THRESHOLD = int(os.environ.get("USAGE_ALERT_THRESHOLD", "80"))  # percentage ≥ 此值预警
 ALERT_DEDUP_SECONDS = 2 * 3600  # 同 key 2 小时内不重推
@@ -270,6 +272,7 @@ def main() -> int:
     keys = _provider_keys()
     report: list[str] = []
     alerts: list[str] = []
+    snapshot_providers: list[dict] = []  # 喂 usage_snapshot.json 的结构化数据
     state = _load_state()
     now_ts = time.time()
 
@@ -282,6 +285,7 @@ def main() -> int:
         if not windows:
             report.append(f"**{name}**: 查询失败/无数据")
             continue
+        snapshot_providers.append({"name": name, "windows": windows})
         parts = [f"**{name}**: " + " | ".join(
             f"{w['window']} {w['pct']}%(重置 {w['reset']})" for w in windows)]
         report.extend(parts)
@@ -298,6 +302,13 @@ def main() -> int:
     local = local_usage()
     report.append("\n**本地消耗**（CC Switch 会话统计，全平台合计）:\n" + "\n".join(local))
     report.append("\n**火山**: 真值请在 CC Switch 3.20.2 UI 配 IAM AK/SK 查看（或装官方 ark-cli）")
+
+    # 快照落盘（供 hermes-desktop 额度条读）
+    snapshot = {"ts": now_ts, "providers": snapshot_providers, "local_lines": local}
+    try:
+        SNAPSHOT_FILE.write_text(json.dumps(snapshot, ensure_ascii=False), encoding="utf-8")
+    except Exception as e:
+        _log(f"[snapshot] write error: {e}")
 
     text = "\n".join(report)
     print(text)
