@@ -62,3 +62,10 @@ nssm.log
 !data/.gitkeep
 !agent/cc_bot.env.example
 !agent/project_os.env.example
+
+# === Registry backups ===
+data/*.bak*
+data/registry.json.bak*
+
+# === Hermes conversation dump (同 conversation_log 策略, 不入库) ===
+thoughts/hermes-conversation.jsonl
