@@ -1,5 +1,4 @@
 import os
-import re
 import subprocess
 import sys
 from datetime import datetime
@@ -8,9 +7,7 @@ from pathlib import Path
 ROOT = Path(r"D:\ClaudeCodeProjects\_ProjectOS")
 AGENT = ROOT / "agent"
 PYTHON = sys.executable
-USER_OPEN_ID = "ou_59a5d4b0cc115a66295961a1aec66a9e"
 REPORT_LOG = AGENT / "daily_report.log"
-FREQ_DAILY_LOG = ROOT / "frequency_os" / "daily_log.md"
 
 
 def _log(msg: str) -> None:
@@ -88,57 +85,6 @@ def git_push_public_data() -> int:
     return rc
 
 
-def _grep(pattern: str, text: str) -> str:
-    m = re.search(pattern, text)
-    return m.group(1).strip() if m else ""
-
-
-def push_frequency_focus() -> int:
-    """读 frequency_os/daily_log.md 当日条目，推一条「今日主频咒语」到飞书。
-
-    在项目卡片之前推送，让老茅进飞书第一眼就看到当天主线。
-    daily_log.md 缺失 / 当日未填 / 主频或咒语为空 → 静默跳过，不阻塞主流程。
-    """
-    if not FREQ_DAILY_LOG.exists():
-        _log("focus: frequency_os/daily_log.md not found, skip")
-        return 0
-
-    text = FREQ_DAILY_LOG.read_text(encoding="utf-8", errors="replace")
-    today = datetime.now().strftime("%Y-%m-%d")
-    m = re.search(rf"## {re.escape(today)}.*?(?=\n## |\Z)", text, re.S)
-    if not m:
-        _log(f"focus: no daily entry for {today}, skip")
-        return 0
-    block = m.group(0)
-    main_freq = _grep(r"今日唯一主频：[ \t]*([^\n]+)", block)
-    mantra = _grep(r"今日主频咒语：[ \t]*([^\n]+)", block)
-    if not main_freq or "主频" in main_freq and not re.search(r"[^\s_]", main_freq):
-        _log(f"focus: main_freq empty for {today}, skip")
-        return 0
-
-    sys.path.insert(0, str(AGENT))
-    try:
-        from feishu_sync import FeishuClient
-        client = FeishuClient()
-        content = (
-            f"**主频目标**：{main_freq}\n\n"
-            f"**今日咒语**：{mantra or '（未填）'}\n\n"
-            f"_（来自 frequency_os/daily_log.md，前一晚 22:00 前填写）_"
-        )
-        result = client.send_rich_message(
-            target=USER_OPEN_ID,
-            title=f"🎯 今日主频 · {today}",
-            content=content,
-            target_type="user_id",
-        )
-        ok = bool(result.get("data"))
-        _log(f"focus: push {'ok' if ok else 'failed'}")
-        return 0 if ok else 1
-    except Exception as e:
-        _log(f"focus: error: {e}")
-        return 1
-
-
 def main() -> int:
     _log("=== 启动 daily_projectos_report ===")
     code = 0
@@ -146,9 +92,9 @@ def main() -> int:
     code |= run([PYTHON, str(AGENT / "export_public_registry.py")], timeout=300)
     code |= git_push_public_data()
     code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "sync-base"], timeout=300)
-    code |= push_frequency_focus()
-    code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "send-cards", USER_OPEN_ID], timeout=600)
-    code |= run([PYTHON, str(AGENT / "feishu_sync.py"), "alert", USER_OPEN_ID], timeout=60)
+    # v0.7.0 信息减负（2026-09-10）：send-cards 90+ 张卡片 / alert / 独立主频推送下线，
+    # 合并为一条群早报（含主频咒语 + 今日三启动），发「AI项目」群
+    code |= run([PYTHON, str(AGENT / "daily_digest.py"), "--morning"], timeout=300)
     _log(f"=== 完成 exit_code={code} ===")
     return code
 

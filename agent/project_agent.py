@@ -27,6 +27,31 @@ import urllib.error
 
 BASE_DIR = Path("D:/ClaudeCodeProjects")
 OS_DIR = BASE_DIR / "_ProjectOS"
+ROOTS_CONFIG_FILE = OS_DIR / "config" / "roots.json"
+
+
+def load_roots() -> List[Path]:
+    """从 _ProjectOS/config/roots.json 加载根目录列表。fallback 单根 BASE_DIR。"""
+    if not ROOTS_CONFIG_FILE.exists():
+        return [BASE_DIR]
+    try:
+        with open(ROOTS_CONFIG_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        roots_str = data.get("roots", []) if isinstance(data, dict) else []
+        roots: List[Path] = []
+        for r in roots_str:
+            p = Path(r)
+            if p.exists() and p.is_dir():
+                roots.append(p)
+            else:
+                print(f"  [WARN] 根目录不存在或不是目录，跳过: {r}")
+        if not roots:
+            print(f"  [WARN] roots.json 为空或全部无效，fallback 到 {BASE_DIR}")
+            return [BASE_DIR]
+        return roots
+    except Exception as e:
+        print(f"  [WARN] 加载 roots.json 失败: {e}，fallback 到 {BASE_DIR}")
+        return [BASE_DIR]
 
 
 def load_env_file(path: Path) -> None:
@@ -110,27 +135,36 @@ class ProjectScanner:
         "dist",
         "build",
         "out",
+        "company-ppt",
     }
 
-    def __init__(self, base_dir: Path):
-        self.base_dir = base_dir
+    def __init__(self, roots: List[Path]):
+        """roots: 项目根目录列表（v0.4.5 多根支持，单根时传 [BASE_DIR] 即可）"""
+        self.roots = roots
 
     def scan(self) -> List[Dict]:
         projects = []
-        for item in self.base_dir.iterdir():
-            if not item.is_dir():
+        for root in self.roots:
+            print(f"  [SCAN] 扫描根目录: {root}")
+            try:
+                root_items = list(root.iterdir())
+            except Exception as e:
+                print(f"  [WARN] 无法遍历 {root}: {e}，跳过此根")
                 continue
-            name = item.name
-            if name.startswith(".") or name.startswith("_") or name.startswith("ProjectOS-"):
-                continue
-            if name in self.EXCLUDE_DIRS:
-                continue
+            for item in root_items:
+                if not item.is_dir():
+                    continue
+                name = item.name
+                if name.startswith(".") or name.startswith("_") or name.startswith("ProjectOS-"):
+                    continue
+                if name in self.EXCLUDE_DIRS:
+                    continue
 
-            project = self.analyze_project(item)
-            projects.append(project)
+                project = self.analyze_project(item, root)
+                projects.append(project)
         return projects
 
-    def analyze_project(self, path: Path) -> Dict:
+    def analyze_project(self, path: Path, root: Path) -> Dict:
         name = path.name
         git_info = self._analyze_git(path)
         doc_info = self._analyze_docs(path)
@@ -143,6 +177,9 @@ class ProjectScanner:
 
         return {
             "name": name,
+            "root": str(root),
+            "root_name": root.name,
+            "registry_key": f"{root.name}__{name}",
             "path": str(path),
             "status": status,
             "git": git_info,
@@ -481,8 +518,34 @@ class RegistryManager:
             json.dump(self.data, f, ensure_ascii=False, indent=2)
 
     def update_project(self, project: Dict):
+        """v0.4.5: 用 registry_key (root_name__name) 作主键, 重名项目隔离。
+        重名迁移: 旧 key (纯 name) 存在时, 把手动字段迁移到新复合 key, 再删旧 key。
+        """
+        registry_key = project.get("registry_key") or project["name"]
         name = project["name"]
-        old = self.data["projects"].get(name, {})
+        old = self.data["projects"].get(registry_key, {})
+
+        # 重名迁移: 旧 key (纯 name) 存在 + 跟当前 root_name 匹配 -> 迁移手动字段
+        if registry_key != name and name in self.data["projects"]:
+            legacy = self.data["projects"][name]
+            # 仅迁移 root 字段为空或匹配当前 root 的旧记录
+            legacy_root = legacy.get("root", "")
+            current_root = project.get("root", "")
+            if not legacy_root or legacy_root == current_root:
+                old = legacy  # 把 legacy 当作 old, 后面会删
+                # 迁移手动字段
+                for key in [
+                    "priority", "deadline", "owner", "notes", "manual_status",
+                    "resources_needed", "mva_decision", "mva_date",
+                    "freq_theory", "freq_market", "freq_org", "freq_total",
+                    "freq_suggestion", "freq_scored_at", "first_seen",
+                ]:
+                    if key in legacy and key not in project:
+                        project[key] = legacy[key]
+                # 删旧 key
+                del self.data["projects"][name]
+                print(f"  [MIGRATE] {name} -> {registry_key} (迁移手动字段)")
+
         project["first_seen"] = old.get("first_seen", datetime.now().isoformat())
 
         # Preserve manual fields
@@ -502,29 +565,54 @@ class RegistryManager:
             "freq_suggestion",
             "freq_scored_at",
         ]:
-            if key in old:
+            if key in old and key not in project:
                 project[key] = old[key]
 
         # manual_status overrides auto-detected status
         if old.get("manual_status"):
             project["status"] = old["manual_status"]
 
-        self.data["projects"][name] = project
+        self.data["projects"][registry_key] = project
+
+    def _resolve_key(self, name: str) -> Optional[str]:
+        """v0.4.5: 兼容老 key (纯 name) + 新复合 key (root_name__name)。
+        短 name 命中唯一项目时自动解析；多根重名时返回 None 报歧义错。
+        """
+        if name in self.data["projects"]:
+            return name
+        # 短 name 匹配 registry_key 后缀
+        matches = [k for k in self.data["projects"].keys() if k.endswith(f"__{name}")]
+        if len(matches) == 1:
+            return matches[0]
+        if len(matches) > 1:
+            return None  # 歧义,调用方需要传完整 registry_key
+        return None
 
     def get_project(self, name: str) -> Optional[Dict]:
-        return self.data["projects"].get(name)
+        """v0.4.5: 支持纯 name (向后兼容) 和 registry_key (复合 key)。
+        短 name 多根重名时返回 None,调用方应改传完整 registry_key。
+        """
+        key = self._resolve_key(name)
+        return self.data["projects"].get(key) if key else None
 
     def list_projects(self) -> List[Dict]:
         return list(self.data["projects"].values())
 
     def set_manual_field(self, name: str, key: str, value):
-        if name in self.data["projects"]:
-            self.data["projects"][name][key] = value
-            self.save()
+        """v0.4.5: 兼容复合 key + 老 key。歧义时报错让调用方传完整 registry_key。"""
+        resolved = self._resolve_key(name)
+        if not resolved:
+            matches = [k for k in self.data["projects"].keys() if k.endswith(f"__{name}")]
+            if len(matches) > 1:
+                print(f"  [ERROR] 短 name '{name}' 匹配多个项目: {matches}, 请用完整 registry_key (root_name__name)")
+            return
+        self.data["projects"][resolved][key] = value
+        self.save()
 
     def remove_project(self, name: str):
-        if name in self.data["projects"]:
-            del self.data["projects"][name]
+        resolved = self._resolve_key(name)
+        if resolved and resolved in self.data["projects"]:
+            del self.data["projects"][resolved]
             self.save()
 
 
@@ -896,12 +984,13 @@ class ProjectAgent:
     """ProjectOS 核心使魔"""
 
     def __init__(self):
-        self.base_dir = BASE_DIR
+        self.base_dir = BASE_DIR  # 向后兼容（FileOrganizer 仍用单根）
+        self.roots = load_roots()  # v0.4.5: 多根目录
         self.os_dir = OS_DIR
         self.data_dir = DATA_DIR
         self.archive_dir = ARCHIVE_DIR
 
-        self.scanner = ProjectScanner(self.base_dir)
+        self.scanner = ProjectScanner(self.roots)
         self.registry = RegistryManager(REGISTRY_FILE)
         self.dashboard = DashboardGenerator(self.registry)
         self.archive_mgr = ArchiveManager(self.archive_dir, self.registry)
@@ -943,7 +1032,8 @@ class ProjectAgent:
             for b in p["blockers"]:
                 sev_counts[b["severity"]] = sev_counts.get(b["severity"], 0) + 1
             sev_str = " ".join([f"{k[0].upper()}{v}" for k, v in sev_counts.items() if v > 0])
-            print(f"  [OK] {p['name']:20s} -> {p['status']:6s} ({sev_str})")
+            root_tag = f"[{p.get('root_name', '?')}] "
+            print(f"  [OK] {root_tag}{p['name']:20s} -> {p['status']:6s} ({sev_str})")
         self.registry.save()
 
         # 3. Generate dashboard
