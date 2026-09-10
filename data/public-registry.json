@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T09:10:33",
+  "generated_at": "2026-09-10T09:25:26",
   "count": 104,
   "projects": [
     {
@@ -1078,7 +1078,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1266,8 +1266,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: 语音交互 + 飞书推送（v0.7）",
-        "date": "2026-09-08"
+        "message": "v0.9c 飞书群内收盘：晚报调度 + ws 长连接收消息 + 群内确认",
+        "date": "2026-09-09"
       },
       "github_url": "https://github.com/vincentmaox/ai-life-secretary",
       "cover_image": null,
