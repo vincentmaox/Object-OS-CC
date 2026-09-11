@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T09:25:26",
+  "generated_at": "2026-09-11T09:02:46",
   "count": 104,
   "projects": [
     {
@@ -1266,8 +1266,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "v0.9c 飞书群内收盘：晚报调度 + ws 长连接收消息 + 群内确认",
-        "date": "2026-09-09"
+        "message": "v0.11 交互重构：群内自然语言 + 任务瘦身 + 立项两步走",
+        "date": "2026-09-10"
       },
       "github_url": "https://github.com/vincentmaox/ai-life-secretary",
       "cover_image": null,
@@ -1551,12 +1551,12 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: CLAUDE.md TODO 标记 v0.5.4 完成 (最近活动徽章+新建项目+立即扫描)",
-        "date": "2026-07-25"
+        "message": "feat: 语音体验包 + 额度条 (v0.7.2)",
+        "date": "2026-09-10"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
@@ -1623,8 +1623,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: 测试 import 补 .js 扩展名适配 NodeNext 解析",
-        "date": "2026-08-27"
+        "message": "fix: 出题脚本三修复 - 流式思维链挤占JSON/3跳饥饿空转/续跑合并",
+        "date": "2026-09-11"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
