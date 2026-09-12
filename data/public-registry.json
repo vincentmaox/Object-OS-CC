@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-11T09:02:46",
-  "count": 104,
+  "generated_at": "2026-09-12T09:02:46",
+  "count": 105,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1078,7 +1078,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1266,8 +1266,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "v0.11 交互重构：群内自然语言 + 任务瘦身 + 立项两步走",
-        "date": "2026-09-10"
+        "message": "v0.11a 故障修复：飞书直连绕过代理 + 织云搬家 8010 端口",
+        "date": "2026-09-11"
       },
       "github_url": "https://github.com/vincentmaox/ai-life-secretary",
       "cover_image": null,
@@ -1360,8 +1360,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 项目对话日志纳入 git 管理",
-        "date": "2026-07-03"
+        "message": "test: Phase 3 压测实测数据填入报告（S1-S4 全场景）",
+        "date": "2026-09-12"
       },
       "github_url": "https://github.com/vincentmaox/ai-skin-system",
       "cover_image": null,
@@ -1555,8 +1555,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: 语音体验包 + 额度条 (v0.7.2)",
-        "date": "2026-09-10"
+        "message": "feat: 增量 ASR 实时识别流 + VAD 默认 0.5s + 项目栏加宽可拖拽 (v0.7.7)",
+        "date": "2026-09-11"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
@@ -1603,6 +1603,22 @@
       ]
     },
     {
+      "name": "ClaudeCodeProjects__resume-voidarchitect",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Node.js"
+      ]
+    },
+    {
       "name": "ClaudeCodeProjects__trae-race",
       "description": "",
       "stage": "已归档",
@@ -1623,7 +1639,7 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: 出题脚本三修复 - 流式思维链挤占JSON/3跳饥饿空转/续跑合并",
+        "message": "feat: 主问答最大输出Tokens设置项 - 设置页可调4096~65536默认16384 - 思考双轨预算随设置生效",
         "date": "2026-09-11"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
