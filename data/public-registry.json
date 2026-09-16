@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T09:31:24",
+  "generated_at": "2026-09-16T09:46:51",
   "count": 105,
   "projects": [
     {
@@ -1360,8 +1360,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: R7b 扫描编排升级 — 面部锁定框 + 慢速局部测量 + 热力图逐个过",
-        "date": "2026-09-14"
+        "message": "feat: 离线 exe 自动打开浏览器 + 启动脚本",
+        "date": "2026-09-15"
       },
       "github_url": "https://github.com/vincentmaox/ai-skin-system",
       "cover_image": null,
@@ -1555,8 +1555,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: CLAUDE.md 加会话收尾纪律 (conversation_log 主档随提交入 git)",
-        "date": "2026-09-12"
+        "message": "fix: v0.7.9 强制子会话保存 Claude transcript",
+        "date": "2026-09-15"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
