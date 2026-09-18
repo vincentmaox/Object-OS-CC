@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-16T09:46:51",
-  "count": 105,
+  "generated_at": "2026-09-18T09:12:49",
+  "count": 106,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1294,6 +1294,26 @@
       "tech_stack": []
     },
     {
+      "name": "ClaudeCodeProjects__ai-ocr-tool",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: dev dialogue archive (2026-09) and v0.3.9 log",
+        "date": "2026-09-17"
+      },
+      "github_url": "https://github.com/vincentmaox/ai-ocr-tool",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Node.js",
+        "React"
+      ]
+    },
+    {
       "name": "ClaudeCodeProjects__ai-router-48h",
       "description": "",
       "stage": "停滞",
@@ -1551,7 +1571,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1635,12 +1655,12 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: v0.7.1 Skill参考文件管理UI + 构建器输出修复",
-        "date": "2026-09-14"
+        "message": "docs: v0.7 经验层验收记录 + v0.9 评估基座与首条基线记录",
+        "date": "2026-09-17"
       },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
