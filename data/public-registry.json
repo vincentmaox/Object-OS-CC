@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T09:12:49",
+  "generated_at": "2026-09-19T09:03:15",
   "count": 106,
   "projects": [
     {
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 技术方案与开发历程交流文档（v0.1-v0.11 完整演进 + 核心方案 + 踩坑清单）",
-        "date": "2026-08-25"
+        "message": "chore: bump version to 0.18.0",
+        "date": "2026-09-19"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1248,7 +1248,7 @@
     {
       "name": "ClaudeCodeProjects__ai-invest",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1300,8 +1300,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: dev dialogue archive (2026-09) and v0.3.9 log",
-        "date": "2026-09-17"
+        "message": "v0.4.4: 4096 rung + VL-OCR engineering playbook",
+        "date": "2026-09-18"
       },
       "github_url": "https://github.com/vincentmaox/ai-ocr-tool",
       "cover_image": null,
@@ -1625,7 +1625,7 @@
     {
       "name": "ClaudeCodeProjects__resume-voidarchitect",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1655,7 +1655,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
