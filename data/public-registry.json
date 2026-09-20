@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T09:03:15",
+  "generated_at": "2026-09-20T09:02:49",
   "count": 106,
   "projects": [
     {
@@ -1134,7 +1134,7 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "chore: bump version to 0.18.0",
+        "message": "docs(v0.20): 未实施能力价值深度分析（8 项逐项评估 + 优先级组合建议）",
         "date": "2026-09-19"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
@@ -1300,8 +1300,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "v0.4.4: 4096 rung + VL-OCR engineering playbook",
-        "date": "2026-09-18"
+        "message": "docs: quick progress index in PROJECT_LOG + update CLAUDE.md status to v0.4.4",
+        "date": "2026-09-19"
       },
       "github_url": "https://github.com/vincentmaox/ai-ocr-tool",
       "cover_image": null,
@@ -1436,7 +1436,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-agent-test",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1655,7 +1655,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
