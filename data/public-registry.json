@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T09:02:49",
+  "generated_at": "2026-09-21T10:11:10",
   "count": 106,
   "projects": [
     {
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs(v0.20): 未实施能力价值深度分析（8 项逐项评估 + 优先级组合建议）",
-        "date": "2026-09-19"
+        "message": "fix(v0.20.5): 导出 Word 格式转换 + 审查轮次上限 80 + 数据库计数语义修正",
+        "date": "2026-09-20"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1655,7 +1655,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
