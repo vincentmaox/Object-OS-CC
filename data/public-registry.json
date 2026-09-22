@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T10:11:10",
+  "generated_at": "2026-09-22T09:05:14",
   "count": 106,
   "projects": [
     {
@@ -656,7 +656,7 @@
     {
       "name": "01_Project__20260405_XIFENG_Knowledge",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(v0.20.5): 导出 Word 格式转换 + 审查轮次上限 80 + 数据库计数语义修正",
-        "date": "2026-09-20"
+        "message": "docs(v0.21): CLAUDE.md 硬约束 + README + 项目日志（测试指南 10 项）",
+        "date": "2026-09-21"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1262,12 +1262,12 @@
     {
       "name": "ClaudeCodeProjects__ai-life-secretary",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 补录 09-10~09-12 对话（v0.11 交互重构 + 双故障复盘），清理全部 PENDING 标记",
-        "date": "2026-09-12"
+        "message": "v0.12b VOS 全七层：L1 状态基线 + L5 五项检查卡守门 + L6 季度审查 + L7 使命建档 + 桌面虚空系统仪表盘",
+        "date": "2026-09-21"
       },
       "github_url": "https://github.com/vincentmaox/ai-life-secretary",
       "cover_image": null,
