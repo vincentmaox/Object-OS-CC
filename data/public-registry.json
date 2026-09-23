@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T09:05:14",
+  "generated_at": "2026-09-23T09:04:58",
   "count": 106,
   "projects": [
     {
@@ -656,7 +656,7 @@
     {
       "name": "01_Project__20260405_XIFENG_Knowledge",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs(v0.21): CLAUDE.md 硬约束 + README + 项目日志（测试指南 10 项）",
-        "date": "2026-09-21"
+        "message": "docs(v0.21): 09-22 测试事故记录（打包源指向错误根因 + 修复清单）",
+        "date": "2026-09-22"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1266,8 +1266,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "v0.12b VOS 全七层：L1 状态基线 + L5 五项检查卡守门 + L6 季度审查 + L7 使命建档 + 桌面虚空系统仪表盘",
-        "date": "2026-09-21"
+        "message": "v0.12d 离线暂存-唤醒合并：LLM 探针判定在线/离线，离线消息落 inbox，醒了/定时自动批量合并处理",
+        "date": "2026-09-22"
       },
       "github_url": "https://github.com/vincentmaox/ai-life-secretary",
       "cover_image": null,
@@ -1380,8 +1380,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: 离线 exe 自动打开浏览器 + 启动脚本",
-        "date": "2026-09-15"
+        "message": "feat: R8 客户档案层 — 90 天皮肤档案叙事（Lumeria 对标）",
+        "date": "2026-09-22"
       },
       "github_url": "https://github.com/vincentmaox/ai-skin-system",
       "cover_image": null,
