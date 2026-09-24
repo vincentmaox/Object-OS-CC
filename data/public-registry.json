@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T09:04:58",
+  "generated_at": "2026-09-24T09:02:37",
   "count": 106,
   "projects": [
     {
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs(v0.21): 09-22 测试事故记录（打包源指向错误根因 + 修复清单）",
-        "date": "2026-09-22"
+        "message": "docs(v0.24): 项目日志补版本控制收尾记录",
+        "date": "2026-09-23"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1266,8 +1266,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "v0.12d 离线暂存-唤醒合并：LLM 探针判定在线/离线，离线消息落 inbox，醒了/定时自动批量合并处理",
-        "date": "2026-09-22"
+        "message": "v0.14 VOS 日报替代旧早报 + 基建月施工单数字化（25天验收线）+ 桌面首屏转向虚空系统",
+        "date": "2026-09-23"
       },
       "github_url": "https://github.com/vincentmaox/ai-life-secretary",
       "cover_image": null,
