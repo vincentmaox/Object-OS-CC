@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T09:02:37",
+  "generated_at": "2026-09-25T09:02:43",
   "count": 106,
   "projects": [
     {
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs(v0.24): 项目日志补版本控制收尾记录",
-        "date": "2026-09-23"
+        "message": "feat(v0.28): PPT 设计系统 + VL 视觉 QA 回路——30 套设计系统基准搬运（open-kimi-ppt-skill MIT，design.md LLM 侧单一事实来源 + design-tokens.json 渲染 ",
+        "date": "2026-09-24"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1262,7 +1262,7 @@
     {
       "name": "ClaudeCodeProjects__ai-life-secretary",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1380,8 +1380,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: R8 客户档案层 — 90 天皮肤档案叙事（Lumeria 对标）",
-        "date": "2026-09-22"
+        "message": "feat: C4 云端 CI/CD — GitHub Actions 构建推送 GHCR + SSH 滚动部署",
+        "date": "2026-09-24"
       },
       "github_url": "https://github.com/vincentmaox/ai-skin-system",
       "cover_image": null,
@@ -1571,7 +1571,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
