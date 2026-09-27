@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T09:02:39",
+  "generated_at": "2026-09-27T09:02:51",
   "count": 106,
   "projects": [
     {
@@ -1296,7 +1296,7 @@
     {
       "name": "ClaudeCodeProjects__ai-ocr-tool",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1436,7 +1436,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-agent-test",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
