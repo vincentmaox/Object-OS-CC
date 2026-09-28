@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T09:02:51",
+  "generated_at": "2026-09-28T09:02:35",
   "count": 106,
   "projects": [
     {
@@ -1057,12 +1057,12 @@
     {
       "name": "ClaudeCodeProjects__AI-NoteBook",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "Phase 2 fix: cascade 剥离为独立命令 + Windows CRLF frontmatter 修复",
-        "date": "2026-06-10"
+        "message": "docs: TESTING.md real-machine test plan + ignore /target",
+        "date": "2026-09-27"
       },
       "github_url": "https://github.com/vincentmaox/AI-NoteBook",
       "cover_image": null,
@@ -1095,12 +1095,12 @@
     {
       "name": "ClaudeCodeProjects__AI-Screen-Record",
       "description": "",
-      "stage": "停滞",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: show recording state immediately on start",
-        "date": "2026-06-12"
+        "message": "fix: redirect Chromium userData to portable dir (three-zeros compliance)",
+        "date": "2026-09-27"
       },
       "github_url": "https://github.com/vincentmaox/AI-Screen-Record",
       "cover_image": null,
@@ -1134,8 +1134,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v0.28): PPT 设计系统 + VL 视觉 QA 回路——30 套设计系统基准搬运（open-kimi-ppt-skill MIT，design.md LLM 侧单一事实来源 + design-tokens.json 渲染 ",
-        "date": "2026-09-24"
+        "message": "feat(v0.29): PPT 骨架六件套 + 微装饰复刻 Kimi 真迹——两份 Kimi Work 产出逐形状解剖（14 页零位图零阴影零渐变、每页 28-52 元素密度）后复刻：13.33×7.5 画布 + 眉标/章节面包屑/断言标",
+        "date": "2026-09-27"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1203,7 +1203,7 @@
     {
       "name": "ClaudeCodeProjects__TexasPhilosopher",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1571,7 +1571,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
