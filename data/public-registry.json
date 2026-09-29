@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T09:02:35",
+  "generated_at": "2026-09-29T15:24:27",
   "count": 106,
   "projects": [
     {
@@ -1095,7 +1095,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Screen-Record",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1571,7 +1571,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
