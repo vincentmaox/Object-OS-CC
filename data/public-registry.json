@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-29T15:24:27",
-  "count": 106,
+  "generated_at": "2026-09-30T20:43:25",
+  "count": 107,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -949,6 +949,20 @@
       "tech_stack": []
     },
     {
+      "name": "01_Project__20260929-韩所结构化标准",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "01_Project__AI-旅游",
       "description": "",
       "stage": "活跃",
@@ -1203,7 +1217,7 @@
     {
       "name": "ClaudeCodeProjects__TexasPhilosopher",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
