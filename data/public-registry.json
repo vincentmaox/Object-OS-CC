@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-04T09:02:38",
-  "count": 107,
+  "generated_at": "2026-10-05T09:02:37",
+  "count": 109,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1071,7 +1071,7 @@
     {
       "name": "ClaudeCodeProjects__AI-NoteBook",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1260,6 +1260,23 @@
       "tech_stack": []
     },
     {
+      "name": "ClaudeCodeProjects__ai-hot-news",
+      "description": "",
+      "stage": "进行中",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "init",
+        "date": "2026-10-04"
+      },
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "ClaudeCodeProjects__ai-invest",
       "description": "",
       "stage": "停滞",
@@ -1407,6 +1424,23 @@
       ]
     },
     {
+      "name": "ClaudeCodeProjects__ai-story-world",
+      "description": "",
+      "stage": "进行中",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "init",
+        "date": "2026-10-04"
+      },
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "ClaudeCodeProjects__at-token-cost",
       "description": "",
       "stage": "活跃",
@@ -1450,7 +1484,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-agent-test",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
