@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T09:02:50",
+  "generated_at": "2026-10-07T09:02:43",
   "count": 109,
   "projects": [
     {
@@ -951,7 +951,7 @@
     {
       "name": "01_Project__20260929-韩所结构化标准",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1430,8 +1430,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "init",
-        "date": "2026-10-04"
+        "message": "feat: 卷一廷根篇完整七幕 + 时间/读秒/恢复系统",
+        "date": "2026-10-06"
       },
       "github_url": null,
       "cover_image": null,
