@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T10:10:21",
+  "generated_at": "2026-10-09T09:02:53",
   "count": 109,
   "projects": [
     {
@@ -1426,14 +1426,14 @@
     {
       "name": "ClaudeCodeProjects__ai-story-world",
       "description": "",
-      "stage": "进行中",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: v3.1+v3.2+v3.3 全落地 — 知识库/组装器/缓存/剧本化叙事层",
-        "date": "2026-10-07"
+        "message": "feat: 穿越积分框架v4 — 卷制/S-A-B-C-D评级/积分商店/大奉税银案首卷 + 出口爆炸修复",
+        "date": "2026-10-08"
       },
-      "github_url": null,
+      "github_url": "https://github.com/vincentmaox/ai-story-world",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -1705,7 +1705,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
