@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-09T09:02:53",
-  "count": 109,
+  "generated_at": "2026-10-10T09:02:39",
+  "count": 110,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -963,6 +963,20 @@
       "tech_stack": []
     },
     {
+      "name": "01_Project__20261009-韩所PPT准备",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "01_Project__AI-旅游",
       "description": "",
       "stage": "活跃",
@@ -1430,8 +1444,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat: 穿越积分框架v4 — 卷制/S-A-B-C-D评级/积分商店/大奉税银案首卷 + 出口爆炸修复",
-        "date": "2026-10-08"
+        "message": "v5：门控/代价/战斗/节奏 —— 税银案卷重构",
+        "date": "2026-10-09"
       },
       "github_url": "https://github.com/vincentmaox/ai-story-world",
       "cover_image": null,
