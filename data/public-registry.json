@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T09:02:39",
+  "generated_at": "2026-10-11T09:02:53",
   "count": 110,
   "projects": [
     {
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v0.29): PPT 骨架六件套 + 微装饰复刻 Kimi 真迹——两份 Kimi Work 产出逐形状解剖（14 页零位图零阴影零渐变、每页 28-52 元素密度）后复刻：13.33×7.5 画布 + 眉标/章节面包屑/断言标",
-        "date": "2026-09-27"
+        "message": "feat(v0.31): PPT 工程模式（Kimi 工作流内网复刻）——create/edit/preview/export 工具组 + previewPptSlides VL 逐页目检回路（Agent 据文本反馈改 spec，审查模型无",
+        "date": "2026-10-10"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1276,14 +1276,14 @@
     {
       "name": "ClaudeCodeProjects__ai-hot-news",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "init",
-        "date": "2026-10-04"
+        "message": "chore: 添加 .gitignore（node_modules/env/本地密钥覆盖层）",
+        "date": "2026-10-10"
       },
-      "github_url": null,
+      "github_url": "https://github.com/vincentmaox/ai-hot-news",
       "cover_image": null,
       "product_label": null,
       "featured": false,
@@ -1440,12 +1440,12 @@
     {
       "name": "ClaudeCodeProjects__ai-story-world",
       "description": "",
-      "stage": "活跃",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "v5：门控/代价/战斗/节奏 —— 税银案卷重构",
-        "date": "2026-10-09"
+        "message": "docs: 开发计划v7 —— P0+P1 六项全部完成标记",
+        "date": "2026-10-10"
       },
       "github_url": "https://github.com/vincentmaox/ai-story-world",
       "cover_image": null,
@@ -1719,7 +1719,7 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
