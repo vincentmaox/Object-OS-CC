@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-11T09:02:53",
-  "count": 110,
+  "generated_at": "2026-10-12T09:13:32",
+  "count": 111,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1276,7 +1276,7 @@
     {
       "name": "ClaudeCodeProjects__ai-hot-news",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1735,6 +1735,23 @@
         "Node.js",
         "React"
       ]
+    },
+    {
+      "name": "ClaudeCodeProjects__voidcompass",
+      "description": "",
+      "stage": "进行中",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "fix(v1.4.0-alpha): middleware放行/_vercel路径，修复Analytics脚本被i18n重定向至404导致埋点未加载",
+        "date": "2026-10-11"
+      },
+      "github_url": "https://github.com/vincentmaox/voidcompass",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
     }
   ]
 }
