@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T09:13:32",
+  "generated_at": "2026-10-13T09:02:47",
   "count": 111,
   "projects": [
     {
@@ -861,12 +861,12 @@
     {
       "name": "01_Project__20260415_情感导师",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v1.2.0): billing system - daily limits, premium plan, pricing page",
-        "date": "2026-05-13"
+        "message": "fix(mobile): stack training chat stats panel below chat on phone screens",
+        "date": "2026-10-12"
       },
       "github_url": "https://github.com/vincentmaox/LoveMentor",
       "cover_image": null,
@@ -1276,19 +1276,22 @@
     {
       "name": "ClaudeCodeProjects__ai-hot-news",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "chore: 添加 .gitignore（node_modules/env/本地密钥覆盖层）",
-        "date": "2026-10-10"
+        "message": "feat(tools): 独立进程启动器——脱离会话规避内存哨兵误杀",
+        "date": "2026-10-12"
       },
       "github_url": "https://github.com/vincentmaox/ai-hot-news",
       "cover_image": null,
       "product_label": null,
       "featured": false,
       "showcase_rank": null,
-      "tech_stack": []
+      "tech_stack": [
+        "Node.js",
+        "Docker"
+      ]
     },
     {
       "name": "ClaudeCodeProjects__ai-invest",
@@ -1324,7 +1327,7 @@
     {
       "name": "ClaudeCodeProjects__ai-love-mentor",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1440,7 +1443,7 @@
     {
       "name": "ClaudeCodeProjects__ai-story-world",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1743,8 +1746,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(v1.4.0-alpha): middleware放行/_vercel路径，修复Analytics脚本被i18n重定向至404导致埋点未加载",
-        "date": "2026-10-11"
+        "message": "docs: CHANGELOG v1.4.0-alpha——Analytics埋点+Git自动部署+落地页硬数据叙事",
+        "date": "2026-10-12"
       },
       "github_url": "https://github.com/vincentmaox/voidcompass",
       "cover_image": null,
