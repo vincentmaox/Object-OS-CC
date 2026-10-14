@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "comment": "使魔军团花名册。run_mode: service(服务集群) | scheduled(计划任务) | ondemand(按需, 未上岗) | resident(开机常驻)。process_patterns 按进程名不区分大小写匹配; scheduled_task_prefix 匹配 Windows 计划任务名前缀。",
+  "memory_alert_threshold_gb": 2.0,
+  "agents": [
+    {
+      "name": "Private-Wealth-AI-Steward",
+      "role": "财务管理",
+      "run_mode": "scheduled",
+      "project_path": "D:\\ClaudeCodeProjects\\Private-Wealth-AI-Steward",
+      "scheduled_task_prefix": "PrivateWealthSteward",
+      "process_patterns": []
+    },
+    {
+      "name": "ai-hot-news",
+      "role": "热点资讯采集",
+      "run_mode": "service",
+      "project_path": "D:\\ClaudeCodeProjects\\ai-hot-news",
+      "scheduled_task_prefix": "",
+      "process_patterns": ["postgres", "com.docker", "docker", "ai-hot", "we-mp-rss"],
+      "note": "docker-compose 服务集群: PG + worker + api + RSS。2026-10-14 12:07 曾因内存耗尽全灭"
+    },
+    {
+      "name": "ai-life-secretary",
+      "role": "生活助理",
+      "run_mode": "ondemand",
+      "project_path": "D:\\ClaudeCodeProjects\\ai-life-secretary",
+      "scheduled_task_prefix": "",
+      "process_patterns": []
+    },
+    {
+      "name": "hermes-desktop",
+      "role": "项目管控",
+      "run_mode": "resident",
+      "project_path": "D:\\ClaudeCodeProjects\\hermes-desktop",
+      "scheduled_task_prefix": "",
+      "process_patterns": ["tauri-app"]
+    },
+    {
+      "name": "disk-manager",
+      "role": "磁盘管理",
+      "run_mode": "scheduled",
+      "project_path": "D:\\ClaudeCodeProjects\\disk-manager",
+      "scheduled_task_prefix": "AI-Disk-Manager",
+      "process_patterns": []
+    },
+    {
+      "name": "ai-invest",
+      "role": "投资管理",
+      "run_mode": "ondemand",
+      "project_path": "D:\\ClaudeCodeProjects\\ai-invest",
+      "scheduled_task_prefix": "",
+      "process_patterns": []
+    },
+    {
+      "name": "product-idea-agent",
+      "role": "产品追踪",
+      "run_mode": "ondemand",
+      "project_path": "D:\\ClaudeCodeProjects\\product-idea-agent",
+      "scheduled_task_prefix": "",
+      "process_patterns": []
+    }
+  ]
+}

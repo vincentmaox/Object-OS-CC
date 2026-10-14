@@ -354,8 +354,45 @@ def build_evening(registry: dict) -> tuple[str, str]:
 
     content = body + f"\n\n---\n_（共 {len(activities)} 项目有动静 · {len(actives)} 活跃 · AI 汇总）_"
     commitment_block = _render_commitment_report(registry)
-    content = commitment_block + "\n\n---\n\n" + content
+    patrol_block = _render_agent_patrol()
+    content = patrol_block + "\n\n---\n\n" + commitment_block + "\n\n---\n\n" + content
     return title, content
+
+
+def _render_agent_patrol() -> str:
+    """军团点名段: 读 agent_patrol.py 的巡检结果 (data/agent_patrol.json)。
+    缺失时触发一次实时巡检, 再缺失则提示。"""
+    patrol_path = WORKDIR / "data" / "agent_patrol.json"
+    data = None
+    try:
+        data = json.loads(patrol_path.read_text(encoding="utf-8"))
+    except Exception:
+        # 巡检还没跑过, 现场跑一次 (schtasks 较慢, 但每晚一次可接受)
+        import subprocess as _sp
+        try:
+            _sp.run(
+                [sys.executable, str(WORKDIR / "agent" / "agent_patrol.py")],
+                capture_output=True, timeout=300,
+            )
+            data = json.loads(patrol_path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    if not data:
+        return "## 🪖 军团点名\n\n巡检数据缺失 (agent_patrol.json 不可读)。\n"
+
+    mem = data.get("memory", {})
+    lines = ["## 🪖 军团点名", ""]
+    emoji = {"working": "🟢", "idle_resident": "🟡", "not_deployed": "⚪", "dead": "🔴"}
+    for a in data.get("agents", []):
+        mark = emoji.get(a.get("status"), "❓")
+        mem_tag = f" · {a['mem_mb']}MB" if a.get("mem_mb") else ""
+        lines.append(f"{mark} **{a['name']}**（{a.get('role', '')}）{a.get('status_label', '')}{mem_tag}")
+        lines.append(f"  └ {a.get('evidence', '无证据')[:80]}")
+    lines.append("")
+    avail = mem.get("available_gb", "?")
+    lines.append(f"💾 内存: 可用 {avail}GB / {mem.get('total_gb', '?')}GB（{mem.get('percent', '?')}%）")
+    lines.append("_（agent_patrol 巡检 · 每 10 分钟内存哨兵 · 阈值预警自动推群）_")
+    return "\n".join(lines)
 
 
 # === 推送 ===
