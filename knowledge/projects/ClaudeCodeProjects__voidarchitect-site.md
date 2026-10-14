@@ -9,13 +9,13 @@
 - tech_needs: 部署配置缺失
 - git: main, clean
 - last_commit: 88beb490 2026-07-22 docs: 迁移对话日志到单文件 conversation_log.md
-- activity: last_code_edit 2026-07-22 (48.9d), files 75
+- activity: last_code_edit 2026-07-22 (81.2d), files 75
 - docs: readme✓ claude_md✓ docs_dir✓
 
 ## blockers
 - [low] tech_need: 部署配置缺失
-- [low] stale: 项目已停滞 49 天
+- [low] stale: 项目已停滞 81 天
 
-_自动更新: 2026-09-09T09:43:21_
+_自动更新: 2026-10-11T18:06:44_
 
 <!-- MANUAL -->

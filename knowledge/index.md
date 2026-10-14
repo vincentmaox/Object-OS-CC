@@ -1,30 +1,33 @@
 # 项目知识库索引
 
-_共 104 个项目_
-_自动更新: 2026-09-09T09:45:10_
+_共 111 个项目_
+_自动更新: 2026-10-11T18:06:44_
 
 | 项目 | 状态 | MVA | 最近编辑 | 卡片 |
 |---|---|---|---|---|
-| ai-invest | 活跃 | All-in | 2026-09-08 | [卡片](projects/ClaudeCodeProjects__ai-invest.md) |
-| ai-life-secretary | 进行中 | All-in | 2026-09-08 | [卡片](projects/ClaudeCodeProjects__ai-life-secretary.md) |
-| hermes-desktop | 进行中 | All-in | 2026-09-08 | [卡片](projects/ClaudeCodeProjects__hermes-desktop.md) |
-| bytedance-agent-test | 活跃 | All-in | 2026-09-08 | [卡片](projects/ClaudeCodeProjects__bytedance-agent-test.md) |
-| void-brain | 活跃 | All-in | 2026-09-06 | [卡片](projects/ClaudeCodeProjects__void-brain.md) |
-| NuclearPowerAI | All-in | All-in | 2026-08-25 | [卡片](projects/ClaudeCodeProjects__NuclearPowerAI.md) |
+| ai-story-world | 进行中 | All-in | 2026-10-11 | [卡片](projects/ClaudeCodeProjects__ai-story-world.md) |
+| voidcompass | 活跃 |  | 2026-10-11 | [卡片](projects/ClaudeCodeProjects__voidcompass.md) |
+| NuclearPowerAI | All-in | All-in | 2026-10-10 | [卡片](projects/ClaudeCodeProjects__NuclearPowerAI.md) |
+| 20261009-韩所PPT准备 | 活跃 |  | 2026-10-09 | [卡片](projects/01_Project__20261009-韩所PPT准备.md) |
 | ai-self-evolution | 活跃 |  | 2026-07-25 | [卡片](projects/ClaudeCodeProjects__ai-self-evolution.md) |
 | at-token-cost | 活跃 |  | 2026-07-24 | [卡片](projects/ClaudeCodeProjects__at-token-cost.md) |
 | voidarchitect-site | 活跃 | All-in | 2026-07-22 | [卡片](projects/ClaudeCodeProjects__voidarchitect-site.md) |
 | 20260219_SKILLS_BEST | 活跃 |  |  | [卡片](projects/01_Project__20260219_SKILLS_BEST.md) |
 | AI-旅游 | 活跃 |  |  | [卡片](projects/01_Project__AI-旅游.md) |
-| 20260405_XIFENG_Knowledge | 卡点 | All-in | 2026-08-26 | [卡片](projects/01_Project__20260405_XIFENG_Knowledge.md) |
-| disk-manager | 卡点 | All-in | 2026-08-26 | [卡片](projects/ClaudeCodeProjects__disk-manager.md) |
-| bytedance-test | 卡点 | All-in | 2026-08-23 | [卡片](projects/ClaudeCodeProjects__bytedance-test.md) |
-| AI-Patent | 卡点 | All-in | 2026-08-12 | [卡片](projects/ClaudeCodeProjects__AI-Patent.md) |
+| ai-hot-news | 卡点 | All-in | 2026-10-10 | [卡片](projects/ClaudeCodeProjects__ai-hot-news.md) |
+| void-brain | 卡点 | All-in | 2026-10-09 | [卡片](projects/ClaudeCodeProjects__void-brain.md) |
+| TexasPhilosopher | 卡点 | All-in | 2026-09-29 | [卡片](projects/ClaudeCodeProjects__TexasPhilosopher.md) |
+| AI-Screen-Record | 卡点 | All-in | 2026-09-27 | [卡片](projects/ClaudeCodeProjects__AI-Screen-Record.md) |
+| disk-manager | 卡点 | All-in | 2026-09-27 | [卡片](projects/ClaudeCodeProjects__disk-manager.md) |
+| hermes-desktop | 卡点 | All-in | 2026-09-27 | [卡片](projects/ClaudeCodeProjects__hermes-desktop.md) |
+| ai-skin-system | 卡点 | All-in | 2026-09-24 | [卡片](projects/ClaudeCodeProjects__ai-skin-system.md) |
+| ai-life-secretary | 卡点 | All-in | 2026-09-23 | [卡片](projects/ClaudeCodeProjects__ai-life-secretary.md) |
+| 20260405_XIFENG_Knowledge | 卡点 | Watch | 2026-09-21 | [卡片](projects/01_Project__20260405_XIFENG_Knowledge.md) |
+| bytedance-test | 卡点 | All-in | 2026-09-12 | [卡片](projects/ClaudeCodeProjects__bytedance-test.md) |
+| AI-Patent | 卡点 | All-in | 2026-09-11 | [卡片](projects/ClaudeCodeProjects__AI-Patent.md) |
 | ai-love-mentor | 卡点 | All-in | 2026-08-05 | [卡片](projects/ClaudeCodeProjects__ai-love-mentor.md) |
 | 20260410_AI面相肤质分析系统-mirage | 卡点 |  | 2026-07-22 | [卡片](projects/01_Project__20260410_AI面相肤质分析系统-mirage.md) |
 | my-bucket-list | 卡点 |  | 2026-07-22 | [卡片](projects/01_Project__my-bucket-list.md) |
-| TexasPhilosopher | 卡点 | All-in | 2026-07-22 | [卡片](projects/ClaudeCodeProjects__TexasPhilosopher.md) |
-| ai-skin-system | 卡点 |  | 2026-07-22 | [卡片](projects/ClaudeCodeProjects__ai-skin-system.md) |
 | bucket-list-ai | 卡点 |  | 2026-07-22 | [卡片](projects/ClaudeCodeProjects__bucket-list-ai.md) |
 | product-idea-agent | 卡点 | All-in | 2026-07-22 | [卡片](projects/ClaudeCodeProjects__product-idea-agent.md) |
 | Private-Wealth-AI-Steward | 卡点 | All-in | 2026-07-20 | [卡片](projects/ClaudeCodeProjects__Private-Wealth-AI-Steward.md) |
@@ -37,13 +40,17 @@ _自动更新: 2026-09-09T09:45:10_
 | bucket-list-ai | 卡点 |  | 2026-06-20 | [卡片](projects/01_Project__bucket-list-ai.md) |
 | 20260415_情感导师 | 卡点 |  | 2026-06-01 | [卡片](projects/01_Project__20260415_情感导师.md) |
 | 20260409_高维捡钱使魔系统 | 卡点 |  | 2026-04-11 | [卡片](projects/01_Project__20260409_高维捡钱使魔系统.md) |
+| 20260929-韩所结构化标准 | 停滞 |  | 2026-09-29 | [卡片](projects/01_Project__20260929-韩所结构化标准.md) |
+| AI-NoteBook | 停滞 | All-in | 2026-09-27 | [卡片](projects/ClaudeCodeProjects__AI-NoteBook.md) |
+| bytedance-agent-test | 停滞 | All-in | 2026-09-27 | [卡片](projects/ClaudeCodeProjects__bytedance-agent-test.md) |
+| ai-ocr-tool | 停滞 | All-in | 2026-09-19 | [卡片](projects/ClaudeCodeProjects__ai-ocr-tool.md) |
+| ai-invest | 停滞 | All-in | 2026-09-11 | [卡片](projects/ClaudeCodeProjects__ai-invest.md) |
+| resume-voidarchitect | 停滞 |  | 2026-09-11 | [卡片](projects/ClaudeCodeProjects__resume-voidarchitect.md) |
 | ai-skill-mentor | 停滞 | All-in | 2026-08-07 | [卡片](projects/ClaudeCodeProjects__ai-skill-mentor.md) |
 | Screen-Record | 停滞 | Watch | 2026-07-20 | [卡片](projects/ClaudeCodeProjects__Screen-Record.md) |
 | CGN-company-ppt | 停滞 |  | 2026-07-16 | [卡片](projects/01_Project__CGN-company-ppt.md) |
 | 20260531_GLM抢套餐 | 停滞 |  | 2026-06-26 | [卡片](projects/01_Project__20260531_GLM抢套餐.md) |
 | 20260304_RCCM规范规则化 | 停滞 |  | 2026-06-22 | [卡片](projects/01_Project__20260304_RCCM规范规则化.md) |
-| AI-Screen-Record | 停滞 | All-in | 2026-06-12 | [卡片](projects/ClaudeCodeProjects__AI-Screen-Record.md) |
-| AI-NoteBook | 停滞 | All-in | 2026-06-10 | [卡片](projects/ClaudeCodeProjects__AI-NoteBook.md) |
 | claude-channel-feishu | 停滞 | Watch | 2026-06-07 | [卡片](projects/ClaudeCodeProjects__claude-channel-feishu.md) |
 | ai-router-48h | 停滞 | Watch | 2026-06-01 | [卡片](projects/ClaudeCodeProjects__ai-router-48h.md) |
 | 20260515_AI路由 | 停滞 |  | 2026-05-17 | [卡片](projects/01_Project__20260515_AI路由.md) |

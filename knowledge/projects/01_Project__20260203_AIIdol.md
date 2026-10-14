@@ -5,13 +5,13 @@
 - status: 停滞
 - tech: Python
 - tech_needs: 部署配置缺失
-- activity: last_code_edit 2026-02-07 (213.5d), files 20
+- activity: last_code_edit 2026-02-07 (245.9d), files 20
 - docs: readme✓ claude_md✗ docs_dir✗
 
 ## blockers
 - [medium] missing_doc: 缺少 CLAUDE.md
 - [low] tech_need: 部署配置缺失
-- [low] stale: 项目已停滞 214 天
+- [low] stale: 项目已停滞 246 天
 
 ## todos
 - README.md:206 - [ ] 语音合成（克隆角色声线）
@@ -20,6 +20,6 @@
 - README.md:209 - [ ] 用户关系成长系统
 - README.md:210 - [ ] 知识图谱可视化
 
-_自动更新: 2026-09-09T09:43:21_
+_自动更新: 2026-10-11T18:06:44_
 
 <!-- MANUAL -->

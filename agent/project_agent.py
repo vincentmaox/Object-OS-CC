@@ -141,6 +141,15 @@ class ProjectScanner:
     def __init__(self, roots: List[Path]):
         """roots: 项目根目录列表（v0.4.5 多根支持，单根时传 [BASE_DIR] 即可）"""
         self.roots = roots
+        self._old_projects = self._load_old_projects()
+
+    def _load_old_projects(self) -> Dict[str, Dict]:
+        """加载旧 registry，用于保留扫描时无法自动推导的字段（如 weekly_commitment）。"""
+        try:
+            data = json.loads(REGISTRY_FILE.read_text(encoding="utf-8"))
+            return data.get("projects", {}) if isinstance(data, dict) else {}
+        except Exception:
+            return {}
 
     def scan(self) -> List[Dict]:
         projects = []
@@ -166,6 +175,7 @@ class ProjectScanner:
 
     def analyze_project(self, path: Path, root: Path) -> Dict:
         name = path.name
+        registry_key = f"{root.name}__{name}"
         git_info = self._analyze_git(path)
         doc_info = self._analyze_docs(path)
         activity = self._analyze_activity(path)
@@ -175,11 +185,15 @@ class ProjectScanner:
 
         status = self._determine_status(git_info, activity, blockers)
 
+        # 保留旧 registry 中的手工字段（扫描无法自动推导）
+        old = self._old_projects.get(registry_key, {}) or {}
+        weekly_commitment = old.get("weekly_commitment") or {}
+
         return {
             "name": name,
             "root": str(root),
             "root_name": root.name,
-            "registry_key": f"{root.name}__{name}",
+            "registry_key": registry_key,
             "path": str(path),
             "status": status,
             "git": git_info,
@@ -188,6 +202,7 @@ class ProjectScanner:
             "tech": tech,
             "blockers": blockers,
             "todos": todos,
+            "weekly_commitment": weekly_commitment,
             "last_scan": datetime.now().isoformat(),
         }
 

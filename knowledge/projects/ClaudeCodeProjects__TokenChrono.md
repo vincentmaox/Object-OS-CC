@@ -8,8 +8,8 @@
 - docs: readme✓ claude_md✓ docs_dir✗
 
 ## blockers
-- [low] stale: 项目已停滞 94 天
+- [low] stale: 项目已停滞 126 天
 
-_自动更新: 2026-09-09T09:45:10_
+_自动更新: 2026-10-11T18:06:44_
 
 <!-- MANUAL -->

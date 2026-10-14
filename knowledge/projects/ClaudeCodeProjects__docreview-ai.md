@@ -9,7 +9,7 @@
 - tech_needs: npm install（缺少node_modules）, 配置.env文件（有.example模板）, 部署配置缺失
 - git: v0.2-rewrite, clean
 - last_commit: 9cc15575 2026-07-20 feat: update model clients + add RCC-M test docs
-- activity: last_code_edit 2026-06-10 (90.9d), files 139
+- activity: last_code_edit 2026-06-10 (123.3d), files 139
 - docs: readme✗ claude_md✓ docs_dir✓
 
 ## blockers
@@ -18,7 +18,7 @@
 - [low] tech_need: npm install（缺少node_modules）
 - [high] tech_need: 配置.env文件（有.example模板）
 - [low] tech_need: 部署配置缺失
-- [low] stale: 项目已停滞 51 天
+- [low] stale: 项目已停滞 83 天
 
 ## todos
 - CLAUDE.md:47 - [ ] **P1** 数据层（sql.js + schema + 迁移 + 设置 KV）
@@ -27,6 +27,6 @@
 - CLAUDE.md:50 - [ ] **P4** 混合检索（向量 + LIKE/FTS5 + Reranker 降级 + 引用）
 - CLAUDE.md:51 - [ ] **P5** 审查引擎（编排 + 哨兵协议 + 严重度 + 保守回答）
 
-_自动更新: 2026-09-09T09:43:21_
+_自动更新: 2026-10-11T18:06:44_
 
 <!-- MANUAL -->

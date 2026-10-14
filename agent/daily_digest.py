@@ -107,6 +107,62 @@ def _render_project_line(p: dict) -> str:
     return "- " + " | ".join(parts)
 
 
+def _compact_active_with_commitments(registry: dict) -> list[dict]:
+    """活跃项目 + 本周交付契约，用于交付问责段。"""
+    out = []
+    for name, info in registry.get("projects", {}).items():
+        status = info.get("status", "")
+        if status in ("已归档", "已Kill", "killed"):
+            continue
+        if not Path(info.get("path", "")).exists():
+            continue
+        wc = info.get("weekly_commitment") or {}
+        out.append({
+            "name": info.get("name") or name,
+            "path": info.get("path", ""),
+            "status": status,
+            "mva": info.get("mva_decision", ""),
+            "weekly_output": wc.get("output", ""),
+            "weekly_due": wc.get("due_date", ""),
+            "weekly_energy": wc.get("energy_cost", ""),
+            "weekly_status": wc.get("status", ""),
+        })
+    return out
+
+
+def _render_commitment_report(registry: dict) -> str:
+    """渲染本周交付契约问责段（不依赖 LLM，保证可追责）。"""
+    items = _compact_active_with_commitments(registry)
+    committed = [i for i in items if i["weekly_output"]]
+    if not committed:
+        return "## 🎯 本周交付契约\n\n暂无 All-in/活跃项目设本周交付物。建议今晚为 1-3 个项目立契约。\n"
+
+    lines = ["## 🎯 本周交付契约", ""]
+    lines.append("| 项目 | 交付物 | 截止 | 能量 | 状态 |")
+    lines.append("|---|---|---|---|---|")
+    for i in committed:
+        lines.append(
+            f"| {i['name']} | {i['weekly_output'][:40]} | {i['weekly_due'] or '?'} | "
+            f"{i['weekly_energy'] or '?'} | {i['weekly_status'] or '进行中'} |"
+        )
+
+    total = len(committed)
+    done = sum(1 for i in committed if i["weekly_status"] == "已完成")
+    overdue = [
+        i for i in committed
+        if i["weekly_due"] and i["weekly_status"] != "已完成" and i["weekly_due"] < today_str()
+    ]
+    lines.append("")
+    lines.append(f"进度：{done}/{total} 完成")
+    if overdue:
+        lines.append(f"过期 {len(overdue)} 项，建议立即决断：")
+        for i in overdue:
+            lines.append(f"- {i['name']}：{i['weekly_output'][:30]} → Kill / 延期 / 降档")
+    else:
+        lines.append("无过期项。")
+    return "\n".join(lines)
+
+
 def _read_freq_today() -> tuple[str, str]:
     """读 frequency_os 今日主频 + 咒语（缺失返回空）。"""
     if not FREQ_DAILY_LOG.exists():
@@ -297,6 +353,8 @@ def build_evening(registry: dict) -> tuple[str, str]:
         body = "\n".join(lines)
 
     content = body + f"\n\n---\n_（共 {len(activities)} 项目有动静 · {len(actives)} 活跃 · AI 汇总）_"
+    commitment_block = _render_commitment_report(registry)
+    content = commitment_block + "\n\n---\n\n" + content
     return title, content
 
 

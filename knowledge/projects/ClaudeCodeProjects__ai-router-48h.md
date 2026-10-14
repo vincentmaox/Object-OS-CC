@@ -9,13 +9,13 @@
 - tech_needs: npm install（缺少node_modules）
 - git: main, clean
 - last_commit: 69e7343a 2026-06-01 chore: clean build warnings
-- activity: last_code_edit 2026-06-01 (99.4d), files 87
+- activity: last_code_edit 2026-06-01 (131.8d), files 87
 - docs: readme✓ claude_md✓ docs_dir✓
 
 ## blockers
 - [low] tech_need: npm install（缺少node_modules）
-- [low] stale: 项目已停滞 99 天
+- [low] stale: 项目已停滞 132 天
 
-_自动更新: 2026-09-09T09:43:21_
+_自动更新: 2026-10-11T18:06:44_
 
 <!-- MANUAL -->

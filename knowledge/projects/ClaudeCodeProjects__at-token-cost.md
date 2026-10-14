@@ -7,14 +7,14 @@
 - tech_needs: 部署配置缺失
 - git: main, clean
 - last_commit: 26db40be 2026-07-24 init: 项目骨架 + 50+ 模型价目表 + SQLite 记账本
-- activity: last_code_edit 2026-07-24 (46.7d), files 43
+- activity: last_code_edit 2026-07-24 (79.1d), files 43
 - docs: readme✓ claude_md✗ docs_dir✓
 
 ## blockers
 - [medium] missing_doc: 缺少 CLAUDE.md
 - [low] tech_need: 部署配置缺失
-- [low] stale: 项目已停滞 47 天
+- [low] stale: 项目已停滞 79 天
 
-_自动更新: 2026-09-09T09:43:21_
+_自动更新: 2026-10-11T18:06:44_
 
 <!-- MANUAL -->

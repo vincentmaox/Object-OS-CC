@@ -47,6 +47,12 @@ def render_card(key: str, p: dict, now: str) -> str:
     ]
     if p.get("mva_decision"):
         lines.append(f"- mva: {p['mva_decision']}" + (f" @ {p['mva_date']}" if p.get("mva_date") else ""))
+    wc = p.get("weekly_commitment") or {}
+    if wc.get("output"):
+        due = wc.get("due_date", "?")
+        energy = wc.get("energy_cost", "?")
+        status = wc.get("status", "进行中")
+        lines.append(f"- weekly: [{status}] {wc['output']} (due {due}, energy {energy})")
     stack = tech.get("stack") or []
     if stack:
         lines.append(f"- tech: {', '.join(stack)}")

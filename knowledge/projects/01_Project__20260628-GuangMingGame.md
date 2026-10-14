@@ -5,7 +5,7 @@
 - status: 卡点
 - git: master, 11 uncommitted
 - last_commit: 80f6ae9a 2026-07-07 fix: 添加开始/继续游戏选择界面+修复存档加载导致景点无法进入的bug+修复mp字段缺失
-- activity: last_code_edit 2026-07-10 (60.5d), files 792
+- activity: last_code_edit 2026-07-10 (92.9d), files 792
 - docs: readme✗ claude_md✗ docs_dir✗
 
 ## blockers
@@ -13,6 +13,6 @@
 - [medium] missing_doc: 缺少 README.md
 - [medium] missing_doc: 缺少 CLAUDE.md
 
-_自动更新: 2026-09-09T09:43:21_
+_自动更新: 2026-10-11T18:06:44_
 
 <!-- MANUAL -->
