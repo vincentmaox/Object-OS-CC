@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T09:02:47",
+  "generated_at": "2026-10-14T09:16:39",
   "count": 111,
   "projects": [
     {
@@ -861,7 +861,7 @@
     {
       "name": "01_Project__20260415_情感导师",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1106,7 +1106,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1280,8 +1280,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(tools): 独立进程启动器——脱离会话规避内存哨兵误杀",
-        "date": "2026-10-12"
+        "message": "docs: 对话记录——头条赛事通道闭环",
+        "date": "2026-10-13"
       },
       "github_url": "https://github.com/vincentmaox/ai-hot-news",
       "cover_image": null,
@@ -1327,7 +1327,7 @@
     {
       "name": "ClaudeCodeProjects__ai-love-mentor",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1742,7 +1742,7 @@
     {
       "name": "ClaudeCodeProjects__voidcompass",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
