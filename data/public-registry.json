@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T09:16:39",
+  "generated_at": "2026-10-15T09:09:45",
   "count": 111,
   "projects": [
     {
@@ -1280,8 +1280,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 对话记录——头条赛事通道闭环",
-        "date": "2026-10-13"
+        "message": "feat(ops): PG 看门狗守夜——DLL 内伤未愈期间的自动拉起（临时，重启后停用）",
+        "date": "2026-10-14"
       },
       "github_url": "https://github.com/vincentmaox/ai-hot-news",
       "cover_image": null,
@@ -1310,12 +1310,12 @@
     {
       "name": "ClaudeCodeProjects__ai-life-secretary",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "v0.14 VOS 日报替代旧早报 + 基建月施工单数字化（25天验收线）+ 桌面首屏转向虚空系统",
-        "date": "2026-09-23"
+        "message": "v0.14b 杜如晦上线：日报加纠偏三问（交付/探针/财富名声）+ 拖延信号词触发反对理由钩子 + 收录我是谁.md 记忆主权文件",
+        "date": "2026-10-14"
       },
       "github_url": "https://github.com/vincentmaox/ai-life-secretary",
       "cover_image": null,
@@ -1405,7 +1405,7 @@
     {
       "name": "ClaudeCodeProjects__ai-skill-mentor",
       "description": "",
-      "stage": "停滞",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1638,12 +1638,12 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: v0.7.9 强制子会话保存 Claude transcript",
-        "date": "2026-09-15"
+        "message": "fix+feat: v0.7.10 ASR 循环 decode 根因修复 + 交付力 MVP 打包",
+        "date": "2026-10-14"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
@@ -1722,13 +1722,10 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "卡点",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": {
-        "message": "docs: v0.7 经验层验收记录 + v0.9 评估基座与首条基线记录",
-        "date": "2026-09-17"
-      },
+      "last_action": null,
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
       "product_label": null,
