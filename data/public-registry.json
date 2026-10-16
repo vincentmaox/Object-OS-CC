@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T09:09:45",
+  "generated_at": "2026-10-16T09:12:50",
   "count": 111,
   "projects": [
     {
@@ -1106,7 +1106,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1280,8 +1280,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(ops): PG 看门狗守夜——DLL 内伤未愈期间的自动拉起（临时，重启后停用）",
-        "date": "2026-10-14"
+        "message": "feat(advisor): 参谋双荐——HF精选+GitHub爆发每日深度简报（宁缺毋滥，V4-Pro四段式）",
+        "date": "2026-10-15"
       },
       "github_url": "https://github.com/vincentmaox/ai-hot-news",
       "cover_image": null,
@@ -1310,7 +1310,7 @@
     {
       "name": "ClaudeCodeProjects__ai-life-secretary",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1405,7 +1405,7 @@
     {
       "name": "ClaudeCodeProjects__ai-skill-mentor",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1642,8 +1642,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix+feat: v0.7.10 ASR 循环 decode 根因修复 + 交付力 MVP 打包",
-        "date": "2026-10-14"
+        "message": "feat: v0.7.11 军团管理 P1——团队频道视图 + 每晚打分",
+        "date": "2026-10-15"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
@@ -1722,10 +1722,13 @@
     {
       "name": "ClaudeCodeProjects__void-brain",
       "description": "",
-      "stage": "活跃",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
+      "last_action": {
+        "message": "docs: v0.7 经验层验收记录 + v0.9 评估基座与首条基线记录",
+        "date": "2026-09-17"
+      },
       "github_url": "https://github.com/vincentmaox/void-brain",
       "cover_image": null,
       "product_label": null,
