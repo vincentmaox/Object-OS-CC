@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T09:02:49",
+  "generated_at": "2026-10-18T09:02:57",
   "count": 111,
   "projects": [
     {
@@ -1106,7 +1106,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1280,8 +1280,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(ops): 全栈看门狗（垫片单点阵亡致推送全灭）+ advisor 排除 sponsors/github 官方仓",
-        "date": "2026-10-16"
+        "message": "fix(ops): worker 假活检测——pgboss 心跳 20 分钟无任务自动重启（10-17 全天静默事故）",
+        "date": "2026-10-17"
       },
       "github_url": "https://github.com/vincentmaox/ai-hot-news",
       "cover_image": null,
@@ -1503,7 +1503,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-agent-test",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
