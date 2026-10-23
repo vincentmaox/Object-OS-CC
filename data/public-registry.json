@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T12:15:53",
+  "generated_at": "2026-10-23T09:04:26",
   "count": 113,
   "projects": [
     {
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v0.31): PPT 工程模式（Kimi 工作流内网复刻）——create/edit/preview/export 工具组 + previewPptSlides VL 逐页目检回路（Agent 据文本反馈改 spec，审查模型无",
-        "date": "2026-10-10"
+        "message": "feat(v0.37): P1+P2——空状态闲聊模式（无知识源走 work Agent rootDir=data/exports，allowEmptyFolder 空批+闲聊纪律+产物清单+Export 按钮）+ 功能开关 feature",
+        "date": "2026-10-22"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
