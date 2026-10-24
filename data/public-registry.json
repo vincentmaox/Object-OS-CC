@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:04:26",
+  "generated_at": "2026-10-24T09:03:31",
   "count": 113,
   "projects": [
     {
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v0.37): P1+P2——空状态闲聊模式（无知识源走 work Agent rootDir=data/exports，allowEmptyFolder 空批+闲聊纪律+产物清单+Export 按钮）+ 功能开关 feature",
-        "date": "2026-10-22"
+        "message": "fix(v0.38): 启动强制重登治后台管控绕过——老茅实测：登录态持久化使关软件重开免登，后台删名单/改密码对已登录用户无效。修复：auth:currentUser 首调时配置了授权网盘即清 current_user（每次启动重新三因子",
+        "date": "2026-10-23"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
