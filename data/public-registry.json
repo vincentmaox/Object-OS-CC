@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26T09:26:12",
-  "count": 113,
+  "generated_at": "2026-10-27T09:03:22",
+  "count": 114,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(v0.38): 启动强制重登治后台管控绕过——老茅实测：登录态持久化使关软件重开免登，后台删名单/改密码对已登录用户无效。修复：auth:currentUser 首调时配置了授权网盘即清 current_user（每次启动重新三因子",
-        "date": "2026-10-23"
+        "message": "docs(v0.38): 用户手册 PDF 生成修复——mini md2html 段落分支漏调 inline（图片标记残留）、electron driver 改 ASCII 临时路径（中文路径传参链路编码损坏）；成品 7 页 A4 带 11",
+        "date": "2026-10-26"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1272,6 +1272,28 @@
       "featured": false,
       "showcase_rank": null,
       "tech_stack": []
+    },
+    {
+      "name": "ClaudeCodeProjects__ai-ResumeDx",
+      "description": "",
+      "stage": "进行中",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "docs: D1 日志更新",
+        "date": "2026-10-26"
+      },
+      "github_url": "https://github.com/vincentmaox/ResumeDx",
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Node.js",
+        "Next.js",
+        "React",
+        "Tailwind"
+      ]
     },
     {
       "name": "ClaudeCodeProjects__ai-engineer-research",
