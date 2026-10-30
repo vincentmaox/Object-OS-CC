@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T09:03:22",
+  "generated_at": "2026-10-30T09:03:04",
   "count": 114,
   "projects": [
     {
@@ -26,7 +26,7 @@
     {
       "name": "01_Project__001_AI_XIFENG",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs(v0.38): 用户手册 PDF 生成修复——mini md2html 段落分支漏调 inline（图片标记残留）、electron driver 改 ASCII 临时路径（中文路径传参链路编码损坏）；成品 7 页 A4 带 11",
-        "date": "2026-10-26"
+        "message": "docs: v0.21-v0.40 版本迭代史（20 个版本开发记录简要）+ v0.40 全功能测试方案（8 模块 60+ 测试项含步骤预期，覆盖全部功能非仅差异）",
+        "date": "2026-10-30"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1276,7 +1276,7 @@
     {
       "name": "ClaudeCodeProjects__ai-ResumeDx",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1380,7 +1380,7 @@
     {
       "name": "ClaudeCodeProjects__ai-marketing",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
