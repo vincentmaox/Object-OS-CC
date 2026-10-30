@@ -23,10 +23,13 @@
     {
       "name": "ai-life-secretary",
       "role": "生活助理",
-      "run_mode": "ondemand",
+      "run_mode": "resident",
       "project_path": "D:\\ClaudeCodeProjects\\ai-life-secretary",
       "scheduled_task_prefix": "",
-      "process_patterns": []
+      "process_patterns": ["ai-life-secretary"],
+      "shift_kill_pattern": "ai-life-secretary\\\\server\\\\scripts\\\\run_server.py",
+      "shift_start_cmd": ["D:\\ClaudeCodeProjects\\ai-life-secretary\\server\\.venv\\Scripts\\pythonw.exe", "D:\\ClaudeCodeProjects\\ai-life-secretary\\server\\scripts\\run_server.py"],
+      "note": "pythonw 后台 server (run_server.py), 2026-10-30 巡检曾漏扫; 注意曾出现双实例 (.venv + D:\\Python 各一个)"
     },
     {
       "name": "hermes-desktop",

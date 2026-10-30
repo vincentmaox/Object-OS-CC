@@ -174,6 +174,10 @@ def _judge(agent: dict, tasks: dict, procs: dict, git_commits: int, conv_today: 
         return "dead", "; ".join(ev) or "无证据"
     if task_fail:
         ev.append(f"⚠️部分任务失败x{len(task_fail)}/共{len(my_tasks)}")
+    # resident 常驻型 (hermes/secretary server): 进程在 = 活着, 不要求"今日产出"
+    if run_mode == "resident":
+        if procs["count"] > 0:
+            return "working", "; ".join(ev) or f"常驻进程x{procs['count']}"
     # 在岗干活: 有今日证据 (任务今天跑过 / commit / 对话)
     if task_recent_today or git_commits > 0 or conv_today:
         return "working", "; ".join(ev)
