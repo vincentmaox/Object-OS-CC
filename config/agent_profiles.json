@@ -18,7 +18,8 @@
       "project_path": "D:\\ClaudeCodeProjects\\ai-hot-news",
       "scheduled_task_prefix": "",
       "process_patterns": ["postgres", "com.docker", "docker", "ai-hot", "we-mp-rss"],
-      "note": "docker-compose 服务集群: PG + worker + api + RSS。2026-10-14 12:07 曾因内存耗尽全灭"
+      "shift_kill_pattern": "ai-hot-news",
+      "note": "docker-compose 服务集群: PG + worker + api + RSS。docker stop 失败时按项目路径进程级兜底。2026-10-14 12:07 曾因内存耗尽全灭"
     },
     {
       "name": "ai-life-secretary",
@@ -27,7 +28,7 @@
       "project_path": "D:\\ClaudeCodeProjects\\ai-life-secretary",
       "scheduled_task_prefix": "",
       "process_patterns": ["ai-life-secretary"],
-      "shift_kill_pattern": "ai-life-secretary\\\\server\\\\scripts\\\\run_server.py",
+      "shift_kill_pattern": "ai-life-secretary",
       "shift_start_cmd": ["D:\\ClaudeCodeProjects\\ai-life-secretary\\server\\.venv\\Scripts\\pythonw.exe", "D:\\ClaudeCodeProjects\\ai-life-secretary\\server\\scripts\\run_server.py"],
       "note": "pythonw 后台 server (run_server.py), 2026-10-30 巡检曾漏扫; 注意曾出现双实例 (.venv + D:\\Python 各一个)"
     },

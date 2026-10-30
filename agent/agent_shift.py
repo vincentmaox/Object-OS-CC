@@ -88,18 +88,24 @@ def _shift_docker(project_path: str, stop: bool) -> bool:
 # ─── 后台进程 kill / 拉起 ─────────────────────────────────
 
 def _kill_by_pattern(pattern: str) -> int:
-    """杀 cmdline 含 pattern 的进程 (pythonw 后台服务等), 返回击杀数。"""
-    import psutil
-    killed = 0
-    for p in psutil.process_iter(["name", "cmdline"]):
-        try:
-            cmd = " ".join(p.info["cmdline"] or []).lower()
-            if pattern.lower() in cmd:
-                p.kill()
-                killed += 1
-        except Exception:
-            continue
-    return killed
+    """杀 cmdline 含 pattern 的进程, 返回击杀数。
+    用 PowerShell WMI 而非 psutil: 计划任务上下文里 psutil 拿不到部分进程的
+    cmdline (hermes 巡检误判/shift killed=0 的根因), WMI 查询不受限。"""
+    esc = pattern.replace("'", "''")
+    ps = (
+        # 限定 python/node: 防误杀恰好 cwd/参数带该路径的终端或编辑器
+        f"Get-CimInstance Win32_Process | Where-Object {{ $_.CommandLine -like '*{esc}*' -and $_.Name -match 'python|node' }} | "
+        "ForEach-Object { try { Stop-Process -Id $_.ProcessId -Force -ErrorAction Stop; Write-Output killed } catch { } }"
+    )
+    try:
+        r = subprocess.run(
+            ["powershell", "-NoProfile", "-Command", ps],
+            capture_output=True, timeout=60,
+        )
+        return r.stdout.decode("utf-8", errors="replace").count("killed")
+    except Exception as e:
+        _log(f"[shift] kill pattern failed ({pattern}): {e}")
+        return 0
 
 
 def _start_cmd(cmd: list[str], cwd: str | None = None) -> bool:
@@ -133,6 +139,10 @@ def shift(mode: str) -> dict:
             r["tasks"] = _shift_tasks(prefix, disable=off)
         if agent.get("run_mode") == "service":
             r["docker"] = _shift_docker(agent.get("project_path", ""), stop=off)
+            # docker stop 失败 (原生部署/docker未跑) 时进程级兜底
+            kill_pat = agent.get("shift_kill_pattern", "")
+            if not r["docker"] and kill_pat and off:
+                r["killed"] = _kill_by_pattern(kill_pat)
         kill_pat = agent.get("shift_kill_pattern", "")
         start_cmd = agent.get("shift_start_cmd", "")
         if kill_pat and off:
