@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T09:03:04",
+  "generated_at": "2026-10-31T09:03:03",
   "count": 114,
   "projects": [
     {
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: v0.21-v0.40 版本迭代史（20 个版本开发记录简要）+ v0.40 全功能测试方案（8 模块 60+ 测试项含步骤预期，覆盖全部功能非仅差异）",
-        "date": "2026-10-30"
+        "message": "feat(v0.45): 助理模式真身——OpenCode 式 Agent 分化（调研 OpenCode/mini-swe-agent/deepseek-harness 定稿，零框架路线）①工具注册表 agentTools.ts 配置驱动（",
+        "date": "2026-10-31"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1688,12 +1688,12 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix: v0.7.12 浏览按钮静默失败——文件夹选择器改 Rust 侧 rfd",
-        "date": "2026-10-20"
+        "message": "feat: v0.7.13 军团上班/下班一键开关",
+        "date": "2026-10-30"
       },
       "github_url": "https://github.com/vincentmaox/hermes-desktop",
       "cover_image": null,
