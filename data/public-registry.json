@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-31T09:03:03",
-  "count": 114,
+  "generated_at": "2026-11-01T09:03:08",
+  "count": 115,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1162,7 +1162,7 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v0.45): 助理模式真身——OpenCode 式 Agent 分化（调研 OpenCode/mini-swe-agent/deepseek-harness 定稿，零框架路线）①工具注册表 agentTools.ts 配置驱动（",
+        "message": "docs: 版本迭代史补全 v0.1→v0.45（42 节无缺口——早期 v0.1-v0.20 由 git 全量日志+CLAUDE.md 约束节+项目日志重建）；新增 NPAI-技术开发手册-v0.45（六原则/架构分层/表全景物理隔离/四",
         "date": "2026-10-31"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
@@ -1384,6 +1384,23 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
+      "name": "ClaudeCodeProjects__ai-memory-manager",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "M1: AI Memory Steward — 四层流水线（psutil感知+规则护栏+Claude判定+反馈学习），17测试全绿",
+        "date": "2026-10-31"
+      },
       "github_url": null,
       "cover_image": null,
       "product_label": null,
@@ -1635,8 +1652,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "C 盘清理工具：admin_clean_t1（管理员 T1 批清理）+ c_drive_survey（空间分布调研）",
-        "date": "2026-08-26"
+        "message": "2026-10-31 全面翻新日：工作日志 + 清理战法手册 + 实战脚本集",
+        "date": "2026-10-31"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
