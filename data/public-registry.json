@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T09:03:08",
+  "generated_at": "2026-11-02T09:06:00",
   "count": 115,
   "projects": [
     {
@@ -1276,12 +1276,12 @@
     {
       "name": "ClaudeCodeProjects__ai-ResumeDx",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: D1 日志更新",
-        "date": "2026-10-26"
+        "message": "docs: P3 报告引擎日志",
+        "date": "2026-11-01"
       },
       "github_url": "https://github.com/vincentmaox/ResumeDx",
       "cover_image": null,
@@ -1652,8 +1652,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "2026-10-31 全面翻新日：工作日志 + 清理战法手册 + 实战脚本集",
-        "date": "2026-10-31"
+        "message": "弹窗静默化战法：S4U 切换脚本 + ps1 ASCII 铁律 + 0x9F 蓝屏排查（2026-10-31 补录）",
+        "date": "2026-11-01"
       },
       "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
@@ -1705,7 +1705,7 @@
     {
       "name": "ClaudeCodeProjects__hermes-desktop",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
