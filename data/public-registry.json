@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-02T09:06:00",
-  "count": 115,
+  "generated_at": "2026-11-03T09:13:09",
+  "count": 116,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 版本迭代史补全 v0.1→v0.45（42 节无缺口——早期 v0.1-v0.20 由 git 全量日志+CLAUDE.md 约束节+项目日志重建）；新增 NPAI-技术开发手册-v0.45（六原则/架构分层/表全景物理隔离/四",
-        "date": "2026-10-31"
+        "message": "feat(v0.46): Agent 权限分级 allow/ask/deny——OpenCode 规则蓝本 + dsh pre-execute 思想（对标文档沉淀 + 权限闸门一次到位）①判定链 resolveToolPermission：",
+        "date": "2026-11-02"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1294,6 +1294,20 @@
         "React",
         "Tailwind"
       ]
+    },
+    {
+      "name": "ClaudeCodeProjects__ai-code-to-vedios",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
     },
     {
       "name": "ClaudeCodeProjects__ai-engineer-research",
@@ -1809,12 +1823,12 @@
     {
       "name": "ClaudeCodeProjects__voidcompass",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs(marketing): 商品素材v2——29.9常态价/30分钟站内文字沟通(互关私信)/交付物升级个人AI职业指导文件/P5去核电背景(身份隔离)",
-        "date": "2026-10-20"
+        "message": "docs(ads): 纯代码版视频主提示词——无Blender/无独显机器优化（HTML/CSS/SVG+Puppeteer逐帧+Edge-TTS+FFmpeg，150秒五幕）",
+        "date": "2026-11-02"
       },
       "github_url": "https://github.com/vincentmaox/voidcompass",
       "cover_image": null,
