@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T09:13:09",
+  "generated_at": "2026-11-05T09:03:25",
   "count": 116,
   "projects": [
     {
@@ -26,7 +26,7 @@
     {
       "name": "01_Project__001_AI_XIFENG",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v0.46): Agent 权限分级 allow/ask/deny——OpenCode 规则蓝本 + dsh pre-execute 思想（对标文档沉淀 + 权限闸门一次到位）①判定链 resolveToolPermission：",
-        "date": "2026-11-02"
+        "message": "docs: CLAUDE.md 补 v0.47.2 渲染三连修硬约束（remark-gfm 表格渲染/copyAnswerRich 双格式/OCR 失败禁入缓存/弹窗居中缩放适配）",
+        "date": "2026-11-04"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1280,8 +1280,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: P3 报告引擎日志",
-        "date": "2026-11-01"
+        "message": "feat(kb): 黑话词典第二批100条（AI应用落地/FDE工程视角）+ 交叉校验脚本 + 别名冲突裁决（Agent Skills归Skills）",
+        "date": "2026-11-05"
       },
       "github_url": "https://github.com/vincentmaox/ResumeDx",
       "cover_image": null,
@@ -1394,7 +1394,7 @@
     {
       "name": "ClaudeCodeProjects__ai-marketing",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1823,7 +1823,7 @@
     {
       "name": "ClaudeCodeProjects__voidcompass",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
