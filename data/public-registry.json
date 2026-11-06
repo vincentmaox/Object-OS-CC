@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T09:03:25",
+  "generated_at": "2026-11-06T09:04:24",
   "count": 116,
   "projects": [
     {
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: CLAUDE.md 补 v0.47.2 渲染三连修硬约束（remark-gfm 表格渲染/copyAnswerRich 双格式/OCR 失败禁入缓存/弹窗居中缩放适配）",
-        "date": "2026-11-04"
+        "message": "feat(1.0.0-rc.4b): 测试OCR升级整链诊断——多行图(10行)测 det→切行→rec，一次按钮区分 rec正常/det失效（附件只出顶部几条的分层定位）+ rc.4 的历史注入/长文中文名已在",
+        "date": "2026-11-05"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1276,7 +1276,7 @@
     {
       "name": "ClaudeCodeProjects__ai-ResumeDx",
       "description": "",
-      "stage": "进行中",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
