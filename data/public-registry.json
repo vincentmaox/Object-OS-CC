@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T09:04:24",
+  "generated_at": "2026-11-08T09:04:22",
   "count": 116,
   "projects": [
     {
@@ -1408,7 +1408,7 @@
     {
       "name": "ClaudeCodeProjects__ai-memory-manager",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
