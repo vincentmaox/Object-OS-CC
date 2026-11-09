@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T09:04:22",
+  "generated_at": "2026-11-09T09:04:12",
   "count": 116,
   "projects": [
     {
@@ -1162,8 +1162,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 对标 Hermes Agent 全方位分析 + P2 路线——三路探路者合成（核心机制/Skill 体系/872 SKILL.md 复筛）",
-        "date": "2026-11-07"
+        "message": "fix(v1.2.0-rc.4): 复杂表格行布局图 + 增量复用模式门控——老茅申报表实测第三轮",
+        "date": "2026-11-08"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1584,7 +1584,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-agent-test",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
