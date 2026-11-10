@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T09:04:12",
-  "count": 116,
+  "generated_at": "2026-11-10T09:16:12",
+  "count": 117,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1106,7 +1106,7 @@
     {
       "name": "ClaudeCodeProjects__AI-Patent",
       "description": "",
-      "stage": "卡点",
+      "stage": "进行中",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
@@ -1298,7 +1298,7 @@
     {
       "name": "ClaudeCodeProjects__ai-code-to-vedios",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
@@ -1541,6 +1541,20 @@
       ]
     },
     {
+      "name": "ClaudeCodeProjects__ai-zhiyisuo",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "ClaudeCodeProjects__at-token-cost",
       "description": "",
       "stage": "活跃",
@@ -1584,7 +1598,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-agent-test",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
