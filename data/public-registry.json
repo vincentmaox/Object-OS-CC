@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-11T10:44:44",
-  "count": 117,
+  "generated_at": "2026-11-12T09:13:13",
+  "count": 118,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1142,6 +1142,26 @@
       ]
     },
     {
+      "name": "ClaudeCodeProjects__AI-Usage-Stats",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": {
+        "message": "feat(v0.1.0): 核岛所AI应用统计工具首版——多网盘聚合/离线分析/CSV 导出",
+        "date": "2026-11-11"
+      },
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": [
+        "Node.js",
+        "React"
+      ]
+    },
+    {
       "name": "ClaudeCodeProjects__Hackathon-AI-Game",
       "description": "",
       "stage": "已归档",
@@ -1162,8 +1182,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(v1.2.0-rc.4): 复杂表格行布局图 + 增量复用模式门控——老茅申报表实测第三轮",
-        "date": "2026-11-08"
+        "message": "fix(v1.2.0-rc.9): OCR 链全面核查修复六问题——speedFirst 补传/标签诚实化/文档链 vision-only 落地（老茅 11-11 发起核查）",
+        "date": "2026-11-11"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
