@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T09:13:13",
+  "generated_at": "2026-11-13T09:48:28",
   "count": 118,
   "projects": [
     {
@@ -1182,8 +1182,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(v1.2.0-rc.9): OCR 链全面核查修复六问题——speedFirst 补传/标签诚实化/文档链 vision-only 落地（老茅 11-11 发起核查）",
-        "date": "2026-11-11"
+        "message": "fix(v1.2.0-rc.15): 发布级评审 8 发现全修——recognize 硬错误抛出复活熔断 + 懒附件真接线 + 缓存 salt v7（rc.4..HEAD 全量深度评审）",
+        "date": "2026-11-12"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1414,7 +1414,7 @@
     {
       "name": "ClaudeCodeProjects__ai-marketing",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
