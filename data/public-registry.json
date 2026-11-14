@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T09:48:28",
-  "count": 118,
+  "generated_at": "2026-11-14T09:04:24",
+  "count": 119,
   "projects": [
     {
       "name": "ClaudeCodeProjects__voidarchitect-site",
@@ -1176,14 +1176,28 @@
       "tech_stack": []
     },
     {
+      "name": "ClaudeCodeProjects__HeyBuddy",
+      "description": "",
+      "stage": "活跃",
+      "freq_total": null,
+      "freq_suggestion": null,
+      "last_action": null,
+      "github_url": null,
+      "cover_image": null,
+      "product_label": null,
+      "featured": false,
+      "showcase_rank": null,
+      "tech_stack": []
+    },
+    {
       "name": "ClaudeCodeProjects__NuclearPowerAI",
       "description": "",
       "stage": "All-in",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(v1.2.0-rc.15): 发布级评审 8 发现全修——recognize 硬错误抛出复活熔断 + 懒附件真接线 + 缓存 salt v7（rc.4..HEAD 全量深度评审）",
-        "date": "2026-11-12"
+        "message": "docs: 对标 IMA 与原点差距分析——「核电工程人的 IMA」照镜记（老茅 11-13 发起回到原点）",
+        "date": "2026-11-13"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
