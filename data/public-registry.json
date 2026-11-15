@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T09:04:24",
+  "generated_at": "2026-11-15T09:04:17",
   "count": 119,
   "projects": [
     {
@@ -1085,23 +1085,16 @@
     {
       "name": "ClaudeCodeProjects__AI-NoteBook",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": {
-        "message": "docs: TESTING.md real-machine test plan + ignore /target",
-        "date": "2026-09-27"
-      },
-      "github_url": "https://github.com/vincentmaox/AI-NoteBook",
+      "last_action": null,
+      "github_url": null,
       "cover_image": null,
       "product_label": null,
       "featured": false,
       "showcase_rank": null,
-      "tech_stack": [
-        "Node.js",
-        "React",
-        "Tailwind"
-      ]
+      "tech_stack": []
     },
     {
       "name": "ClaudeCodeProjects__AI-Patent",
@@ -1196,8 +1189,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "docs: 对标 IMA 与原点差距分析——「核电工程人的 IMA」照镜记（老茅 11-13 发起回到原点）",
-        "date": "2026-11-13"
+        "message": "feat(v1.3.0-rc.3): 会议纪要默认隐藏（showMeetings 开关）+ 工程界IMA体系总纲——老茅 11-14 定调",
+        "date": "2026-11-14"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1245,22 +1238,16 @@
     {
       "name": "ClaudeCodeProjects__Screen-Record",
       "description": "",
-      "stage": "停滞",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": {
-        "message": "chore: gitignore mobile dir (728MB, contains node_modules)",
-        "date": "2026-07-20"
-      },
-      "github_url": "https://github.com/vincentmaox/Screen-Record",
+      "last_action": null,
+      "github_url": null,
       "cover_image": null,
       "product_label": null,
       "featured": false,
       "showcase_rank": null,
-      "tech_stack": [
-        "Node.js",
-        "React"
-      ]
+      "tech_stack": []
     },
     {
       "name": "ClaudeCodeProjects__TexasPhilosopher",
@@ -1310,24 +1297,16 @@
     {
       "name": "ClaudeCodeProjects__ai-ResumeDx",
       "description": "",
-      "stage": "卡点",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": {
-        "message": "feat(kb): 黑话词典第二批100条（AI应用落地/FDE工程视角）+ 交叉校验脚本 + 别名冲突裁决（Agent Skills归Skills）",
-        "date": "2026-11-05"
-      },
-      "github_url": "https://github.com/vincentmaox/ResumeDx",
+      "last_action": null,
+      "github_url": null,
       "cover_image": null,
       "product_label": null,
       "featured": false,
       "showcase_rank": null,
-      "tech_stack": [
-        "Node.js",
-        "Next.js",
-        "React",
-        "Tailwind"
-      ]
+      "tech_stack": []
     },
     {
       "name": "ClaudeCodeProjects__ai-code-to-vedios",
@@ -1710,21 +1689,16 @@
     {
       "name": "ClaudeCodeProjects__disk-manager",
       "description": "",
-      "stage": "卡点",
+      "stage": "活跃",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": {
-        "message": "弹窗静默化战法：S4U 切换脚本 + ps1 ASCII 铁律 + 0x9F 蓝屏排查（2026-10-31 补录）",
-        "date": "2026-11-01"
-      },
-      "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
+      "last_action": null,
+      "github_url": null,
       "cover_image": null,
       "product_label": null,
       "featured": false,
       "showcase_rank": null,
-      "tech_stack": [
-        "Python"
-      ]
+      "tech_stack": []
     },
     {
       "name": "ClaudeCodeProjects__docreview-ai",
