@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T09:04:17",
+  "generated_at": "2026-11-16T09:04:43",
   "count": 119,
   "projects": [
     {
@@ -1189,8 +1189,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v1.3.0-rc.3): 会议纪要默认隐藏（showMeetings 开关）+ 工程界IMA体系总纲——老茅 11-14 定调",
-        "date": "2026-11-14"
+        "message": "feat(v1.3.4-rc.1): 命名体系定稿（四层知识资产体系）+ L2→L4 凝练通道 + 1.3.x 完整测试方案——老茅 11-16 定调",
+        "date": "2026-11-15"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
