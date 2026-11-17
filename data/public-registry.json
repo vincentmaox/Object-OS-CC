@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T09:04:43",
+  "generated_at": "2026-11-17T09:04:17",
   "count": 119,
   "projects": [
     {
@@ -1189,8 +1189,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v1.3.4-rc.1): 命名体系定稿（四层知识资产体系）+ L2→L4 凝练通道 + 1.3.x 完整测试方案——老茅 11-16 定调",
-        "date": "2026-11-15"
+        "message": "feat(v1.3.7-rc.2): 审查批内轮次对齐编写/助理——100 起步 + 每文件追加 10 轮（老茅拍板：旧公式没算 search_knowledge_base 检索轮次；防跑飞真保险丝是 doom 守卫+压缩层+停止按钮，非轮",
+        "date": "2026-11-16"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1556,7 +1556,7 @@
     {
       "name": "ClaudeCodeProjects__ai-zhiyisuo",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
