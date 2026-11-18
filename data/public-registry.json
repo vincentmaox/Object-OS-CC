@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T09:04:17",
+  "generated_at": "2026-11-18T09:04:53",
   "count": 119,
   "projects": [
     {
@@ -1689,16 +1689,21 @@
     {
       "name": "ClaudeCodeProjects__disk-manager",
       "description": "",
-      "stage": "活跃",
+      "stage": "卡点",
       "freq_total": null,
       "freq_suggestion": null,
-      "last_action": null,
-      "github_url": null,
+      "last_action": {
+        "message": "2026-11-14 第二轮抢救：hermes junction 搬家 + robocopy 实体化/去重战法 + WinSxS/ReservedStorage 系统级瘦身",
+        "date": "2026-11-14"
+      },
+      "github_url": "https://github.com/vincentmaox/AI-Disk-Manager",
       "cover_image": null,
       "product_label": null,
       "featured": false,
       "showcase_rank": null,
-      "tech_stack": []
+      "tech_stack": [
+        "Python"
+      ]
     },
     {
       "name": "ClaudeCodeProjects__docreview-ai",
