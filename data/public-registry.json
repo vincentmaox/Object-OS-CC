@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T09:17:07",
+  "generated_at": "2026-11-21T09:04:04",
   "count": 119,
   "projects": [
     {
@@ -1189,8 +1189,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "fix(v1.3.7-rc.3): canvas 别名双门禁——1.3.6-rc.1..rc.2 三包别名被 npm prune 缺件出厂，内网扫描页 read_page_visual 全挂 createCanvas undefined（与",
-        "date": "2026-11-18"
+        "message": "feat(v1.3.8-rc.3): 远程配置诊断补强——每轮检查写 data/logs/remote-settings.log（原因码可查，rc.2 全静默是诊断盲区）+ 设置页「检查远程模型配置」按钮（手动触发+失败原因中文提示，不必等",
+        "date": "2026-11-20"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
@@ -1611,7 +1611,7 @@
     {
       "name": "ClaudeCodeProjects__bytedance-agent-test",
       "description": "",
-      "stage": "活跃",
+      "stage": "停滞",
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": null,
