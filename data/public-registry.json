@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T09:04:04",
+  "generated_at": "2026-11-27T09:04:29",
   "count": 119,
   "projects": [
     {
@@ -1189,8 +1189,8 @@
       "freq_total": null,
       "freq_suggestion": null,
       "last_action": {
-        "message": "feat(v1.3.8-rc.3): 远程配置诊断补强——每轮检查写 data/logs/remote-settings.log（原因码可查，rc.2 全静默是诊断盲区）+ 设置页「检查远程模型配置」按钮（手动触发+失败原因中文提示，不必等",
-        "date": "2026-11-20"
+        "message": "feat(v1.4.0-rc.1): NPAI MCP Server——HeyBuddy 打通一期（监督进程 ELECTRON_RUN_AS_NODE 自拉起纯 Node bundle，四工具 list/search/save 只读快照+落",
+        "date": "2026-11-26"
       },
       "github_url": "https://github.com/vincentmaox/NPAI-knowledge",
       "cover_image": null,
